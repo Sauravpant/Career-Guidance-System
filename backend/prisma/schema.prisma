@@ -6,3 +6,179 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+model User {
+  id String @id @default(cuid())
+
+  name     String
+  email    String @unique
+  password String
+
+  education String
+
+  skills    String[]
+  interests String[]
+
+  createdAt DateTime @default(now())
+
+  recommendations CareerRecommendation[]
+  selectedCareer  UserCareer?
+
+  weeklyPlans WeeklyPlan[]
+  progress    StepProgress[]
+}
+
+model Career {
+  id String @id @default(cuid())
+
+  requiredSkills String[]
+
+  roadmap Roadmap?
+
+  recommendations CareerRecommendation[]
+  userCareers     UserCareer[]
+}
+
+model CareerRecommendation {
+  id String @id @default(cuid())
+
+  userId   String
+  careerId String
+
+  score Float
+
+  createdAt DateTime @default(now())
+
+  user   User   @relation(fields: [userId], references: [id])
+  career Career @relation(fields: [careerId], references: [id])
+}
+
+model UserCareer {
+  id String @id @default(cuid())
+
+  userId   String @unique
+  careerId String
+
+  startedAt DateTime @default(now())
+
+  user   User   @relation(fields: [userId], references: [id])
+  career Career @relation(fields: [careerId], references: [id])
+}
+
+model Roadmap {
+  id String @id @default(cuid())
+
+  careerId String @unique
+
+  title       String
+  description String?
+
+  aiResponse Json?
+
+  career Career @relation(fields: [careerId], references: [id])
+
+  phases RoadmapPhase[]
+
+  createdAt DateTime @default(now())
+}
+
+model RoadmapPhase {
+  id String @id @default(cuid())
+
+  roadmapId String
+
+  title       String
+  description String?
+
+  phaseOrder Int
+
+  roadmap Roadmap @relation(fields: [roadmapId], references: [id])
+
+  steps    RoadmapStep[]
+  projects Project[]
+
+  createdAt DateTime @default(now())
+}
+
+model RoadmapStep {
+  id String @id @default(cuid())
+
+  phaseId String
+
+  title       String
+  description String?
+
+  stepOrder Int
+
+  phase RoadmapPhase @relation(fields: [phaseId], references: [id])
+
+  resources Resource[]
+  progress  StepProgress[]
+
+  createdAt DateTime @default(now())
+}
+
+model StepProgress {
+  id String @id @default(cuid())
+
+  userId String
+  stepId String
+
+  completed Boolean @default(false)
+
+  completedAt DateTime?
+
+  user User        @relation(fields: [userId], references: [id])
+  step RoadmapStep @relation(fields: [stepId], references: [id])
+
+  @@unique([userId, stepId])
+}
+
+model Resource {
+  id String @id @default(cuid())
+
+  stepId String
+
+  title String
+  url   String
+
+  type String
+
+  step RoadmapStep @relation(fields: [stepId], references: [id])
+
+  createdAt DateTime @default(now())
+}
+
+model Project {
+  id String @id @default(cuid())
+
+  phaseId String
+
+  title       String
+  description String
+
+  difficulty String?
+
+  githubLink String?
+
+  phase RoadmapPhase @relation(fields: [phaseId], references: [id])
+
+  createdAt DateTime @default(now())
+}
+
+model WeeklyPlan {
+  id String @id @default(cuid())
+
+  userId String
+
+  title       String
+  description String?
+
+  plannedDate DateTime
+
+  completed Boolean @default(false)
+
+  user User @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now())
+}
