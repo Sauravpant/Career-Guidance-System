@@ -1,5 +1,5 @@
 generator client {
-  provider = "prisma-client"
+  provider = "prisma-client-js"
   output   = "../src/generated/prisma"
 }
 
@@ -158,8 +158,6 @@ model Project {
   description String
 
   difficulty String?
-
-  githubLink String?
 
   phase RoadmapPhase @relation(fields: [phaseId], references: [id])
 
