@@ -1,8 +1,8 @@
 {
   "model": "SVC",
-  "accuracy": 0.9808,
-  "precision_macro": 0.9791,
-  "recall_macro": 0.9785,
-  "f1_macro": 0.9785,
-  "cv_f1_macro": 0.9773
+  "accuracy": 0.9565,
+  "precision_macro": 0.9576,
+  "recall_macro": 0.9559,
+  "f1_macro": 0.9566,
+  "cv_f1_macro": 0.9642
 }
