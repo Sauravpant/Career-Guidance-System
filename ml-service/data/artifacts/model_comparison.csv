@@ -1,0 +1,5 @@
+model,accuracy,precision_macro,recall_macro,f1_macro,cv_f1_macro
+Logistic Regression,0.9767,0.9751,0.9744,0.9745,0.977
+SVC,0.9808,0.9791,0.9785,0.9785,0.9773
+Random Forest,0.9767,0.9751,0.9744,0.9744,0.9728
+XGBoost,0.976,0.9754,0.9734,0.974,0.9743
