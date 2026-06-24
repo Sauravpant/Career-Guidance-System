@@ -17,8 +17,3 @@ def save_json(data: dict, filename: str):
     ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
     with open(ARTIFACTS_DIR / filename, "w") as f:
         json.dump(data, f, indent=2)
-
-
-def load_json(filename: str) -> dict:
-    with open(ARTIFACTS_DIR / filename) as f:
-        return json.load(f)
