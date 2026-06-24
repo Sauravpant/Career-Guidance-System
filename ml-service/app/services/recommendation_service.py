@@ -19,7 +19,7 @@ class RecommendationService:
 
     def predict(self, skills: list[str], interests: list[str], education: str) -> dict:
         df = pd.DataFrame([{
-            "Skills": ";".join(skills),
+            "Skills":    ";".join(skills),
             "Interests": ";".join(interests),
             "Education": education,
         }])
@@ -32,18 +32,14 @@ class RecommendationService:
             fit=False,
         )
 
-        proba = self.model.predict_proba(X)[0]
+        proba    = self.model.predict_proba(X)[0]
         top3_idx = np.argsort(proba)[::-1][:3]
 
-        best_career = self.le.inverse_transform([top3_idx[0]])[0]
-        confidence = round(float(proba[top3_idx[0]]), 4)
-        top3 = [
-            {"career": self.le.inverse_transform([i])[0], "score": round(float(proba[i]), 4)}
-            for i in top3_idx
-        ]
-
         return {
-            "best_career": best_career,
-            "confidence": confidence,
-            "top_3_recommendations": top3,
+            "best_career":           self.le.inverse_transform([top3_idx[0]])[0],
+            "confidence":            round(float(proba[top3_idx[0]]), 4),
+            "top_3_recommendations": [
+                {"career": self.le.inverse_transform([i])[0], "score": round(float(proba[i]), 4)}
+                for i in top3_idx
+            ],
         }
