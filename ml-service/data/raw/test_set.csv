@@ -1,0 +1,1201 @@
+CandidateID,Name,Age,Education,Skills,Interests,Recommended_Career,Recommendation_Score
+90922,Michael Patterson,38.0,Bachelor's,Graphic Design;UI/UX;Adobe Creative Suite,Digital Media;Design,UX Designer,0.9
+90441,Zoey Bennett,49.0,Bachelor's,React;JavaScript;CSS,Design;Technology,Front-end Developer,0.84
+90915,Elijah Diaz,21.0,Bachelor's,Sketch;Prototyping;Java,Design;Engineering,UX Designer,0.83
+90979,Henry Henderson,45.0,Bachelor's,Keras;Machine Learning;C#,AI;Engineering,AI/ML Engineer,0.91
+90275,Olivia Stewart,38.0,Bachelor's,JavaScript;Express;MongoDB,Software Development;Web,Full Stack Developer,0.89
+90748,Daniel Hughes,35.0,Bachelor's,React Native;JavaScript;Mobile Apps,Technology;Apps,Mobile Developer,0.9
+90486,Emily Griffin,41.0,Master's,Python;Data Mining;Java,Technology;Software Development,Data Scientist,0.96
+90912,Abigail Kim,27.0,Bachelor's,User Research;UX Design;Prototyping,Digital Media;Design,UX Designer,0.97
+90041,Olivia Reed,49.0,Bachelor's,C#;.NET;System Design,Software Development;AI,Software Engineer,0.84
+90387,Zoey Ford,51.0,Bachelor's,HTML;CSS;TypeScript,Design;Technology,Front-end Developer,0.86
+90768,Harper Hughes,23.0,Bachelor's,Flutter;Dart;Cloud Computing,Technology;Cloud,Mobile Developer,0.92
+91143,Grace Jenkins,41.0,Bachelor's,Network Security;Linux;Python,Security;Technology,Cybersecurity Specialist,0.96
+90811,Victoria Bailey,39.0,Master's,Java;Android;HTML,Mobile Development;Design,Mobile Developer,0.86
+91146,John Kelly,21.0,Bachelor's,Cybersecurity;Cryptography;Networking,Technology;Security,Cybersecurity Specialist,0.95
+90061,Emily Hughes,36.0,PhD,C++;Algorithms;System Design,Software Development;AI,Software Engineer,0.84
+90419,Jacob Russell,48.0,Bachelor's Degree,JavaScript;Vue.js;CSS,Design;Technology,Front-end Developer,0.91
+90055,Avery Peterson,49.0,Master's,Java;System Design;Cloud Computing,Software Development;AI,Software Engineer,0.87
+91094,Joseph Myers,30.0,Bachelor's,Kubernetes;DevOps;Python,Technology;Business,AI/ML Engineer,0.85
+90737,Lily Howard,27.0,Bachelor's,Kotlin;Android;Firebase,Mobile Apps;Technology,Mobile Developer,0.83
+90940,Amelia Diaz,24.0,PhD,Python;Neural Networks;TensorFlow,Technology;Machine Learning,AI/ML Engineer,0.86
+91075,Carter Ford,21.0,Master's,Cloud Computing;DevOps;Python,Cloud;Automation,DevOps Engineer,0.9
+90958,David Cook,53.0,Bachelor's,Python;Machine Learning;AI,Technology;Machine Learning,AI/ML Engineer,0.86
+90409,Harper Kelly,34.0,Bachelor's,HTML;CSS;JavaScript,Design;Technology,Front-end Developer,0.82
+90700,Madison Flores,22.0,Bachelor's,Node.js;Express;Flutter,Backend;Technology,Backend Developer,0.96
+90056,Hannah Long,21.0,Bachelor's Degree,C++;Algorithms;System Design,Software Development;Technology,Software Engineer,0.87
+90036,Oliver Powell,40.0,Bachelor's,Java;Spring;Python,Engineering;Software Development,Software Engineer,0.91
+90142,Ethan Barnes,35.0,Bachelor's,Java;Spring;System Design,Engineering;Technology,Software Engineer,0.83
+90833,Olivia Price,38.0,Bachelor's,Adobe XD;UX/UI;Cybersecurity,Digital Media;Cybersecurity,UX Designer,0.93
+90893,Aria Ford,41.0,Master's,Sketch;Prototyping;UI Design,Arts;Digital Media,UX Designer,0.88
+90829,Chloe Ramos,41.0,Master's,Adobe XD;UX/UI;Python,Digital Media;Data Science,UX Designer,0.87
+91092,John Cox,38.0,Master's,Docker;Kubernetes;HTML,Cloud;Design,DevOps Engineer,0.85
+90096,Oliver Watson,27.0,Bachelor's,Java;Spring;Docker,Software Development;Technology,Software Engineer,0.92
+91033,Sebastian Long,50.0,Bachelor's,Terraform;DevOps;Linux,Cloud;Automation,DevOps Engineer,0.91
+90415,Lily Morris,38.0,Bachelor's,JavaScript;Vue.js;CSS,Design;Technology,Front-end Developer,0.86
+90324,Mia Ross,37.0,Bachelor's,HTML;CSS;React,Design;Technology,Front-end Developer,0.85
+90647,John Ford,37.0,Master's,Java;Microservices;SQL,Backend;Technology,Backend Developer,0.83
+91156,Daniel Hughes,25.0,PhD,Penetration Testing;Cybersecurity;Linux,Security;Technology,Cybersecurity Specialist,0.85
+90422,Olivia Perry,35.0,Bachelor's,HTML;CSS;TypeScript,Design;Technology,Front-end Developer,0.9
+91184,Carter Coleman,32.0,Bachelor's,Ethical Hacking;Cybersecurity;Linux,Technology;Security,Cybersecurity Specialist,0.84
+90088,Matthew Patterson,49.0,Bachelor's,C++;Algorithms;Keras,Engineering;Technology,Software Engineer,0.97
+90289,Alexander Peterson,45.0,Master's,JavaScript;Angular;Node.js,Web Development;Technology,Full Stack Developer,0.83
+90493,Charlotte Kelly,28.0,Master's,Python;Data Analysis;Machine Learning,Data Science;Healthcare,Data Scientist,0.94
+90455,Sophia Stewart,29.0,Bachelor's,R;Statistics;Machine Learning,Data Science;Finance,Data Scientist,0.95
+90899,Charlotte Ross,24.0,Bachelor's,Sketch;Prototyping;Python,Arts;Technology,UX Designer,0.88
+90226,Harper Morris,22.0,Bachelor's,JavaScript;React;Cloud Computing,Software Development;Cloud,Full Stack Developer,0.87
+90291,Nora Ross,28.0,Bachelor's,JavaScript;Express;MongoDB,Software Development;Web,Full Stack Developer,0.96
+91021,Owen Ford,50.0,Master's,Machine Learning;Scikit-learn;Python,AI;Innovation,AI/ML Engineer,0.96
+90613,Noah Patel,27.0,Bachelor's,Node.js;Express;JavaScript,Software Engineering;Technology,Mobile Developer,0.91
+90711,Madison Ross,53.0,Bachelor's,Java;Microservices;SQL,Backend;Technology,Backend Developer,0.82
+90702,Jackson Ward,36.0,Master's,Node.js;Express;JavaScript,Software Engineering;Technology,Backend Developer,0.96
+90354,Emily Powell,21.0,Bachelor's,HTML;CSS;TypeScript,Web Development;Design,Front-end Developer,0.87
+90210,Harper Watson,37.0,Bachelor's,Python;Django;Python,Software Development;Engineering,Full Stack Developer,0.93
+90865,David Watson,50.0,Master's,User Research;UX Design;Prototyping,Design;Technology,UX Designer,0.88
+91159,Sebastian Cook,41.0,Bachelor's,Ethical Hacking;Cybersecurity;Linux,Security;Technology,Cybersecurity Specialist,0.94
+91014,Ava Bailey,54.0,Bachelor's,Machine Learning;Scikit-learn;Docker,AI;Cloud,AI/ML Engineer,0.89
+90069,Isabella Bennett,38.0,Bachelor's,Python;Software Engineering;Java,Engineering;Software Engineering,Front-end Developer,0.88
+90806,Owen Wood,22.0,Bachelor's,Swift;iOS;TypeScript,Mobile Development;Web Development,Cybersecurity Specialist,0.91
+90460,Logan Barnes,22.0,Master's,R;Statistics;Machine Learning,Data Science;Healthcare,Data Scientist,0.95
+90216,Wyatt Morgan,34.0,Bachelor's,JavaScript;Angular;Machine Learning,Technology;Technology,Full Stack Developer,0.82
+91199,Alexander Jenkins,22.0,Master's,Cybersecurity;Cryptography;Terraform,Security;Cloud,Cybersecurity Specialist,0.82
+91089,Daniel Hughes,37.0,PhD,AWS;Jenkins;HTML,Cloud;Web Development,DevOps Engineer,0.87
+91173,Abigail Kim,53.0,Bachelor's,Network Security;Linux;Python,Cybersecurity;Networking,Cybersecurity Specialist,0.88
+90670,Jackson Powell,39.0,Bachelor's,Python;Django;PostgreSQL,Backend;Technology,Backend Developer,0.86
+90424,Ella Wood,39.0,PhD,HTML;CSS;Node.js,Design;Backend,Front-end Developer,0.86
+90178,Layla Watts,27.0,Master's,JavaScript;Angular;Node.js,Software Development;Web,Full Stack Developer,0.86
+90844,Chloe Barnes,35.0,Bachelor's,Graphic Design;UI/UX;Python,Digital Media;Web Development,UX Designer,0.86
+90479,Riley Cox,37.0,Master's,Python;Data Analysis;C++,Data Science;Software Development,Data Scientist,0.95
+90097,Matthew Patterson,46.0,Master's,C++;Algorithms;Terraform,Software Development;Technology,Software Engineer,0.89
+91118,Oliver Reed,45.0,PhD,Kubernetes;DevOps;Python,Technology;Infrastructure,DevOps Engineer,0.85
+90644,Emily Patel,30.0,Master's,Java;Microservices;SQL,Software Engineering;Finance,Backend Developer,0.96
+91106,Elijah Long,43.0,Bachelor's,Kubernetes;DevOps;Python,Technology;Technology,DevOps Engineer,0.83
+90325,Isabella Watts,41.0,Bachelor's,JavaScript;Vue.js;CSS,Design;Technology,Front-end Developer,0.92
+90892,Elijah Peterson,51.0,Master's,User Research;UX Design;HTML,Digital Media;Web Design,UX Designer,0.86
+90857,Wyatt Kelly,54.0,Bachelor's,Figma;Wireframing;UX Research,Design;Technology,UX Designer,0.84
+90620,Avery Bennett,33.0,Bachelor's,Python;Django;PostgreSQL,Software Engineering;Technology,Backend Developer,0.9
+90120,Samuel Morgan,38.0,Bachelor's,C#;.NET;System Design,Software Development;AI,Software Engineer,0.9
+90058,Layla Perry,22.0,Bachelor's,C++;Algorithms;React,Software Development;Design,Software Engineer,0.87
+90603,Sophia Morris,23.0,Master's,Node.js;Express;MongoDB,Backend;Technology,Backend Developer,0.85
+90252,Scarlett Watson,21.0,Bachelor's,JavaScript;React;C++,Technology;Software Development,Full Stack Developer,0.84
+91088,Daniel Bennett,34.0,Bachelor's,AWS;Jenkins;DevOps,Technology;Business,DevOps Engineer,0.94
+90079,Isabella Reed,43.0,Bachelor's,Java;System Design;Python,Software Development;Data Science,Software Engineer,0.93
+91025,Sophia Bennett,36.0,Bachelor's,Keras;Machine Learning;Network Security,AI;Technology,AI/ML Engineer,0.83
+90951,Michael Hughes,35.0,Bachelor's,Keras;Machine Learning;Python,Technology;Machine Learning,UX Designer,0.93
+90876,Daniel Perry,38.0,Master's,Adobe XD;UX/UI;Python,Arts;Technology,UX Designer,0.92
+90548,John Reyes,29.0,Master's,Python;Data Analysis;Machine Learning,Data Science;Finance,Data Scientist,0.97
+90877,John Bennett,24.0,Bachelor's,Sketch;Prototyping;UI Design,Arts;Digital Media,UX Designer,0.92
+90800,Sophia Bryant,49.0,Master's,Swift;iOS;Python,Mobile Apps;Data Science,Mobile Developer,0.85
+91131,David Cook,26.0,Bachelor's,Network Security;Linux;Python,Security;Technology,Cybersecurity Specialist,0.96
+90037,Chloe Powell,38.0,Master's,Java;System Design;Ethical Hacking,Engineering;Security,Software Engineer,0.87
+90193,Ethan Rogers,24.0,Master's,JavaScript;Angular;Node.js,Web Development;Technology,Full Stack Developer,0.84
+90759,Riley Rogers,38.0,Bachelor's,Flutter;Dart;Mobile Apps,Mobile Development;Design,Mobile Developer,0.91
+90469,Lily Bryant,25.0,Bachelor's,Python;Data Analysis;Machine Learning,Data Science;Healthcare,Data Scientist,0.84
+90745,Aiden Foster,52.0,Master's,Swift;iOS;Java,Mobile Development;Software Engineering,Mobile Developer,0.92
+91167,Alexander Murphy,39.0,Master's,Ethical Hacking;Cybersecurity;Linux,Technology;Security,Software Engineer,0.93
+90849,Olivia Richardson,39.0,Bachelor's,Figma;Wireframing;UX Research,Arts;Digital Media,Software Engineer,0.88
+90616,Jackson Reed,30.0,Bachelor's,Node.js;Express;MongoDB,Software Engineering;Finance,Backend Developer,0.97
+90138,Madison Price,41.0,Bachelor's,Java;System Design;Kubernetes,Engineering;Cloud,Software Engineer,0.88
+90008,Victoria Reed,41.0,Bachelor's,Java;System Design;JavaScript,Software Development;Design,Software Engineer,0.84
+90590,Aiden Watson,35.0,PhD,Python;Django;PostgreSQL,Backend;Technology,Backend Developer,0.86
+91037,Joseph Peterson,37.0,Bachelor's,Cloud Computing;DevOps;Python,Technology;Infrastructure,DevOps Engineer,0.95
+90500,Ava Myers,39.0,Master's,Python;Data Mining;Cybersecurity,Data Science;Technology,Data Scientist,0.93
+90529,Henry Wood,49.0,Master's,Python;Data Mining;Ethical Hacking,Data Science;Security,Data Scientist,0.9
+90609,Madison Price,38.0,Bachelor's,Java;Microservices;SQL,"Software Engineering, Technology",Backend Developer,0.96
+90925,Joseph Morgan,34.0,Master's,User Research;UX Design;Prototyping,Design;Technology,UX Designer,0.96
+91056,Henry Coleman,27.0,Bachelor's,Kubernetes;DevOps;Python,Technology;Infrastructure,DevOps Engineer,0.87
+90087,Daniel Russell,31.0,Bachelor's,C++;Algorithms;System Design,Software Development;AI,Software Engineer,0.9
+90615,Amelia Murphy,45.0,Master's,Go;Microservices;Python,Backend;AI,Backend Developer,0.93
+91134,Ava Patterson,44.0,Bachelor's,Python;Cybersecurity;Go,Technology;Software Engineering,Cybersecurity Specialist,0.82
+90971,David Coleman,53.0,Bachelor's,Python;Machine Learning;Statistics,Technology;Machine Learning,AI/ML Engineer,0.94
+90901,Lily Myers,50.0,Bachelor's,Sketch;Prototyping;Python,Design;Data Science,UX Designer,0.92
+90538,Aria Rogers,32.0,Master's,Python;Data Mining;AWS,Data Science;Cloud,Data Scientist,0.89
+90754,Joseph Barnes,37.0,Bachelor's,Swift;iOS;UI Design,Technology;Apps,Full Stack Developer,0.85
+90195,Charlotte Griffin,21.0,Master's,JavaScript;Express;MongoDB,Software Development;Web,Full Stack Developer,0.97
+90722,Layla Cook,50.0,Bachelor's,Kotlin;Android;Python,Technology;Data Science,Mobile Developer,0.95
+90026,Abigail Cox,45.0,Bachelor's,C++;Algorithms;System Design,Software Development;AI,Software Engineer,0.82
+90047,Owen Cook,34.0,Master's,C#;.NET;System Design,Software Development;AI,Software Engineer,0.84
+90184,Evelyn Patel,37.0,Bachelor's,JavaScript;Express;MongoDB,Web Development;Technology,Full Stack Developer,0.95
+90864,Owen Bennett,36.0,PhD,Adobe XD;UX/UI;Graphic Design,Arts;Digital Media,UX Designer,0.84
+90141,Zoey Howard,43.0,Bachelor's,C++;Algorithms;System Design,Software Development;Technology,Software Engineer,0.86
+90082,Elijah Powell,55.0,Master's,Java;Spring;System Design,Engineering;Technology,Software Engineer,0.87
+90467,Jackson Bennett,24.0,Master's,Python;Data Mining;Python,Technology;Security,Data Scientist,0.9
+90773, Lucas Patterson ,37.0,Bachelor's,Swift;iOS;UI Design,Mobile Development;Design,Mobile Developer,0.91
+90465,Liam Reyes,40.0,PhD,Python;Data Analysis;Machine Learning,Data Science;Healthcare,Data Scientist,0.83
+90044,Michael Jenkins,22.0,PhD,C#;.NET;JavaScript,Software Development;Web Development,Software Engineer,0.86
+90801,Henry Morris,30.0,Bachelor's,Swift;iOS;UI Design,Mobile Development;Design,Mobile Developer,0.93
+90156,David Ramos,41.0,Bachelor's,C++;Algorithms;System Design,Software Development;AI,Software Engineer,0.96
+90976,Layla Flores,51.0,Master's,Python;Machine Learning;AI,Technology;Machine Learning,AI/ML Engineer,0.97
+90906,John Myers,54.0,Master's,Graphic Design;UI/UX;Adobe Creative Suite,Digital Media;Design,UX Designer,0.87
+90241,Sophia Ramos,52.0,Bachelor's,TypeScript;React;AWS,Technology;Technology,Full Stack Developer,0.96
+90623,Ava Watts,52.0,Master's,Go;Microservices;Python,Software Engineering;Data Science,Backend Developer,0.88
+90428,Riley Bennett,49.0,Bachelor's,HTML;CSS;React,Web Design;Technology,Front-end Developer,0.82
+90121,Zoey Howard,36.0,Master's,Java;System Design;Cloud Computing,Software Development;Technology,Software Engineer,0.93
+90434,Madison Long,27.0,Bachelor's,HTML;CSS;React,Web Design;Technology,Front-end Developer,0.86
+90256,Madison Stewart,40.0,Master's,JavaScript;Express;MongoDB,Software Development;Web,Full Stack Developer,0.84
+90219,Ethan Griffin,28.0,PhD,Python;Django;React,Technology;Web,Backend Developer,0.86
+90862,Sebastian Patterson,48.0,Master's,Sketch;Prototyping;Python,Arts;Software Engineering,UX Designer,0.83
+90095,Ella Patel,45.0,Master's,Python;Software Engineering;Swift,Software Development;Technology,Software Engineer,0.84
+90947,Alexander Morris,53.0,PhD,Python;Machine Learning;JavaScript,AI;Technology,AI/ML Engineer,0.88
+90719,Emily Myers,38.0,Bachelor's,Swift;iOS;Sketch,Technology;Design,Mobile Developer,0.96
+90944,Liam Cooper,41.0,PhD,Python;Deep Learning;JavaScript,Technology;Web Development,AI/ML Engineer,0.94
+90534,Samuel Russell,43.0,Bachelor's,Python;Statistics;Network Security,Data Science;Technology,Data Scientist,0.9
+91093,Jackson Jenkins,25.0,Master's,Terraform;DevOps;Python,Technology;Software Development,DevOps Engineer,0.92
+90682,Amelia Hughes,45.0,Bachelor's,Go;Microservices;APIs,Backend;Technology,Backend Developer,0.83
+90513,Layla Bailey,48.0,PhD,Python;Statistics;Machine Learning,Technology;Data Science,Data Scientist,0.87
+90878,Liam Price,40.0,Master's,User Research;UX Design;Prototyping,Digital Media;Design,UX Designer,0.96
+90680,Madison Long,38.0,Bachelor's,Python;Django;PostgreSQL,Backend;Technology,Backend Developer,0.83
+90966,Logan Watson,55.0,Bachelor's,Python;Deep Learning;AI,Technology;AI,AI/ML Engineer,0.97
+90797,Oliver Perry,33.0,Bachelor's,React Native;JavaScript;Mobile Apps,Technology;Apps,Mobile Developer,0.83
+90433,Emily Reed,53.0,Bachelor's,HTML;CSS;JavaScript,Web Development;Design,Front-end Developer,0.82
+90145,Mia Griffin,51.0,Bachelor's,C#;.NET;System Design,Engineering;Technology,Software Engineer,0.95
+90093,Madison Ford,46.0,Bachelor's,Python;Software Engineering;Algorithms,Software Development;Technology,Software Engineer,0.93
+90288,Victoria Foster,44.0,Bachelor's,JavaScript;Express;MongoDB,Technology;Web,Full Stack Developer,0.84
+90262,Sophia Sanders,47.0,Master's,JavaScript;Express;MongoDB,Web Development;Technology,Full Stack Developer,0.85
+90483,Zoey Flores,27.0,Bachelor's,Python;Data Mining;Statistics,Data Science;Healthcare,Data Scientist,0.82
+90933,Jackson Hayes,50.0,Bachelor's,PyTorch;Machine Learning;Python,AI;Data Science,AI/ML Engineer,0.93
+91179,Nora Coleman,35.0,Master's,Ethical Hacking;Cybersecurity;Sketch,Technology;Digital Media,Cybersecurity Specialist,0.85
+90924,Scarlett Patel,31.0,Bachelor's,Graphic Design;UI/UX;Node.js,Design;Backend,UX Designer,0.87
+90024,Hannah Sanders,41.0,PhD,Python;Software Engineering;Algorithms,Software Development;AI,Software Engineer,0.94
+91166,Nora Ford,29.0,Bachelor's,Penetration Testing;Cybersecurity;HTML,Cybersecurity;Design,Cybersecurity Specialist,0.94
+90641,Avery Ford,32.0,Bachelor's,Java;Microservices;SQL,Backend;Technology,Backend Developer,0.83
+90197,Hannah Morgan,46.0,Bachelor's,JavaScript;Express;MongoDB,Technology;Web,Full Stack Developer,0.95
+90757,Charlotte Jenkins,51.0,Bachelor's,Flutter;Dart;Mobile Apps,Technology;Apps,Mobile Developer,0.95
+90147,Alexander Hughes,46.0,Bachelor's,Python;Software Engineering;Algorithms,Engineering;Technology,Software Engineer,0.82
+90783,David Ford,26.0,Bachelor's,React Native;JavaScript;Adobe XD,Mobile Apps;Arts,Mobile Developer,0.87
+90723,Ella Bailey,29.0,Bachelor's,Flutter;Dart;Mobile Apps,Mobile Apps;Technology,Mobile Developer,0.83
+90494,Daniel Perry,42.0,Master's,Python;Data Mining;Keras,Technology;Technology,Data Scientist,0.83
+90954,Mia Howard,38.0,Master's,PyTorch;Machine Learning;Python,AI;Data Science,AI/ML Engineer,0.84
+90781,Avery Brooks,44.0,Bachelor's,Swift;iOS;UI Design,Mobile Apps;Technology,Mobile Developer,0.87
+90587,Elijah Richardson,33.0,Bachelor's,Java;Microservices;Flutter,Software Engineering;Mobile Development,Backend Developer,0.87
+90215,Emily Hughes,33.0,Bachelor's,JavaScript;Express;MongoDB,Web Development;Technology,Full Stack Developer,0.93
+90175,Isabella Stewart,54.0,Bachelor's,JavaScript;React;Python,Technology;Software Development,Full Stack Developer,0.82
+90752,Ava Bailey,48.0,Bachelor's,React Native;JavaScript;Mobile Apps,Technology;Apps,Mobile Developer,0.91
+90635,Scarlett Bennett,36.0,Bachelor's,Python;Django;PostgreSQL,Software Engineering;Finance,Backend Developer,0.89
+90454,Lily Cooper,26.0,Bachelor's,R;Statistics;Machine Learning,Data Science;Healthcare,Front-end Developer,0.83
+90839,Logan Kelly,41.0,Bachelor's,Sketch;Prototyping;C#,Arts;Software Development,UX Designer,0.87
+90497,Evelyn Richardson,47.0,PhD,Python;Data Analysis;Machine Learning,Technology;Data Science,Data Scientist,0.84
+90471,Samuel Ford,53.0,PhD,Python;Data Analysis;Machine Learning,Data Science;Healthcare,Data Scientist,0.94
+90406,Riley Howard,44.0,Bachelor's,React;JavaScript;CSS,Design;Technology,Front-end Developer,0.9
+90802,David Price,31.0,Bachelor's,Flutter;Dart;React,Mobile Development;Web Development,Mobile Developer,0.88
+90297,Oliver Price,37.0,Bachelor's,JavaScript;React;Node.js,Technology;Web,Full Stack Developer,0.96
+90921,Daniel Powell,22.0,Bachelor's,Graphic Design;UI/UX;Adobe Creative Suite,Arts;Digital Media,UX Designer,0.83
+90251, Harper Cooper ,50.0,Bachelor's,JavaScript;Express;MongoDB,Software Development;Web,Full Stack Developer,0.83
+90127,David Peterson,39.0,Bachelor's,C#;.NET;Python,Software Development;Technology,Software Engineer,0.86
+91072,Elijah Perry,42.0,Bachelor's,Kubernetes;DevOps;Cybersecurity,Technology;Cybersecurity,DevOps Engineer,0.9
+90989,Evelyn Barnes,45.0,Master's,Machine Learning;Scikit-learn;Python,Technology;Software Development,AI/ML Engineer,0.92
+90712,Elijah Stewart,34.0,Bachelor's,Flutter;Dart;Mobile Apps,Technology;Apps,Mobile Developer,0.88
+90247,Mason Bryant,34.0,Master's,JavaScript;Angular;Node.js,Technology;Web,Full Stack Developer,0.87
+90519,Sebastian Jenkins,52.0,PhD,Python;Data Mining;Statistics,Data Science;Healthcare,Data Scientist,0.95
+90734,Mason Powell,35.0,Bachelor's,Swift;iOS;UI Design,Mobile Apps;Technology,Software Engineer,0.86
+90400,Zoey Bailey,25.0,Bachelor's,JavaScript;Vue.js;CSS,Web Development;Design,Front-end Developer,0.9
+90299,Lily Long,54.0,Bachelor's,Python;Django;React,Web Development;Technology,Full Stack Developer,0.95
+91135,Sophia Murphy,28.0,Bachelor's,Network Security;Linux;Python,Technology;Security,Cybersecurity Specialist,0.88
+90568,Amelia Jenkins,22.0,Bachelor's,R;Statistics;Python,Technology;Technology,Data Scientist,0.91
+91124,Noah Morris,49.0,Bachelor's,Ethical Hacking;Cybersecurity;Linux,Security;Technology,Cybersecurity Specialist,0.9
+90972,Grace Patel,30.0,Master's,Keras;Machine Learning;Python,Technology;Machine Learning,AI/ML Engineer,0.9
+90701,Noah Bennett,29.0,Master's,Java;Spring;Microservices,Software Engineering;Finance,Backend Developer,0.84
+90582,Jackson Wood,53.0,Master's,Python;Statistics;Machine Learning,Data Science;Finance,Data Scientist,0.94
+90496,Jacob Watson,48.0,Master's,Python;Statistics;Machine Learning,Technology;Data Science,Data Scientist,0.91
+90040,Lily Coleman,32.0,Bachelor's,Python;Software Engineering;Python,Software Development;Software Engineering,Software Engineer,0.86
+90560,Amelia Coleman,26.0,PhD,Python;Data Analysis;Ethical Hacking,Data Science;Security,Software Engineer,0.84
+90718,Layla Henderson,37.0,PhD,Kotlin;Android;Firebase,Mobile Development;Design,Mobile Developer,0.85
+90861,Liam Rogers,44.0,Bachelor's,Figma;Wireframing;UX Research,Design;Technology,UX Designer,0.93
+90551,Owen Russell,43.0,Bachelor's,Python;Statistics;Machine Learning,data science;finance,Data Scientist,0.91
+90970,Riley Hughes,38.0,Master's,Python;Machine Learning;Statistics,AI;Innovation,AI/ML Engineer,0.89
+90128,Emily Watson,32.0,Bachelor's,C++;Algorithms;System Design,Software Development;Technology,Software Engineer,0.88
+90795,Wyatt Hughes,25.0,Bachelor's,Java;Android;UI Design,Technology;Apps,Mobile Developer,0.83
+90200,Elijah Griffin,32.0,PhD,JavaScript;Angular;Node.js,Technology;Web,Full Stack Developer,0.94
+90267,Daniel Barnes,39.0,Bachelor's,JavaScript;Angular;Node.js,Web Development;Technology,Full Stack Developer,0.96
+90134,Madison Watts,25.0,Bachelor's,Java;Spring;Python,Engineering;Technology,Software Engineer,0.91
+90510,Lily Richardson,31.0,Bachelor's,R;Statistics;JavaScript,Data Science;Web Design,Data Scientist,0.88
+90717,Ava Jenkins,34.0,Bachelor's,Swift;iOS;Adobe XD,Mobile Apps;Arts,Mobile Developer,0.95
+90005,Madison Barnes,30.0,Master's,Java;System Design;PyTorch,Engineering;AI,Software Engineer,0.9
+90567,Lily Hughes,32.0,Master's,Python;Data Analysis;Machine Learning,Technology;Data Science,Data Scientist,0.91
+90232,Charlotte Ross,34.0,Bachelor's,TypeScript;React;Java,Technology;Mobile Development,Full Stack Developer,0.86
+90761,Mason Jenkins,50.0,Bachelor's,Flutter;Dart;Mobile Apps,Technology;Apps,AI/ML Engineer,0.93
+90402,Owen Jenkins,22.0,Bachelor's,HTML;CSS;Node.js,Web Development;Software Engineering,Front-end Developer,0.83
+90189,Grace Bennett,52.0,Bachelor's,JavaScript;React;Node.js,Technology;Web,Full Stack Developer,0.86
+90411,Ethan Diaz,26.0,Bachelor's,HTML;CSS;JavaScript,Web Development;Design,Front-end Developer,0.85
+90659,Olivia Patel,22.0,Master's,Node.js;Express;Machine Learning,Software Engineering;AI,Backend Developer,0.9
+90828,Abigail Cook,31.0,Bachelor's,User Research;UX Design;Prototyping,Digital Media;Design,UX Designer,0.82
+90357,Alexander Brooks,36.0,Master's,HTML;CSS;Java,Design;Technology,Front-end Developer,0.96
+90997,Isabella Bennett,55.0,Bachelor's,Machine Learning;Scikit-learn;Python,AI;Innovation,AI/ML Engineer,0.89
+91103,Ella Reyes,24.0,Master's,Terraform;DevOps;Linux,Technology;Infrastructure,DevOps Engineer,0.85
+90685,Owen Hughes,36.0,Bachelor's,Java;Spring;Microservices,Software Engineering;Technology,Backend Developer,0.87
+91145,Logan Howard,45.0,Master's,Python;Cybersecurity;Kubernetes,Technology;Technology,Cybersecurity Specialist,0.83
+91195,Grace Jenkins,30.0,Master's,Ethical Hacking;Cybersecurity;Linux,Security;Technology,Cybersecurity Specialist,0.97
+90879,Liam Morris,29.0,Master's,Sketch;Prototyping;UI Design,Digital Media;Design,UX Designer,0.86
+90908,Joseph Bennett,21.0,Master's,User Research;UX Design;C++,Digital Media;Software Development,UX Designer,0.87
+90414,Grace Long,35.0,Master's,HTML;CSS;React,Web Development;Design,Front-end Developer,0.84
+91047,Chloe Peterson,30.0,Bachelor's,Cloud Computing;DevOps;Python,Cloud;Automation,DevOps Engineer,0.97
+90785,Lucas Ford,41.0,Bachelor's,React Native;JavaScript;Mobile Apps,Mobile Development;Design,Mobile Developer,0.97
+91034,Michael Ross,39.0,Bachelor's,Terraform;DevOps;Java,Technology;Software Engineering,DevOps Engineer,0.84
+90739,Jackson Diaz,54.0,Master's,Swift;iOS;UI Design,Mobile Development;Design,Mobile Developer,0.95
+90730,Michael Peterson,45.0,Bachelor's,Flutter;Dart;Cybersecurity,Mobile Development;Technology,Mobile Developer,0.91
+90114,Amelia Hayes,37.0,Bachelor's,C++;Algorithms;System Design,Software Development;AI,Software Engineer,0.96
+90725,Aria Hughes,34.0,Bachelor's,React Native;JavaScript;Mobile Apps,Technology;Apps,Mobile Developer,0.88
+90473,Ethan Coleman,55.0,PhD,R;Statistics;Machine Learning,Data Science;Healthcare,Data Scientist,0.86
+90126,Abigail Flores,35.0,Master's,C++;Algorithms;HTML,Engineering;Design,Software Engineer,0.93
+90622,Benjamin Foster,49.0,Bachelor's,Node.js;Express;MongoDB,Backend;Technology,Backend Developer,0.91
+91158,Samuel Diaz,22.0,PhD,Network Security;Linux;Adobe XD,Security;Arts,Cybersecurity Specialist,0.86
+90223,Nora Morris,31.0,Bachelor's,Python;Django;JavaScript,Web Development;Web Design,Full Stack Developer,0.94
+90403,Daniel Cooper,51.0,Bachelor's,HTML;CSS;JavaScript,Design;Technology,Front-end Developer,0.86
+91012,John Diaz,36.0,Master's,PyTorch;Machine Learning;Cybersecurity,Technology;Security,AI/ML Engineer,0.97
+90192,Noah Howard,40.0,Bachelor's,TypeScript;React;Terraform,Technology;Technology,Cybersecurity Specialist,0.86
+91036,Ava Hughes,23.0,Bachelor's,AWS;Jenkins;Python,Technology;Security,DevOps Engineer,0.83
+90111,Amelia Griffin,25.0,Bachelor's,Python;Software Engineering;Algorithms,Engineering;Technology,Software Engineer,0.96
+90043,Ethan Bennett,32.0,Master's Degree,Python;Software Engineering;Algorithms,Software Development;Technology,Software Engineer,0.91
+90412,John Ward,35.0,Master's,JavaScript;Vue.js;Network Security,Design;Security,Front-end Developer,0.95
+90661,Ava Peterson,28.0,Bachelor's,Node.js;Express;Terraform,Software Engineering;Cloud,DevOps Engineer,0.83
+90207,Elijah Murphy,44.0,Master's,JavaScript;Express;MongoDB,Technology;Web,Full Stack Developer,0.88
+90391,Abigail Patterson,44.0,Master's,React;JavaScript;CSS,Web Development;Design,Front-end Developer,0.82
+90380,Zoey Barnes,22.0,Bachelor's,HTML;CSS;JavaScript,Web Design;Technology,Front-end Developer,0.84
+91112,Aria Bennett,29.0,Master's,Terraform;DevOps;Linux,Cloud;Automation,DevOps Engineer,0.83
+91082,Alexander Watson,47.0,Bachelor's,Cloud Computing;DevOps;Python,Technology;Infrastructure,DevOps Engineer,0.9
+90015,Sebastian Cooper,54.0,Master's,C++;Algorithms;System Design,Software Development;AI,UX Designer,0.87
+91000,Jacob Henderson,40.0,PhD,Python;Machine Learning;AI,AI;Innovation,Software Engineer,0.87
+90363,Lily Cooper,55.0,Bachelor's,React;JavaScript;Figma,Web Design;Design,Front-end Developer,0.92
+90235,Avery Hughes,22.0,Bachelor's,JavaScript;Angular;Node.js,Web Development;Technology,Full Stack Developer,0.83
+90431,Layla Cox,47.0,Master's,HTML;CSS;TypeScript,Web Design;Technology,Front-end Developer,0.92
+90558,Lucas Patel,50.0,PhD,Python;Big Data;Statistics,Data Science;Healthcare,Data Scientist,0.86
+90144,Liam Kelly,36.0,PhD,C#;.NET;Go,Software Development;Backend,Software Engineer,0.89
+91123,Alexander Bailey,37.0,Bachelor's,Penetration Testing;Cybersecurity;Java,CYBERSECURITY;SOFTWARE DEVELOPMENT,Cybersecurity Specialist,0.95
+90898,Michael Ross,33.0,Bachelor's,Figma;Wireframing;UX Research,Arts;Digital Media,UX Designer,0.95
+90161,Layla Cook,32.0,Bachelor's,JavaScript;Angular;Node.js,Software Development;Web,Full Stack Developer,0.88
+90048,John Reyes,53.0,Bachelor's,C#;.NET;System Design,Software Development;Technology,Software Engineer,0.88
+91198,Olivia Coleman,23.0,Master's,Python;Cybersecurity;Python,Cybersecurity;Technology,Cybersecurity Specialist,0.97
+90508,Wyatt Watts,47.0,Master's,Python;Big Data;Java,Data Science;Engineering,Data Scientist,0.84
+91003,Scarlett Barnes,22.0,Master's,Python;Machine Learning;Statistics,AI;Innovation,AI/ML Engineer,0.88
+90535,Aiden Foster,53.0,Bachelor's,Python;Data Analysis;Machine Learning,Technology;Data Science,Data Scientist,0.88
+91133,Lucas Coleman,50.0,Bachelor's,Ethical Hacking;Cybersecurity;Linux,Technology;Security,Cybersecurity Specialist,0.88
+90099,Lily Hayes,26.0,Master's,Java;System Design;HTML,Software Development;Web Design,Software Engineer,0.96
+91161,Benjamin Bennett,52.0,Bachelor's,Python;Cybersecurity;Network Security,Security;Technology,Cybersecurity Specialist,0.88
+90168,Olivia Perry,38.0,PhD,JavaScript;Angular;Node.js,Technology;Web,Full Stack Developer,0.92
+90249,Mason Bennett,38.0,Bachelor's,JavaScript;Express;Figma,Web Development;Digital Media,Full Stack Developer,0.86
+90280,Grace Griffin,29.0,Bachelor's,Python;Django;Node.js,Web Development;Backend,Full Stack Developer,0.91
+91164,Zoey Rogers,48.0,Master's,Cybersecurity;Cryptography;Kotlin,,Cybersecurity Specialist,0.95
+90975,Zoey Patterson,24.0,Master's,Python;Machine Learning;TensorFlow,Technology;Machine Learning,AI/ML Engineer,0.88
+90569,Zoey Coleman,44.0,Master's,Python;Data Analysis;Python,Data Science;Technology,Data Scientist,0.83
+90001,Victoria Hughes,23.0,PhD,C#;.NET;System Design,Engineering;Technology,Software Engineer,0.88
+90196,Oliver Myers,28.0,Bachelor's,JavaScript;React;Node.js,Technology;Web,Full Stack Developer,0.96
+90708,Amelia Henderson,44.0,Master's,Java;Microservices;Python,Software Engineering;Engineering,Backend Developer,0.86
+90135,Lily Powell,49.0,Master's,Java;Spring;System Design,Engineering;Technology,Software Engineer,0.91
+90067,John Reed,55.0,Bachelor's,Java;System Design;Cloud Computing,Software Development;Technology,Software Engineer,0.85
+90919,Matthew Reyes,28.0,Bachelor's,User Research;UX Design;Prototyping,Digital Media;Design,UX Designer,0.95
+90347,John Cox,50.0,Bachelor's,HTML;CSS;TypeScript,Web Development;Design,Front-end Developer,0.83
+90539,John Rogers,35.0,Master's,Python;Data Mining;HTML,Technology;Web Development,Data Scientist,0.88
+91015,Daniel Myers,28.0,Master's,Keras;Machine Learning;React Native,AI;Mobile Development,AI/ML Engineer,0.91
+90438,Scarlett Russell,35.0,Bachelor's,JavaScript;Vue.js;CSS,Web Development;Design,Front-end Developer,0.82
+90021,Noah Henderson,47.0,Bachelor's,Java;System Design;Cloud Computing,Software Development;Technology,Software Engineer,0.83
+91110,Henry Bryant,55.0,Master's,AWS;Jenkins;Adobe XD,Technology;Design,DevOps Engineer,0.91
+91129,Carter Morris,51.0,Bachelor's,Cybersecurity;Cryptography;Graphic Design,Security;Digital Media,Cybersecurity Specialist,0.86
+90662,Nora Hughes,52.0,Bachelor's,Go;Microservices;Python,Backend;Software Development,Backend Developer,0.95
+90212,Lucas Flores,30.0,Master's,JavaScript;React;User Research,Web Development;Design,Full Stack Developer,0.87
+90073,Victoria Morgan,49.0,Bachelor's,C++;Algorithms;System Design,,Software Engineer,0.87
+91048,Jacob Hughes,27.0,Master's,Cloud Computing;DevOps;Python,Technology;Technology,DevOps Engineer,0.84
+90575,Zoey Foster,39.0,Bachelor's,Python;Data Mining;Statistics,Data Science;Healthcare,Data Scientist,0.95
+90480, Mia Coleman ,29.0,Bachelor's,Python;Data Analysis;Flutter,Data Science;Mobile Development,Data Scientist,0.96
+90039,Avery Kelly,23.0,Master's,Python;Software Engineering;Algorithms,Software Development;AI,Software Engineer,0.84
+90871,Layla Howard,24.0,Bachelor's,Sketch;Prototyping;Python,Digital Media;Technology,UX Designer,0.82
+90054,Jackson Barnes,21.0,Bachelor's,Java;System Design;AWS,Software Development;Technology,Software Engineer,0.93
+90012,Lily Ross,43.0,Master's,C#;.NET;System Design,Engineering;Technology,Software Engineer,0.83
+90863,Avery Stewart,40.0,Bachelor's,Adobe XD;UX/UI;Graphic Design,Digital Media;Design,UX Designer,0.89
+90581,Aria Hayes,33.0,Master's,Python;Data Mining;Flutter,Technology;Mobile Apps,Data Scientist,0.97
+91176,Hannah Brooks,40.0,Bachelor's,Cybersecurity;Cryptography;Networking,Technology;Security,Cybersecurity Specialist,0.93
+90939,Hannah Watson,43.0,Master's,Keras;Machine Learning;Python,Technology;AI,AI/ML Engineer,0.94
+90042,Mason Bennett,21.0,Bachelor's,Python;Software Engineering;Algorithms,Engineering;Technology,Software Engineer,0.95
+90778,Michael Ross,49.0,PhD,React Native;JavaScript;JavaScript,Mobile Apps;Software Development,Mobile Developer,0.92
+91061,Daniel Ford,38.0,Bachelor's,AWS;Jenkins;Python,Technology;Data Science,DevOps Engineer,0.87
+90632,Lily Perry,39.0,Master's,Java;Spring;Sketch,Software Engineering;Arts,Backend Developer,0.86
+91115,Madison Russell,41.0,Master's,Terraform;DevOps;Network Security,Cloud;Security,DevOps Engineer,0.85
+91032,Abigail Kim,46.0,Bachelor's,Cloud Computing;DevOps;Python,Technology;Infrastructure,DevOps Engineer,0.83
+91050,Jacob Bryant,30.0,Bachelor's,Cloud Computing;DevOps;Machine Learning,Technology;Technology,DevOps Engineer,0.87
+90511,Matthew Stewart,23.0,PhD,Python;Data Mining;Statistics,Technology;Data Science,Data Scientist,0.86
+90525,Amelia Barnes,46.0,PhD,Python;Big Data;Statistics,Technology;Data Science,Data Scientist,0.87
+90728,Avery Bailey,25.0,Master's,Java;Android;Adobe XD,Mobile Development;Digital Media,Mobile Developer,0.93
+90537,Nora Bailey,39.0,Master's,Python;Big Data;Statistics,Technology;Data Science,Data Scientist,0.95
+91150,Samuel Kelly,32.0,Master's,Network Security;Linux;Docker,Technology;Cloud,Cybersecurity Specialist,0.9
+90143,Lily Peterson,49.0,Master's,C#;.NET;System Design,Software Development;AI,Software Engineer,0.91
+90104,David Long,52.0,Master's,C#;.NET;JavaScript,Software Development;Technology,Software Engineer,0.88
+90518,Joseph Sanders,48.0,Master's,"Python, Data Mining, C#",Data Science;Software Development,Data Scientist,0.97
+91004,Abigail Stewart,41.0,Bachelor's,Python;Deep Learning;AI,AI;Data Science,AI/ML Engineer,0.94
+90052,Lily Bailey,42.0,Bachelor's,Python;Software Engineering;Java,Software Development;Software Engineering,Software Engineer,0.96
+90810,Hannah Howard,21.0,Master's,Flutter;Dart;Mobile Apps,Mobile Development;Design,Mobile Developer,0.97
+90533,Sophia Stewart,47.0,Master's,Python;Data Mining;Machine Learning,Technology;Technology,Data Scientist,0.95
+90153,Harper Bailey,52.0,Bachelor's,C++;Algorithms;System Design,Software Development;AI,Software Engineer,0.88
+90337,Michael Hughes,40.0,Bachelor's,React;JavaScript;Java,Web Design;Software Engineering,Front-end Developer,0.92
+91113,Mason Russell,55.0,PhD,Docker;Kubernetes;CI/CD,Technology;Business,DevOps Engineer,0.87
+90753,Harper Price,51.0,Bachelor's,Swift;iOS;Python,Mobile Apps;AI,Mobile Developer,0.94
+91045,Owen Flores,27.0,Master's,Cloud Computing;DevOps;Java,Cloud;Technology,DevOps Engineer,0.93
+90464,Benjamin Richardson,39.0,Bachelor's,Python;Data Analysis;Machine Learning,Technology;Data Science,Data Scientist,0.83
+90617,Lily Diaz,51.0,PhD,Node.js;Express;MongoDB,Software Engineering;Technology,Backend Developer,0.84
+90710,Aria Peterson,28.0,Bachelor's,Java;Spring;JavaScript,Software Engineering;Technology,Backend Developer,0.94
+90772,Mia Henderson,52.0,Bachelor's,Java;Android;Java,Technology;Engineering,Mobile Developer,0.84
+90634,Sophia Coleman,36.0,Master's,Node.js;Express;JavaScript,Software Engineering;Technology,Backend Developer,0.89
+91081,Ella Powell,24.0,Bachelor's,Kubernetes;DevOps;Network Security,Technology;Security,DevOps Engineer,0.95
+90667,Hannah Ramos,35.0,Bachelor's,Java;Microservices;SQL,Software Engineering;Technology,Backend Developer,0.88
+90764,Ava Barnes,38.0,Bachelor's,React Native;JavaScript;Python,Mobile Development;Data Science,Mobile Developer,0.93
+90367,Henry Murphy,48.0,PhD,JavaScript;Vue.js;CSS,Web Development;Design,Front-end Developer,1.0
+90651,Hannah Reyes,50.0,Bachelor's,Node.js;Express;MongoDB,Backend;Technology,Backend Developer,0.92
+90530,Daniel Diaz,27.0,PhD,Python;Statistics;React,Technology;Design,Data Scientist,0.87
+90078,Isabella Ross,52.0,Bachelor's,C++;ALGORITHMS;SYSTEM DESIGN,Software Development;Technology,Software Engineer,0.92
+90027,Oliver Ross,54.0,PhD,Python;Software Engineering;Algorithms,Software Development;Technology,Software Engineer,0.9
+90652,Wyatt Bennett,32.0,PhD,Java;Spring;Graphic Design,Software Engineering;Design,Backend Developer,0.84
+91109,Aria Henderson,29.0,Bachelor's,Cloud Computing;DevOps;Python,Cloud;Automation,DevOps Engineer,0.88
+90733,Wyatt Brooks,46.0,Bachelor's,Swift;iOS;Penetration Testing,Mobile Apps;Cybersecurity,Mobile Developer,0.86
+90075,Zoey Kelly,37.0,Master's,C++;Algorithms;System Design,Software Development;Technology,DevOps Engineer,0.82
+90941,Evelyn Hughes,35.0,PhD,PyTorch;Machine Learning;Python,Technology;Data Science,AI/ML Engineer,0.96
+90476,Madison Ward,31.0,PhD,R;Statistics;Machine Learning,Data Science;Finance,Data Scientist,0.84
+91177,Abigail Foster,52.0,Bachelor's,Python;Cybersecurity;Network Security,Technology;Security,Cybersecurity Specialist,0.94
+90949,Hannah Barnes,24.0,Bachelor's,Python;Machine Learning;TensorFlow,AI;Innovation,AI/ML Engineer,0.85
+90484,Sophia Sanders,44.0,Master's,Python;Statistics;Machine Learning,Data Science;Healthcare,Data Scientist,0.84
+90151,Matthew Reed,44.0,Master's,C++;Algorithms;TypeScript,Engineering;Software Development,Software Engineer,0.84
+90902,Logan Diaz,46.0,Bachelor's,Figma;Wireframing;Python,Digital Media;Data Science,UX Designer,0.86
+91107,Charlotte Barnes,45.0,Bachelor's,Terraform;DevOps;Linux,Technology;Business,DevOps Engineer,0.84
+90265,Scarlett Henderson,43.0,Bachelor's,Python;Django;JavaScript,Technology;Web Design,Full Stack Developer,0.89
+91030,Ethan Watson,53.0,Master's,Python;Deep Learning;Sketch,TECHNOLOGY;DESIGN,AI/ML Engineer,0.94
+90512,David Rogers,37.0,Master's,Python;Data Analysis;Machine Learning,Data Science;Finance, Data Scientist ,0.85
+91171,Alexander Griffin,37.0,Bachelor's,Cybersecurity;Cryptography;Networking,Cybersecurity;Networking,Cybersecurity Specialist,0.89
+90746,Ethan Coleman,40.0,Master's,Kotlin;Android;Python,Technology;AI,Mobile Developer,0.87
+90482,Joseph Jenkins,50.0,PhD,Python;Statistics;Python,Data Science;AI,Data Scientist,0.9
+90996,Wyatt Cooper,42.0,Master's,Python;Deep Learning;AI,Technology;AI,AI/ML Engineer,0.84
+91196,Jackson Flores,22.0,Master's,Python;Cybersecurity;Kotlin,Technology;Mobile Apps,Cybersecurity Specialist,0.88
+90053,Henry Flores,36.0,Master's,Java;Spring;Adobe XD,Engineering;Digital Media,Software Engineer,0.9
+90735,Alexander Watson,47.0,Master's,Java;Android;C++,Mobile Apps;Software Development,Mobile Developer,0.89
+91080,Hannah Russell,53.0,Bachelor's,Kubernetes;DevOps;Python,Cloud;Automation,DevOps Engineer,0.92
+90236,Liam Ross,24.0,Master's,JavaScript;Express;MongoDB,Technology;Web,Full Stack Developer,0.87
+90867,Hannah Henderson,46.0,Bachelor's,Adobe XD;UX/UI;Graphic Design,Design;Technology,UX Designer,0.82
+90485,John Wood,25.0,Bachelor's,R;Statistics;Penetration Testing,Data Science;Security,Data Scientist,0.86
+90132,Chloe Brooks,47.0,Bachelor's,C#;.NET;System Design,Engineering;Technology,Software Engineer,0.87
+90891,Elijah Long,45.0,Bachelor's,Adobe XD;UX/UI;Graphic Design,Digital Media;Design,UX Designer,0.96
+90461,Chloe Ward,31.0,Bachelor's,Python;Statistics;Flutter,Data Science;Mobile Development,Data Scientist,0.86
+90009,Samuel Foster,21.0,PhD,C#;.NET;Terraform,Software Development;Technology,Software Engineer,0.92
+90068,Avery Howard,99.0,Bachelor's,Python;Software Engineering;Algorithms,Software Development;AI,Software Engineer,0.83
+90462,Sophia Long,37.0,PhD,R;Statistics;Machine Learning,Data Science;Finance,Data Scientist,0.9
+90386,Charlotte Griffin,49.0,Bachelor's,JavaScript;Vue.js;CSS,Design;Technology,Front-end Developer,0.93
+90392,Ethan Watson,46.0,Bachelor's,React;JavaScript;CSS,Web Design;Technology,Front-end Developer,0.92
+90964,Sophia Foster,43.0,Master's,Python;Machine Learning;C#,AI;Engineering,AI/ML Engineer,0.93
+90524,Ava Henderson,54.0,Master's,Python;Statistics;C++,Technology;Engineering,Data Scientist,0.83
+91054,Samuel Powell,25.0,Master's,Terraform;DevOps;Linux,Technology;Infrastructure,Front-end Developer,0.94
+90320,Riley Hayes,28.0,Master's,HTML;CSS;React,Web Development;Design,Front-end Developer,0.83
+90517,Logan Hughes,43.0,Master's,Python;Data Analysis;Docker,Technology;Technology,Data Scientist,0.96
+90119,Michael Griffin,26.0,Master's,C++;Algorithms;Terraform,Engineering;Technology,Software Engineer,0.92
+91005,Nora Hughes,28.0,PhD,Python;Deep Learning;Cybersecurity,Technology;Technology,AI/ML Engineer,0.9
+91153,Joseph Ramos,55.0,PhD,Penetration Testing;Cybersecurity;Linux,Technology;Security,Cybersecurity Specialist,0.91
+91121,Zoey Bennett,23.0,Bachelor's,Ethical Hacking;Cybersecurity;Linux,Technology;Security,Cybersecurity Specialist,0.93
+90343,Jacob Rogers,21.0,Bachelor's,HTML;CSS;TypeScript,Web Development;Design,Front-end Developer,0.87
+90373,Zoey Coleman,24.0,Master's,HTML;CSS;JavaScript,Web Development;Design,Front-end Developer,0.87
+90521,Avery Murphy,35.0,PhD,Python;Data Mining;Statistics,Technology;Data Science,Data Scientist,0.91
+90255,Ava Peterson,34.0,Bachelor's,Python;Django;React,Software Development;Web,Full Stack Developer,0.85
+90936,Jackson Bennett,29.0,Bachelor's,Python;Machine Learning;AI,AI;Data Science,AI/ML Engineer,0.89
+90477,Harper Cooper,43.0,Master's,Python;Statistics;Node.js,Data Science;Software Engineering,Data Scientist,0.93
+90751,Lily Reyes,41.0,Bachelor's,React Native;JavaScript;Mobile Apps,Technology;Apps,Mobile Developer,0.82
+90973,Ava Brooks,31.0,Master's,Python;Machine Learning;AI,AI;Data Science,AI/ML Engineer,0.84
+90396,Grace Reyes,31.0,PhD,HTML;CSS;JavaScript,Design;Technology,Front-end Developer,0.83
+90931,Amelia Ward,48.0,Master's,Adobe XD;UX/UI;Java,Design;Software Engineering,UX Designer,0.96
+90112,Hannah Cooper,30.0,PhD,Python;Software Engineering;Algorithms,Engineering;Technology,Software Engineer,0.87
+91083,Ella Peterson,55.0,PhD,Cloud Computing;DevOps;Python,Technology;Infrastructure,DevOps Engineer,0.87
+90980,Michael Cook,28.0,Master's,Python;Machine Learning;TensorFlow,Technology;Machine Learning,AI/ML Engineer,0.88
+90253,Evelyn Ramos,24.0,Master's,JavaScript;Angular;C++,Technology;Engineering,Full Stack Developer,0.83
+90323,Madison Powell,26.0,Bachelor's,HTML;CSS;React,Web Development;Design,Full Stack Developer,0.97
+90191,Ella Barnes,48.0,Bachelor's,TypeScript;React;Node.js,Technology;Web,Full Stack Developer,0.88
+90274,Scarlett Foster,46.0,Bachelor's,JavaScript;React;Node.js,Software Development;Web,Full Stack Developer,0.92
+90101,Joseph Barnes,45.0,Bachelor's,Python;Software Engineering;Algorithms,Engineering;Technology,Software Engineer,0.96
+90793,Hannah Stewart,38.0,PhD,Swift;iOS;UI Design,Mobile Apps;Technology,Mobile Developer,0.86
+90217,Elijah Flores,33.0,PhD,JavaScript;Angular;Node.js,Technology;Web,Full Stack Developer,0.83
+90269,Hannah Powell,42.0,Master's,JavaScript;Express;Python,Web Development;AI,Full Stack Developer,0.96
+90640,Scarlett Foster,30.0,Master's,Go;Microservices;APIs,Backend;Technology,Backend Developer,0.95
+90507,Liam Richardson,21.0,Bachelor's,Python;Data Analysis;Machine Learning,Data Science;Finance,Data Scientist,0.92
+91076,Owen Patel,49.0,Master's,Kubernetes;DevOps;Python,Technology;Infrastructure,UX Designer,0.96
+90174,Liam Hughes,46.0,Bachelor's,JavaScript;React;Python,Web Development;Software Development,Full Stack Developer,0.83
+91097,Jacob Wood,36.0,Master's,AWS;Jenkins;Cybersecurity,Technology;Technology,Front-end Developer,0.92
+90293,Lily Bennett,29.0,Bachelor's,JavaScript;Angular;C#,Web Development;Software Development,Full Stack Developer,0.94
+90826,Jacob Morgan,52.0,Bachelor's,Swift;iOS;UI Design,Technology;Apps,Mobile Developer,0.96
+90957,Hannah Watson,41.0,Master's,Python;Neural Networks;React,AI;Web Design,AI/ML Engineer,0.89
+90425,Riley Bennett,27.0,Bachelor's,HTML;CSS;TypeScript,Web Development;Design,Front-end Developer,0.83
+90612,Sophia Watson,52.0,Master's,Python;Django;Java,Software Engineering;Mobile Apps,Backend Developer,0.87
+90690,Carter Myers,39.0,Bachelor's,Node.js;Express;MongoDB,Backend;Technology,Backend Developer,0.89
+90658,Sophia Morris,32.0,Bachelor's,Java;Microservices;SQL,Software Engineering;Technology,Backend Developer,0.92
+90873,Madison Cox,35.0,Bachelor's,Adobe XD;UX/UI;Graphic Design,Design;Technology,UX Designer,0.83
+90224,Jacob Cook,30.0,Bachelor's,TypeScript;React;Node.js,Software Development;Web,Full Stack Developer,0.87
+90589,Ethan Henderson,50.0,Bachelor's,Python;Django;JavaScript,Software Engineering;Web Development,Backend Developer,0.91
+90916,Michael Patel,21.0,Bachelor's,Figma;Wireframing;UX Research,Arts;Digital Media,UX Designer,0.96
+90206,Isabella Sanders,22.0,Bachelor's,TypeScript;React;Python,Web Development;Technology,Full Stack Developer,0.88
+91046,Layla Morris,55.0,PhD,Terraform;DevOps;Python,Technology;Backend,DevOps Engineer,0.84
+90390,Madison Hughes,54.0,Bachelor's,HTML;CSS;Flutter,Web Design;Mobile Apps,Front-end Developer,0.94
+90606,Ava Bryant,54.0,Bachelor's,Java;Spring;Network Security,Software Engineering;Technology,Backend Developer,0.92
+90605,Zoey Kelly,54.0,Master's,Python;Django;PostgreSQL,Software Engineering;Technology,Backend Developer,0.91
+90035,Jackson Bennett,30.0,Master's,Python;Software Engineering;JavaScript,Software Development;Web Development,Software Engineer,0.95
+91060,Avery Sanders,53.0,Master's,Docker;Kubernetes;HTML,Technology;Web Design,DevOps Engineer,0.95
+90170,Ella Cook,49.0,Bachelor's,JavaScript;React;User Research,Web Development;Arts, Full Stack Developer ,0.85
+90404,Michael Wood,21.0,Master's,React;JavaScript;Python,Design;Security,Front-end Developer,0.83
+91193,Riley Kelly,48.0,Bachelors,Cybersecurity;Cryptography;Networking,Cybersecurity;Networking,Cybersecurity Specialist,0.93
+90146,Grace Rogers,38.0,Master's,C++;Algorithms;Kotlin,Engineering;Technology,Software Engineer,0.84
+90086,Chloe Patel,37.0,Master's,Java;System Design;TypeScript,Software Development;Technology,Software Engineer,0.86
+90185,Ella Watts,32.0,Bachelor's,JavaScript;Express;MongoDB,Technology;Web,Full Stack Developer,0.87
+90130,Aria Coleman,43.0,Master's,C++;Algorithms;Python,Software Development;Technology,Cybersecurity Specialist,0.96
+90315,Joseph Peterson,39.0,Master's,JavaScript;Vue.js;CSS,Design;Technology,Front-end Developer,0.91
+91013,Harper Ford,24.0,Master's,PyTorch;Machine Learning;Python,Technology;AI,AI/ML Engineer,0.86
+90038,Amelia Long,45.0,Master's,Java;System Design;R,Software Development;Technology,Software Engineer,0.89
+90775,Jacob Reyes,35.0,Bachelor's,Swift;iOS;Go,Mobile Development;Software Engineering,Mobile Developer,0.97
+90316,Scarlett Foster,47.0,Master's,HTML;CSS;TypeScript,Design;Technology,Front-end Developer,0.84
+90333,Scarlett Patterson,45.0,Bachelor's,HTML;CSS;React,Design;Technology,Front-end Developer,0.88
+90204,Carter Price,27.0,Bachelor's,JavaScript;Angular;Machine Learning,"Web Development, AI",Full Stack Developer,0.94
+91074,Amelia Foster,48.0,Bachelor's,AWS;Jenkins;DevOps,Technology;Business,Full Stack Developer,0.94
+90763,Avery Price,21.0,Bachelor's,Swift;iOS;UI Design,Technology;Apps,Mobile Developer,0.86
+90106,Jackson Ford,51.0,Master's,C#;.NET;System Design,Software Development;AI,Backend Developer,0.87
+90848,Isabella Brooks,34.0,Master's,Figma;Wireframing;UX Research,Design;Technology,UX Designer,0.85
+90660,Matthew Ramos,46.0,PhD,Go;Microservices;Kubernetes,Software Engineering;Cloud,Backend Developer,0.9
+90666,Victoria Reed,54.0,Bachelor's,Go;Microservices;APIs,Software Engineering;Technology,Backend Developer,0.92
+90943,Sebastian Reyes,22.0,Bachelor's,Machine Learning;Scikit-learn;Python,AI;Data Science,AI/ML Engineer,0.83
+90913,Joseph Stewart,40.0,Master's,User Research;UX Design;Prototyping,Arts;Digital Media,UX Designer,0.97
+90542,Samuel Peterson,46.0,Bachelor's,Python;Data Analysis;Sketch,Technology;Digital Media,Data Scientist,0.97
+90301,Joseph Russell,31.0,Bachelor's,Python;Django;React,Web Development;Technology,Full Stack Developer,0.94
+91114,Ethan Powell,51.0,Bachelor's,Docker;Kubernetes;Ethical Hacking,Technology;Security,DevOps Engineer,0.82
+90306,Abigail Griffin,37.0,Master's,JavaScript;React;Node.js,Technology;Web,Full Stack Developer,0.92
+90239,Joseph Cooper,34.0,Master's,JavaScript;Express;MongoDB,Web Development;Technology,Full Stack Developer,0.87
+91017,Olivia Long,53.0,Master's,Python;Machine Learning;AI,AI;Data Science,AI/ML Engineer,0.93
+90840,Chloe Morris,21.0,PhD,Graphic Design;UI/UX;Adobe Creative Suite,Digital Media;Design,UX Designer,0.83
+91007,Michael Perry,23.0,Master's,Keras;Machine Learning;Cybersecurity,Technology;Technology,AI/ML Engineer,0.93
+90374,Aria Myers,52.0,Master's,HTML;CSS;React,Web Design;Technology,Front-end Developer,0.91
+90760,Harper Powell,44.0,Bachelor's,React Native;JavaScript;Mobile Apps,Technology;Apps,Mobile Developer,0.86
+90956,Liam Bennett,39.0,PhD,Python;Neural Networks;Swift,Technology;Mobile Apps,AI/ML Engineer,0.84
+90779,Samuel Watts,47.0,Master's,React Native;JavaScript;Python,,Mobile Developer,0.95
+90584,Olivia Rogers,25.0,Master's,R;Statistics;Machine Learning,Technology;Data Science,Data Scientist,0.9
+90034,Owen Hughes,49.0,Master's,Java;Spring;System Design,Software Development;Technology,Software Engineer,0.85
+90318,Harper Stewart,47.0,Master's,React;JavaScript;Java,Web Development;Software Development,Front-end Developer,0.9
+90774,Ethan Griffin,24.0,Bachelor's,Flutter;Dart;Mobile Apps,Mobile Apps;Technology,Mobile Developer,0.93
+90268,Aria Bryant,42.0,Bachelor's,JavaScript;React;Keras,Technology;Technology,Full Stack Developer,0.86
+90246,Abigail Reed,37.0,Bachelor's,JavaScript;React;Node.js,Web Development;Technology,Full Stack Developer,0.84
+91155,Layla Russell,18.0,Master's,Ethical Hacking;Cybersecurity;Linux,Technology;Security,Cybersecurity Specialist,0.83
+90287,Jacob Patterson,36.0,Bachelor's,JavaScript;Angular;Node.js,Technology;Web,Full Stack Developer,0.96
+90444,Elijah Hayes,46.0,Bachelor's,HTML;CSS;Cybersecurity,Design;Security,DevOps Engineer,0.94
+90509,Grace Long,53.0,Master's,Python;Big Data;Statistics,Data Science;Healthcare,Data Scientist,0.92
+90230,Mason Hayes,55.0,Bachelor's,JavaScript;Express;MongoDB,Web Development;Technology,Full Stack Developer,0.95
+90305,Ella Patel,33.0,Master's,JavaScript;React;Node.js,Technology;Web,Cybersecurity Specialist,0.89
+90838,Logan Perry,31.0,Bachelor's,Adobe XD;UX/UI;Graphic Design,Arts;Digital Media,UX Designer,0.97
+90656,Abigail Rogers,39.0,Bachelor's,Go;Microservices;APIs,Software Engineering;Finance,Backend Developer,0.85
+90163,Victoria Peterson,43.0,Master's,JavaScript;Angular;Python,Software Development;Data Science,Full Stack Developer,0.87
+90874,Amelia Bryant,40.0,Bachelor's,Figma;Wireframing;Java,Design;Software Development,UX Designer,0.93
+90059,Amelia Cox,38.0,Master's,Python;Software Engineering;Figma,Engineering;Design,Software Engineer,0.95
+90869,Mia Coleman,31.0,Bachelor's,Adobe XD;UX/UI;Graphic Design,Design;Technology,UX Designer,0.83
+90050,Benjamin Coleman,49.0,Bachelor's,C#;.NET;Terraform,Engineering;Technology,Software Engineer,0.86
+90938,John Patterson,31.0,Bachelor's,Python;Machine Learning;AI,Technology;AI,AI/ML Engineer,0.93
+90282,Oliver Ford,28.0,Bachelor's,JavaScript;Angular;Node.js,Software Development;Web,Full Stack Developer,0.83
+90429,Matthew Reyes,21.0,Bachelor's,JavaScript;Vue.js;CSS,Web Design;Technology,Front-end Developer,0.89
+90310,Jackson Kelly,33.0,Master's,Python;Django;Swift,Technology;Mobile Apps,Full Stack Developer,0.93
+90523,Matthew Flores,46.0,Master's,Python;Big Data;Docker,Data Science;Technology,Backend Developer,0.86
+90271,Daniel Reed,22.0,Bachelor's,JavaScript;React;Node.js,Web Development;Technology,Front-end Developer,0.94
+90432,Michael Perry,23.0,Bachelor's,HTML;CSS;React,Design;Technology,Front-end Developer,0.9
+91120,Amelia Cooper,43.0,PhD,Python;Cybersecurity;Network Security,Security;Technology,Cybersecurity Specialist,0.86
+90813,Chloe Russell,53.0,Bachelor's,Java;Android;R,Technology;Data Science,Mobile Developer,0.95
+90344,Alexander Russell,53.0,Bachelor's,HTML;CSS;React,Web Design;Technology,Front-end Developer,0.95
+91181,Lily Morgan,39.0,Bachelor's,Python;Cybersecurity;Network Security,Security;Technology,Cybersecurity Specialist,0.9
+90416,Daniel Russell,29.0,Master's,HTML;CSS;Node.js,Web Design;Software Engineering,Front-end Developer,0.85
+90649,Scarlett Sanders,22.0,Master's Degree,Java;Spring;C#,Software Engineering;Engineering,Backend Developer,0.83
+90531,Emily Morgan,31.0,Bachelor's,Python;Data Mining;Statistics,Data Science;Healthcare,Data Scientist,0.94
+90176,Madison Richardson,22.0,Bachelor's,JavaScript;Express;MongoDB,Software Development;Web,Full Stack Developer,0.85
+90920,,54.0,PhD,Sketch;Prototyping;C++,Design;Software Development,UX Designer,0.87
+90308,Avery Price,26.0,Bachelor's,Python;Django;React,Technology;Web,Front-end Developer,0.89
+90166,Matthew Bailey,51.0,Bachelor's,JavaScript;Express;MongoDB,Technology;Web,Full Stack Developer,0.93
+90832,Joseph Long,55.0,Master's,Adobe XD;UX/UI;Graphic Design,Design;Technology,UX Designer,0.96
+90608,Scarlett Watts,41.0,Master's,Java;Spring;Microservices,Software Engineering;Technology,Backend Developer,0.97
+90591,Aiden Wood,44.0,Bachelor's,Python;Django;PostgreSQL,Backend;Technology,Backend Developer,0.96
+90418,Noah Rogers,28.0,Bachelor's,HTML;CSS;React,Web Development;Design,Front-end Developer,0.95
+90841,Carter Hayes,40.0,Bachelor's,Graphic Design;UI/UX;Adobe Creative Suite,Arts;Digital Media,UX Designer,0.89
+90177,Jacob Barnes,35.0,PhD,JavaScript;Angular;Node.js,Software Development;Web,Full Stack Developer,0.84
+90834,John Brooks,37.0,PhD,Adobe XD;UX/UI;React,Digital Media;Web Design,UX Designer,0.96
+90555,Owen Patterson,36.0,Master's,Python;Data Analysis;Machine Learning,Technology;Data Science,Data Scientist,0.91
+91105,Victoria Foster,37.0,Master's,Cloud Computing;DevOps;Python,Technology;Infrastructure,DevOps Engineer,0.93
+90845,Noah Foster,49.0,Master's,User Research;UX Design;Prototyping,Design;Technology,UX Designer,0.95
+91170,Grace Ramos,48.0,Master's,Ethical Hacking;Cybersecurity;Linux,Technology;Security,Mobile Developer,0.87
+90672,Abigail Jenkins,42.0,PhD,Node.js;Express;MongoDB,Software Engineering;Finance,Backend Developer,0.91
+90259,Benjamin Ward,43.0,Master's,Python;Django;React,Software Development;Web,Full Stack Developer,0.84
+90092,Ava Brooks,49.0,PhD,C#;.NET;Java,Engineering;Mobile Development,Software Engineer,0.91
+90968,Joseph Hayes,43.0,PhD,Python;Machine Learning;Sketch,Technology;Digital Media,AI/ML Engineer,0.9
+90803,Samuel Bryant,38.0,Bachelor's,Swift;iOS;UI Design,Mobile Development;Design,Mobile Developer,0.87
+90440,Chloe Myers,46.0,Bachelor's,HTML;CSS;React,Design;Technology,Front-end Developer,0.95
+90720,Madison Ramos,54.0,Master's,Swift;iOS;UI Design,Mobile Development;Design,Mobile Developer,0.94
+91049,Amelia Henderson,32.0,PhD,Docker;Kubernetes;CI/CD,Technology;Infrastructure,DevOps Engineer,0.87
+91073,Lily Patterson,47.0,Bachelor's,Docker;Kubernetes;Python,Technology;Technology, DevOps Engineer ,0.9
+90846,Alexander Bryant,21.0,Bachelor's,Adobe XD;UX/UI;Graphic Design,Design;Technology,UX Designer,0.94
+90935,Mason Murphy,31.0,Master's,Python;Deep Learning;AI,Technology;AI,AI/ML Engineer,0.86
+90261,Alexander Price,44.0,Bachelor's,Python;Django;C++,Technology;Engineering,Full Stack Developer,0.84
+90691,Harper Kim,53.0,Bachelor's,Python;Django;Swift,Backend;Mobile Apps,Backend Developer,0.9
+90503,Benjamin Long,52.0,PhD,Python;Data Analysis;Machine Learning,Data Science;Finance,Data Scientist,0.87
+90987,David Ross,37.0,Master's,Python;Deep Learning;AI,AI;Innovation,AI/ML Engineer,0.93
+90277,Ella Peterson,33.0,Master's,TypeScript;React;React,Web Development;Design,Full Stack Developer,0.95
+90556,Scarlett Myers,35.0,Bachelor's,Python;Big Data;HTML,Technology;Design,UX Designer,0.86
+90566,Jacob Bryant,47.0,Master's,R;Statistics;Keras,Technology;AI,Full Stack Developer,0.86
+90544,Nora Morgan,38.0,Master's,R;Statistics;Machine Learning,Data Science;Finance,Data Scientist,0.83
+90598,Chloe Bailey,22.0,Bachelor's,Java;Spring;Microservices,Software Engineering;Technology,Backend Developer,0.87
+90948,Jacob Cook,53.0,Master's,Python;Machine Learning;AI,AI;Data Science,AI/ML Engineer,0.84
+90993,Benjamin Brooks,26.0,Bachelor's,PyTorch;Machine Learning;HTML,AI;Design,AI/ML Engineer,0.94
+90017,Harper Long,50.0,PhD,Java;System Design;Java,Software Development;Software Engineering,Software Engineer,0.83
+90950,Liam Bailey,45.0,Master's,Keras;Machine Learning;C#,Technology;Software Development,AI/ML Engineer,0.87
+90769,Evelyn Wood,44.0,PhD,Swift;iOS;Kubernetes,Technology;Technology,Mobile Developer,0.95
+90468,Oliver Bennett,40.0,Master's,Python;Statistics;Machine Learning,Technology;Data Science,Data Scientist,0.97
+90823,Abigail Stewart,51.0,Master's,Java;Android;UI Design,Mobile Development;Design,Mobile Developer,0.85
+91022,Evelyn Patterson,26.0,Bachelor's,Machine Learning;Scikit-learn;Python,Technology;AI,AI/ML Engineer,0.96
+90601,Evelyn Stewart,44.0,Master's,Go;Microservices;APIs,Software Engineering;Technology,Backend Developer,0.92
+90884,Avery Kim,54.0,Master's,Figma;Wireframing;UX Research,Design;Technology,UX Designer,0.95
+91029,Olivia Brooks,36.0,Master's,Python;Machine Learning;Python,Technology;Technology,AI/ML Engineer,0.82
+90148,Riley Ramos,29.0,Bachelor's,C++;Algorithms;Python,Software Development;AI,Software Engineer,0.82
+90098,Lily Griffin,32.0,Bachelor's,Java;System Design;Adobe XD,Software Development;Design,Software Engineer,0.97
+90549,Samuel Sanders,51.0,Master's,Python;Data Analysis;Machine Learning,Technology;Data Science,Data Scientist,0.93
+90303,Hannah Barnes,40.0,Bachelor's,JavaScript;Angular;Node.js,Technology;Web,Full Stack Developer,0.84
+90115,Michael Brooks,44.0,Master's,C#;.NET;System Design,Engineering;Technology,Software Engineer,0.93
+90133,Madison Hayes,52.0,Bachelor's,Java;System Design;Cloud Computing,Software Development;AI,Software Engineer,0.87
+90107,Sebastian Rogers,40.0,Master's,Java;System Design;Penetration Testing,Software Development;Technology,Software Engineer,0.85
+90930,,42.0,Bachelor's,Adobe XD;UX/UI;PyTorch,Digital Media;Technology,UX Designer,0.93
+90777,Aiden Morgan,28.0,Master's,Java;Android;UI Design,Mobile Development;Design,Mobile Developer,0.89
+90279,Matthew Powell,48.0,Bachelor's,TypeScript;React;Docker,Technology;Technology,Full Stack Developer,0.86
+90137,Emily Diaz,37.0,Master's,Java;System Design;HTML,Software Development;Web Design,Software Engineer,0.86
+90721,Olivia Richardson,23.0,Bachelor's,Flutter;Dart;Python,Mobile Apps;Data Science,Backend Developer,0.9
+90546,Logan Price,28.0,PhD,R;Statistics;Machine Learning,Technology;Data Science,Data Scientist,0.96
+91059,Sophia Foster,28.0,Bachelor's,Docker;Kubernetes;CI/CD,Technology;Infrastructure,DevOps Engineer,0.95
+90637,Jacob Brooks,48.0,Bachelor's,Python;Django;PostgreSQL,Software Engineering;Finance,Backend Developer,0.91
+90679,Henry Myers,42.0,Master's,Java;Microservices;Python,Backend;Cybersecurity,Backend Developer,0.85
+91052,Elijah Murphy,33.0,Master's,AWS;Jenkins;C#,Cloud;Software Development,DevOps Engineer,0.93
+90817,Daniel Brooks,39.0,Master's,Flutter;Dart;Mobile Apps,Mobile Apps;Technology,Mobile Developer,0.84
+91182,Ella Foster,44.0,PhD,Penetration Testing;Cybersecurity;Sketch,Security;Digital Media,UX Designer,0.86
+91062,Victoria Kelly,55.0,Bachelor's,Cloud Computing;DevOps;Ethical Hacking,Cloud;Technology,DevOps Engineer,0.93
+90470,Grace Ward,41.0,Bachelor's,Python;Big Data;Statistics,Data Science;Finance,Data Scientist,0.94
+90090,Ethan Wood,36.0,Bachelor's,C#;.NET;System Design,Software Development;AI,Software Engineer,0.88
+90214,Aria Barnes,44.0,Master's,JavaScript;Express;MongoDB,Web Development;Technology,Full Stack Developer,0.85
+90451,Samuel Griffin,21.0,Master's,HTML;CSS;React,Web Development;Design,Front-end Developer,0.91
+90360,Avery Coleman,50.0,Bachelor's,HTML;CSS;Java,Web Development;Software Engineering,Front-end Developer,0.97
+90057,Isabella Powell,44.0,Master's,C#;.NET;Ethical Hacking,Engineering;Security,Software Engineer,0.86
+90222,Ava Cooper,30.0,Bachelor's,JavaScript;React;Node.js,Technology;Web,Full Stack Developer,0.82
+90302,Sophia Morgan,23.0,Master's,JavaScript;React;Node.js,Technology;Web,Full Stack Developer,0.85
+90585,Avery Barnes,33.0,PhD,Python;Statistics;React,Data Science;Design,Data Scientist,0.88
+90209,Logan Hughes,33.0,Bachelor's,TypeScript;React;Node.js,Software Development;Web,Full Stack Developer,0.94
+90157,Noah Long,60.0,Bachelor's,Java;Spring;System Design,Software Development;Technology,Software Engineer,0.92
+90699,Alexander Ross,49.0,Bachelor's,Go;Microservices;APIs,Software Engineering;Finance,Backend Developer,0.95
+90290,Ava Russell,21.0,Master's,TypeScript;React;Node.js,Web Development;Technology,Full Stack Developer,0.95
+90875,Zoey Wood,33.0,Master's,Graphic Design;UI/UX;React,Arts;Web Development,UX Designer,0.95
+90022,Benjamin Jenkins,54.0,Bachelor's,C#;.NET;System Design,Software Development;AI,Software Engineer,0.94
+90514,Nora Ross,24.0,Bachelor's,Python;Statistics;Machine Learning,Data Science;Finance,Data Scientist,0.9
+90969,Oliver Ward,36.0,Master's,Python;Machine Learning;AI,AI;Data Science,AI/ML Engineer,0.95
+90827,Lily Patel,54.0,Bachelor's,User Research;UX Design;Prototyping,Digital Media;Design,UX Designer,0.96
+90273,Wyatt Barnes,28.0,Bachelor's,TypeScript;React;Node.js,Software Development;Web,Full Stack Developer,0.87
+90629,Isabella Reed,21.0,PhD,Java;Microservices;HTML,Software Engineering;Web Design,Backend Developer,0.94
+90194,Lily Flores,38.0,Bachelor's,JavaScript;Express;Java,Web Development;Engineering,Full Stack Developer,0.87
+90673,Hannah Long,33.0,Bachelor's,Java;Spring;Microservices,Software Engineering;Finance,Backend Developer,0.93
+91152,Olivia Reed,41.0,Bachelor's,Python;Cybersecurity;Kubernetes,Security;Technology,Cybersecurity Specialist,0.92
+90004,Elijah Cook,53.0,Bachelor's,Python;Software Engineering;Algorithms,Engineering;Technology,Software Engineer,0.94
+91119,Layla Sanders,30.0,Master's,Terraform;DevOps;Linux,Technology;Business,DevOps Engineer,0.92
+91039,Nora Jenkins,34.0,PhD,AWS;Jenkins;DevOps,Cloud;Automation,DevOps Engineer,0.94
+90345,Lily Price,21.0,Master's,HTML;CSS;React,Design;Technology,Front-end Developer,0.93
+90300,Grace Perry,24.0,Master's,TypeScript;React;Node.js,Technology;Web,Full Stack Developer,0.95
+90234,Nora Long,28.0,Bachelor's,TypeScript;React;User Research,Web Development;Arts,Full Stack Developer,0.9
+90129,Victoria Sanders,27.0,Master's,Python;Software Engineering;Algorithms,Engineering;Technology,Software Engineer,0.92
+90522,Matthew Bailey,52.0,Master's,Python;Statistics;Machine Learning,Data Science;Finance,Data Scientist,0.92
+91069,Sophia Stewart,39.0,Master's,Kubernetes;DevOps;JavaScript,Cloud;Web Development,DevOps Engineer,0.93
+90545,Samuel Reed,46.0,Master's,Python;Statistics;Machine Learning,Data Science;Healthcare,Data Scientist,0.89
+90852,Layla Long,38.0,Master's,Adobe XD;UX/UI;Graphic Design,Digital Media;Design,Data Scientist,0.95
+90353,Harper Cox,27.0,Master's,React;JavaScript;Java,Web Design;Technology,Front-end Developer,0.84
+90886,Hannah Wood,50.0,Bachelor's,User Research;UX Design;Go,Arts;Software Engineering,UX Designer,0.83
+90830,Wyatt Griffin,41.0,Bachelor's,User Research;UX Design;HTML,Arts;Web Development,Front-end Developer,0.88
+90602,Joseph Flores,30.0,Bachelor's,Go;Microservices;Keras,Software Engineering;Technology,Backend Developer,0.89
+90488,Evelyn Peterson,54.0,Master's,Python;Data Mining;Statistics,Data Science;Healthcare,Data Scientist,0.91
+90456,Victoria Powell,34.0,PhD,Python;Big Data;Statistics,Technology;Data Science,Data Scientist,0.9
+90600,Ella Cooper,29.0,PhD,Python;Django;React,Software Engineering;Web Development,Backend Developer,0.94
+90278,Carter Coleman,29.0,Master's,JavaScript;React;Node.js,Software Development;Web,Full Stack Developer,0.82
+90646,Samuel Cooper,33.0,Bachelor's,Java;Spring;Microservices,Software Engineering;Technology,Backend Developer,0.82
+90657,Aria Peterson,32.0,Bachelor's,Python;Django;PostgreSQL,Backend;Technology,Backend Developer,0.87
+90046,Nora Russell,25.0,Master's,C++;Algorithms;System Design,Software Development;AI,Software Engineer,0.94
+90740,Samuel Richardson,47.0,PhD,Java;Android;UI Design,Technology;Apps,Mobile Developer,0.92
+91138,Logan Rogers,47.0,Bachelor's,Penetration Testing;Cybersecurity;Linux,Cybersecurity;Networking,Cybersecurity Specialist,0.92
+90648,Aria Morris,45.0,Bachelor's,Node.js;Express;Terraform,Software Engineering;Technology,Backend Developer,0.91
+90736,Sebastian Wood,51.0,bachelor's,Swift;iOS;UI Design,Mobile Apps;Technology,Data Scientist,0.84
+90245,Aria Stewart,32.0,Bachelor's,TypeScript;React;Node.js,Web Development;Technology,Full Stack Developer,0.83
+90889,Mason Russell,32.0,Master's,Adobe XD;UX/UI;Graphic Design,Arts;Digital Media,UX Designer,0.93
+90960,Charlotte Kelly,22.0,Master's,Python;Machine Learning;Java,AI;Software Development,AI/ML Engineer,0.9
+90787,John Hayes,42.0,PhD,Swift;iOS;UI Design,Mobile Development;Design,Mobile Developer,0.96
+90655,Sebastian Bennett,49.0,Bachelor's,Node.js;Express;Terraform,Backend;Technology,Backend Developer,0.87
+90481,Logan Patel,32.0,Master's,Python;Data Mining;Statistics,Data Science;Finance,Data Scientist,0.84
+91028,Logan Rogers,54.0,PhD,Machine Learning;Scikit-learn;JavaScript,AI;Web Development,AI/ML Engineer,0.87
+90025,Samuel Bailey,34.0,Bachelor's,Java;Spring;Docker,Software Development;Technology,Software Engineer,0.91
+90749,Harper Watts,53.0,PhD,Kotlin;Android;Firebase,Technology;Apps,Mobile Developer,0.89
+91026,Victoria Watts,39.0,PhD,Python;Machine Learning;Cloud Computing,AI;Technology,AI/ML Engineer,0.94
+90847,Abigail Long,36.0,Master's,Adobe XD;UX/UI;Python,Design;Technology,UX Designer,0.95
+91163,Layla Coleman,41.0,PhD,Cybersecurity;Cryptography;Kubernetes,Technology;Technology,Cybersecurity Specialist,0.92
+90932,Aria Peterson,51.0,Master's,Sketch;Prototyping;UI Design,Design;Technology,UX Designer,0.88
+90758,Abigail Foster,46.0,Master's,Flutter;Dart;Mobile Apps,Mobile Apps;Technology,Mobile Developer,0.92
+90738,Jackson Stewart,26.0,Bachelor's,Kotlin;Android;Firebase,Technology;Apps,Mobile Developer,0.89
+90755,Matthew Murphy,39.0,Bachelor's,Java;Android;Python,Mobile Apps;Technology,Mobile Developer,0.95
+90284,Carter Ross,25.0,Bachelor's,Python;Django;React,Web Development;Technology,Full Stack Developer,0.93
+90489,Benjamin Richardson,51.0,Master's,Python;Data Mining;AWS,Data Science;Technology,Data Scientist,0.9
+90065,Henry Hayes,47.0,Bachelor's,Python;Software Engineering;Sketch,Engineering;Design,Software Engineer,0.91
+90326,Evelyn Brooks,55.0,Bachelor's,JavaScript;Vue.js;Sketch,Design;Design,Front-end Developer,0.85
+90063,John Perry,54.0,Bachelor's,java;spring;python,Software Development;Technology,Software Engineer,0.92
+90346,Noah Morgan,32.0,Bachelor's,React;JavaScript;CSS,Web Design;Technology,Front-end Developer,0.91
+90618,Amelia Russell,37.0,Bachelor's,Java;Microservices;SQL,Software Engineering;Finance,Backend Developer,0.96
+90851,Ava Cook,27.0,Master's,Figma;Wireframing;Kubernetes,Arts;Cloud,UX Designer,0.95
+91020,Emily Powell,35.0,PhD,Keras;Machine Learning;Python,Technology;Machine Learning,AI/ML Engineer,0.96
+90499,Ethan Bennett,35.0,PhD,Python;Data Mining;Machine Learning,Data Science;Technology,Data Scientist,0.93
+90089,Avery Brooks,33.0,Master's,Java;System Design;Cloud Computing,Software Development;AI,Software Engineer,0.92
+90281,Hannah Henderson,50.0,Bachelor's,Python;Django;React,Web Development;Technology,Full Stack Developer,0.91
+90319,Michael Kim,50.0,Bachelor's,JavaScript;Vue.js;CSS,Design;Technology,Front-end Developer,0.82
+91096,Lucas Coleman,33.0,Bachelor's,Cloud Computing;DevOps;Python,Cloud;Automation,DevOps Engineer,0.82
+91065,Elijah Peterson,41.0,Bachelor's,Kubernetes;DevOps;Python,Technology;Infrastructure,DevOps Engineer,0.87
+90791,Noah Ramos,21.0,Bachelor's,Flutter;Dart;Mobile Apps,Mobile Apps;Technology,Mobile Developer,0.96
+90780,Aria Kelly,41.0,Bachelor's,React Native;JavaScript;Python,Technology;Software Engineering,Mobile Developer,0.9
+91160,Sebastian Cox,38.0,Bachelor's,Network Security;Linux;Swift,Technology;Mobile Apps,DevOps Engineer,0.84
+90697,Samuel Rogers,31.0,Bachelor's,Java;Microservices;SQL,Backend;Technology,Backend Developer,0.83
+90536,Owen Cooper,50.0,PhD,Python;Data Analysis;Machine Learning,Technology;Data Science,Data Scientist,0.83
+90457,Logan Powell,36.0,Bachelor's,Python;Data Analysis;Machine Learning,Data Science;Healthcare,Data Scientist,0.9
+90559,Charlotte Kelly,46.0,Master's,R;Statistics;Machine Learning,Technology;Data Science,Data Scientist,0.86
+90317,Aria Kelly,25.0,Master's,HTML;CSS;R,Web Development;Technology,Front-end Developer,0.93
+90014,Carter Murphy,52.0,Master's,Python;Software Engineering;Algorithms,Software Development;AI,Software Engineer,0.941
+90338,Wyatt Ross,41.0,Master's,HTML;CSS;React,Web Development;Design,Front-end Developer,0.95
+90789,Samuel Coleman,54.0,Master's,Java;Android;Java,Technology;Backend,Mobile Developer,0.91
+90528,Charlotte Ford,26.0,Master's,Python;Data Analysis;Machine Learning,Data Science;Finance,Data Scientist,0.89
+91024,Wyatt Powell,54.0,Bachelor's,Python;Neural Networks;Java,Technology;Mobile Apps,AI/ML Engineer,0.9
+90062,Ella Barnes,40.0,Bachelor's,Java;Spring;System Design,Software Development;Technology,Software Engineer,0.96
+90543,Emily Morris,27.0,Master's,R;Statistics;Machine Learning,Data Science;Finance,Data Scientist,0.92
+90029,Sebastian Ramos,55.0,Master's,Python;Software Engineering;Flutter,Software Development;Mobile Development,Full Stack Developer,0.9
+90105,Michael Howard,22.0,PhD,Python;Software Engineering;Algorithms,Software Development;AI,Software Engineer,0.86
+91090,Evelyn Long,40.0,Bachelor's,Docker;Kubernetes;CI/CD,Cloud;Automation,DevOps Engineer,
+90286,Henry Diaz,47.0,Bachelor's,TypeScript;React;Node.js,Technology;Web,Full Stack Developer,0.83
+90571,Liam Watts,43.0,Master's,R;Statistics;Machine Learning,Technology;Data Science,Data Scientist,0.83
+90459,Chloe Diaz,54.0,PhD,Python;Data Analysis;Machine Learning,Data Science;Healthcare,Data Scientist,0.83
+90331,Amelia Murphy,53.0,Bachelor's,JavaScript;Vue.js;CSS,Web Development;Design,Front-end Developer,0.93
+90180,Ava Stewart,41.0,Bachelor's,Python;Django;React,Software Development;Web,Full Stack Developer,0.92
+90358,Ella Myers,60.0,Bachelor's,HTML;CSS;JavaScript,Web Design;Technology,Front-end Developer,0.88
+90359,Zoey Ramos,42.0,Bachelor's,HTML;CSS;Swift,Design;Mobile Development,Front-end Developer,0.9
+90952,Samuel Powell,50.0,PhD,PyTorch;Machine Learning;JavaScript,,AI/ML Engineer,0.96
+90304,Riley Bailey,34.0,PhD,TypeScript;React;Cybersecurity,Web Development;Security,Full Stack Developer,0.84
+90492,Isabella Cook,49.0,Bachelor's,Python;Big Data;Statistics,Technology;Data Science,Data Scientist,0.84
+90945,Samuel Perry,31.0,PhD,Machine Learning;Scikit-learn;Sketch,AI;Design,AI/ML Engineer,0.97
+90990,Isabella Hayes,39.0,Master's,Python;Machine Learning;Java,Technology;Backend,AI/ML Engineer,0.9
+90820,Avery Perry,39.0,Bachelor's,Swift;iOS;UI Design,Technology;Apps,Mobile Developer,0.89
+90742,Abigail Hughes,27.0,Bachelor's,Java;Android;Python,Mobile Development;Engineering,Mobile Developer,0.85
+90228,Scarlett Watts,35.0,Bachelor's,JavaScript;React;Node.js,Web Development;Technology,Full Stack Developer,0.84
+90961,Ella Ross,43.0,PhD,Keras;Machine Learning;Python,Technology;AI,AI/ML Engineer,0.84
+91009,Michael Reyes,45.0,Bachelor's,Keras;Machine Learning;HTML,Technology;Web Design,AI/ML Engineer,0.88
+90072,Charlotte Cox,35.0,Master's,Java;System Design;Network Security,Software Development;Technology,Software Engineer,0.9
+90953,Henry Watson,26.0,Bachelor's,Machine Learning;Scikit-learn;Python,Technology;Data Science,AI/ML Engineer,0.93
+90394,Evelyn Stewart,39.0,Bachelor's,HTML;CSS;React,Web Development;Design,Front-end Developer,0.92
+90506,Elijah Morgan,24.0,Bachelor's,Python;Statistics;Machine Learning,Technology;Data Science,Data Scientist,0.89
+90372,Ava Long,22.0,Bachelor's,html;css;react,Design;Technology,Front-end Developer,0.84
+90995,Jacob Rogers,44.0,PhD,Python;Machine Learning;Swift,AI;Mobile Development,AI/ML Engineer,0.95
+90018,Zoey Wood,33.0,Master's,Java;System Design;Cloud Computing,Engineering;Technology,Software Engineer,0.86
+90564,Aria Reyes,47.0,PHD,R;Statistics;Machine Learning,Data Science;Healthcare,Front-end Developer,0.91
+91108,Wyatt Stewart,53.0,Master's,Docker;Kubernetes;CI/CD,Technology;Infrastructure,DevOps Engineer,0.87
+90066,Avery Kim,24.0,PhD,Python;Software Engineering;Algorithms,Software Development;AI,Software Engineer,0.84
+90445,Joseph Cox,42.0,PhD,HTML;CSS;React,,Front-end Developer,0.95
+90364,Liam Morgan,29.0,Bachelor's,HTML;CSS;Python,Web Design;AI,Front-end Developer,0.9
+90187,Aria Brooks,25.0,Bachelor's,JavaScript;Angular;Node.js,Software Development;Web,Full Stack Developer,0.94
+90443,Elijah Russell,21.0,Bachelor's,JavaScript;Vue.js;CSS,Web Design;Technology,Front-end Developer,0.86
+90108,Avery Peterson,30.0,Master's,Java;System Design;Cloud Computing,Software Development;AI,Software Engineer,0.96
+90110,Oliver Reed,70.0,Bachelor's,Python;Software Engineering;TypeScript,Software Development;Web Development,Software Engineer,0.96
+90077,Ella Ward,39.0,PhD,Java;System Design;Cybersecurity,Software Development;Cybersecurity,Software Engineer,0.91
+90487,Ella Morris,48.0,Master's,Python;Data Analysis;Graphic Design,Data Science;Arts,Data Scientist,0.96
+90430,Sebastian Powell,24.0,Bachelor's,React;JavaScript;Java,Web Development;Engineering,Front-end Developer,0.89
+90294,Ava Cooper,46.0,PhD,JavaScript;Angular;Node.js,Technology;Web,Full Stack Developer,0.95
+90031,Charlotte Diaz,32.0,Master's,Java;Spring;System Design,Engineering;Technology,Software Engineer,0.95
+90283,Evelyn Price,53.0,Bachelor's,JavaScript;Express;MongoDB,Web Development;Technology,Full Stack Developer,0.9
+91008,Olivia Reed,35.0,Bachelor's,Python;Machine Learning;Statistics,Technology;AI,AI/ML Engineer,0.93
+90526,Mia Patel,48.0,Master's,Python;Statistics;Python,Technology;Technology,Data Scientist,0.88
+91043,Samuel Ford,55.0,Master's,Docker;Kubernetes;CI/CD,Technology;Business,DevOps Engineer,0.87
+90389,Layla Sanders,53.0,Master's,JavaScript;Vue.js;CSS,Web Design;Technology,Front-end Developer,0.82
+90049,Aiden Russell,22.0,Bachelor's,Java;System Design;Cloud Computing,Engineering;Technology,Software Engineer,0.95
+90045,Lucas Henderson,55.0,PhD,Java;Spring;System Design,Software Development;AI,Software Engineer,0.88
+90498,Michael Powell,21.0,Master's,Python;Data Mining;Statistics,Data Science;Finance,Mobile Developer,0.87
+91126,Daniel Bailey,47.0,Bachelor's,Penetration Testing;Cybersecurity;C++,Technology;Engineering,Cybersecurity Specialist,0.94
+90621,Michael Cox,46.0,Master's,Go;Microservices;APIs,Software Engineering;Technology,Backend Developer,0.94
+90796,Evelyn Powell,53.0,Master's,Java;Android;JavaScript,Mobile Apps;Software Development,Mobile Developer,0.95
+90770,Sophia Ford,46.0,Master's,Swift;iOS;UI Design,Technology;Apps,Mobile Developer,0.85
+90162,Ethan Watson,44.0,Bachelor's,JavaScript;React;Node.js,Software Development;Web,Full Stack Developer,0.89
+90183,Zoey Bennett,24.0,Bachelor's,JavaScript;Angular;Swift,Technology;Mobile Apps,Full Stack Developer,0.86
+90369,Michael Hughes,25.0,Bachelor's,React;JavaScript;CSS,Web Design;Technology,Front-end Developer,0.95
+90650,Abigail Brooks,44.0,Bachelor's,Java;Microservices;Adobe XD,Backend;Arts,Backend Developer,0.93
+90965,Daniel Long,43.0,Master's,Python;Neural Networks;Python,AI;Software Development,AI/ML Engineer,0.92
+90335,Madison Ford,48.0,Bachelor's,JavaScript;Vue.js;Go,Web Development;Backend,Front-end Developer,0.83
+90125,Jackson Powell,21.0,Bachelor's,C++;Algorithms;TypeScript,Engineering;Technology,Software Engineer,0.83
+90890,Chloe Morgan,43.0,Master's,User Research;UX Design;Machine Learning,Digital Media;AI,UX Designer,0.83
+90636,Madison Reed,53.0,Master's,Go;Microservices;APIs,Software Engineering;Technology,Backend Developer,0.95
+90378,Jacob Bennett,28.0,Bachelor's,JavaScript;Vue.js;CSS,Web Development;Design,Front-end Developer,0.93
+90243,Riley Ross,41.0,PhD,JavaScript;React;Node.js,Web Development;Technology,Full Stack Developer,0.84
+91078,Zoey Reed,24.0,Bachelor's,Kubernetes;DevOps;Swift,Technology;Mobile Development,DevOps Engineer,0.97
+90663,Olivia Bennett,42.0,Bachelor's,Java;Microservices;Docker,Software Engineering;Cloud,Backend Developer,0.86
+90743,John Stewart,25.0,Bachelor's,Java;Android;JavaScript,Mobile Development;Design,Mobile Developer,0.93
+91019,Aiden Morgan,36.0,Master's,PyTorch;Machine Learning;Java,AI;Engineering,AI/ML Engineer,0.92
+90122,David Coleman,40.0,Master's,C++;Algorithms;System Design,Engineering;Technology,Software Engineer,0.91
+90561,Scarlett Hayes,53.0,Master's,Python;Statistics;Machine Learning,Data Science;Finance,Data Scientist,0.94
+90821,Benjamin Ramos,38.0,Bachelor's,Kotlin;Android;Cloud Computing,Mobile Apps;Technology,Mobile Developer,0.96
+90765,Chloe Coleman,44.0,PhD,Flutter;Dart;Java,Mobile Development;Software Engineering,Mobile Developer,0.85
+90684,Benjamin Ward,44.0,PhD,Java;Spring;Microservices,Software Engineering;Technology,Backend Developer,0.93
+90155,David Ross,49.0,Master's,C++;Algorithms;JavaScript,Software Development;Software Development,Software Engineer,0.84
+91175,Ella Reyes,42.0,Master's,Python;Cybersecurity;Network Security,Technology;Security,Cybersecurity Specialist,0.87
+91174,Ethan Cox,40.0,Master's,Python;Cybersecurity;Network Security,Technology;Security,Cybersecurity Specialist,0.85
+90231,Victoria Powell,42.0,Bachelor's,TypeScript;React;Node.js,Web Development;Technology,Full Stack Developer,0.93
+91010,Grace Cox,48.0,Bachelor's,Machine Learning;Scikit-learn;Python,Technology;AI,AI/ML Engineer,0.86
+91087,Mason Coleman,39.0,Master's,Cloud Computing;DevOps;Node.js,Technology;Software Engineering,DevOps Engineer,0.88
+90900,Samuel Reed,33.0,Master's,Figma;Wireframing;UX Research,Design;Technology,Backend Developer,0.87
+90250,Mason Price,49.0,Master's,Python;Django;Figma,Technology;Digital Media,Full Stack Developer,0.95
+90860,Aria Ross,40.0,Bachelor's,Adobe XD;UX/UI;Python,Design;Web Development,UX Designer,0.91
+90724,Jacob Bennett,31.0,Master's,Flutter;Dart;Python,Mobile Apps;Technology,Mobile Developer,0.95
+90307,Lucas Ford,28.0,Master's,JavaScript;React;Node.js,Web Development;Technology,Backend Developer,0.88
+91136,Wyatt Hughes,36.0,Master's,Python;Cybersecurity;Network Security,Security;Technology,Cybersecurity Specialist,0.91
+90716,Olivia Long,52.0,Bachelor's,Java;Android;UI Design,Technology;Apps,Mobile Developer,0.88
+90767,Aiden Ross,32.0,Bachelor's,Swift;iOS;Go,Technology;Software Engineering,Mobile Developer,0.86
+90205,Ethan Bryant,21.0,Bachelor's,Python;Django;React,Web Development;Technology,Full Stack Developer,0.89
+90882,Isabella Cox,45.0,Bachelor's,Sketch;Prototyping;Java,Digital Media;Software Development,UX Designer,0.83
+90816,Benjamin Barnes,47.0,Bachelor's,React Native;JavaScript;Python,Technology;Data Science,Mobile Developer,0.82
+90677,Aiden Morris,29.0,Master's,Java;Microservices;SQL,Backend;Technology,Backend Developer,0.86
+90211,Aiden Myers,30.0,Bachelor's,JavaScript;Express;MongoDB,Software Development;Web,Full Stack Developer,0.82
+90678,Carter Myers,39.0,Bachelor's,Go;Microservices;APIs,Software Engineering;Technology,Backend Developer,0.88
+90946,Benjamin Rogers,33.0,Bachelor's,Python;Deep Learning;AI,AI;Data Science,AI/ML Engineer,0.85
+90870,Mia Howard,38.0,Master's,Adobe XD;UX/UI;Graphic Design,Design;Technology,UX Designer,0.95
+90165,Joseph Myers,27.0,Master's,Python;Django;React,Software Development;Web,Full Stack Developer,0.84
+90254,Ethan Powell,33.0,Bachelor's,JavaScript;Angular;Node.js,Software Development;Web,Full Stack Developer,0.96
+90421,Zoey Patel,23.0,Master's,HTML;CSS;JavaScript,Web Development;Design,Front-end Developer,0.88
+90955,Mia Morris,36.0,PhD,PyTorch;Machine Learning;Cybersecurity,AI;Cybersecurity,UX Designer,0.84
+91128,Benjamin Kim,45.0,Master's,Python;Cybersecurity;C#,Cybersecurity;Engineering,Cybersecurity Specialist,0.89
+90229,Ella Hughes,39.0,Bachelor's,Python;Django;User Research,Web Development;Design,Full Stack Developer,0.91
+90756,Oliver Watts,46.0,Bachelor's,Flutter;Dart;Mobile Apps,Mobile Apps;Technology,Mobile Developer,0.94
+90474,Benjamin Kelly,39.0,Bachelor's,Python;Data Mining;Statistics,Data Science;Healthcare,Data Scientist,0.94
+90732,Victoria Price,36.0,Bachelor's,Java;Android;UI Design,Mobile Development;Design,Mobile Developer,0.95
+90784,Ella Hayes,47.0,Bachelor's,Swift;iOS;Python,Mobile Apps;Technology,Mobile Developer,0.84
+90822,Ethan Watts,40.0,Bachelor's,Java;Android;Keras,Mobile Development;AI,Mobile Developer,0.91
+91095,Alexander Kim,45.0,Master's,Cloud Computing;DevOps;Python,Cloud;Automation,DevOps Engineer,0.84
+90573,Chloe Hughes,53.0,PhD,Python;Big Data;Go,Data Science;Software Engineering,Data Scientist,0.83
+90123,Amelia Watts,31.0,Master's,Java;System Design;Cloud Computing,Software Development;Technology,Software Engineer,0.9
+90167,Mia Powell,47.0,Master's,JavaScript;Angular;Node.js,Web Development;Technology,Full Stack Developer,0.82
+90665,Grace Hughes,53.0,Master's,Go;Microservices;Terraform,Software Engineering;Technology,Backend Developer,0.89
+90541,Alexander Cox,43.0,PhD,Python;Statistics;Kubernetes,Data Science;Technology,Data Scientist,0.86
+91077,Amelia Patel,23.0,Master's,Kubernetes;DevOps;Python,Technology;Business,DevOps Engineer,0.88
+90881,Ella Morgan,29.0,Master's,Sketch;Prototyping;Keras,Digital Media;AI,Full Stack Developer,0.88
+90799,Noah Hughes,52.0,Bachelor's,,Technology;Apps,Mobile Developer,0.9
+90423,Michael Price,37.0,PhD,HTML;CSS;Network Security,Design;Security,Front-end Developer,0.86
+90766,Logan Stewart,,Bachelor's,Java;Android;UI Design,Mobile Apps;Technology,Mobile Developer,0.85
+90370,Zoey Peterson,43.0,Bachelor's,JavaScript;Vue.js;Docker,Web Design;Technology,Front-end Developer,0.93
+90552,Olivia Powell,34.0,PhD,Python;Data Mining;Statistics,Technology;Data Science,Data Scientist,0.87
+90006,Benjamin Flores,52.0,Bachelor's,Python;Software Engineering;Algorithms,Software Development;AI,Software Engineer,0.82
+90490,Emily Bryant,51.0,PhD,Python;Data Mining;Statistics,Technology;Data Science,Data Scientist,0.88
+90313,Amelia Reyes,46.0,Bachelor's,HTML;CSS;JavaScript,Web Design;Technology,Front-end Developer,0.95
+90572,Avery Patterson,50.0,Master's,Python;Data Mining;Statistics,Data Science;Finance,Data Scientist,0.95
+90597,Sophia Cox,25.0,Bachelor's,Python;Django;Sketch,Backend;Design,Backend Developer,0.89
+90911,Emily Myers,43.0,Bachelor's,Figma;Wireframing;UX Research,Design;Technology,UX Designer,0.91
+90136,Alexander Watts,45.0,Bachelor's,Python;Software Engineering;Algorithms,Engineering;Technology,Software Engineer,0.85
+90904,John Flores,41.0,PhD,Figma;Wireframing;Swift,Arts;Mobile Apps,UX Designer,0.94
+90643,Jackson Diaz,49.0,Bachelor's,Java;Spring;Microservices,Backend;Technology,Backend Developer,0.82
+90959,Chloe Morgan,38.0,PhD,Python;Deep Learning;AI,AI;Innovation,AI/ML Engineer,0.84
+91071,Samuel Ward,39.0,Bachelor's,AWS;Jenkins;DevOps,Technology;Infrastructure,DevOps Engineer,0.92
+90328,John Russell,42.0,Bachelor's,HTML;CSS;Python,Web Development;Data Science,Front-end Developer,0.84
+90562,Owen Cox,27.0,Bachelor's,Python;Statistics;TypeScript,Data Science;Web Development,Data Scientist,0.96
+90917,Charlotte Patel,46.0,Master's,Adobe XD;UX/UI;Python,Digital Media;AI,UX Designer,0.94
+90982,Liam Henderson,42.0,Master's,Python;Machine Learning;Statistics,Technology;AI,AI/ML Engineer,0.88
+91148,Jacob Cox,26.0,Bachelor's,Python;Cybersecurity;Network Security,Cybersecurity;Networking,Cybersecurity Specialist,0.86
+91154,Riley Cox,33.0,Master's,Cybersecurity;Cryptography;Networking,Security;Technology,Cybersecurity Specialist,0.89
+90199,Oliver Cox,52.0,Bachelor's,JavaScript;React;C#,Software Development;Software Development,Full Stack Developer,0.89
+90630,Mia Hughes,24.0,Bachelor's,Python;Django;PostgreSQL,Software Engineering;Technology,Backend Developer,0.83
+90854,Ava Jenkins,25.0,Bachelor's,Graphic Design;UI/UX;Adobe Creative Suite,Arts;Digital Media,UX Designer,0.89
+90580,Logan Perry,44.0,PhD,Python;Data Mining;Statistics,Data Science;Finance,Data Scientist,0.94
+91144,Amelia Coleman,34.0,Master's,Penetration Testing;Cybersecurity;Linux,Security;Technology,Cybersecurity Specialist,0.83
+90351,Michael Long,50.0,PhD,HTML;CSS;TypeScript,Web Design;Web Development,Front-end Developer,0.93
+90671,Samuel Reed,21.0,Bachelor's,Node.js;Express;MongoDB,Software Engineering;Finance,Backend Developer,0.82
+90083,Matthew Powell,49.0,Master's,C#;.NET;System Design,Software Development;AI,Software Engineer,0.88
+90408,Wyatt Bennett,30.0,Bachelor's,HTML;CSS;Python,Web Development;AI,Front-end Developer,0.96
+91067,Sebastian Bennett,33.0,Bachelor's,Cloud Computing;DevOps;Python,Technology;Business,DevOps Engineer,0.87
+90448,Madison Flores,28.0,Bachelor's,HTML;CSS;Ethical Hacking,Web Design;Security,Front-end Developer,0.93
+90159,Lucas Ramos,39.0,Bachelor's,Java;System Design;Cloud Computing,Engineering;Technology,Software Engineer,0.92
+90653,Ava Powell,41.0,Bachelor's,Go;Microservices;APIs,Backend;Technology,Backend Developer,0.94
+91125,Nora Powell,37.0,Bachelor's,Python;Cybersecurity;JavaScript,Technology;Design,Cybersecurity Specialist,0.87
+90417,John Long,21.0,Bachelor's,HTML;CSS;React,Design;Technology,Front-end Developer,0.83
+90502,Mia Wood,51.0,PhD,Python;Statistics;Cloud Computing,Technology;Technology,Data Scientist,0.9
+90152,Carter Coleman,44.0,Bachelor's,C#;.NET;System Design,Engineering;Technology,Software Engineer,0.92
+91190,Ella Perry,35.0,Master's,Cybersecurity;Cryptography;Networking,Security;Technology,Cybersecurity Specialist,0.92
+90843,Ella Cook,53.0,Master's,Graphic Design;UI/UX;Adobe Creative Suite,Digital Media;Design,UX Designer,0.96
+90164,Ethan Cook,53.0,Master's,JavaScript;Angular;Swift,Technology;Mobile Development,Full Stack Developer,0.92
+90150,Amelia Morris,36.0,Bachelor's,Java;System Design;Cloud Computing,Engineering;Technology,Software Engineer,0.95
+90064,Nora Ross,55.0,Bachelor's,Java;System Design;Cloud Computing,Engineering;Technology,Software Engineer,0.91
+90007,Abigail Ford,45.0,Bachelor's,C++;Algorithms;System Design,Software Development;Technology,Software Engineer,0.93
+90532,Owen Cook,46.0,Master's,R;Statistics;Python,Technology;Engineering,Data Scientist,0.86
+91063,Carter Ward,44.0,Bachelor's,Terraform;DevOps;Linux,Technology;Infrastructure,DevOps Engineer,0.9
+90818,Matthew Russell,43.0,Master's,Java;Android;JavaScript,Technology;Web Development,Mobile Developer,0.96
+90831,Layla Stewart,28.0,Bachelor's,User Research;UX Design;Prototyping,Arts;Digital Media,UX Designer,0.83
+90896,Aria Long,47.0,Bachelor's,Graphic Design;UI/UX;Penetration Testing,Design;Security,UX Designer,0.84
+90478,Zoey Patel,55.0,Master's,Python;Big Data;Statistics,Data Science;Healthcare,Data Scientist,0.93
+90981,Jackson Stewart,38.0,Bachelor's,Python;Neural Networks;Python,Technology;Engineering,AI/ML Engineer,0.92
+90994,Abigail Long,22.0,Master's,Machine Learning;Scikit-learn;Python,AI;Innovation,AI/ML Engineer,0.95
+90350,Michael Bailey,27.0,Master's,HTML;CSS;TypeScript,Design;Technology,Front-end Developer,0.83
+90689,Joseph Howard,48.0,Master's,Node.js;Express;MongoDB,Software Engineering;Technology,Backend Developer,0.84
+91139,Harper Rogers,36.0,Bachelor's,Python;Cybersecurity;Docker,Cybersecurity;Technology,Cybersecurity Specialist,0.84
+90100,Logan Morgan,40.0,Master's,C#;.NET;System Design,Software Development;Technology,Software Engineer,0.82
+90382,Zoey Powell,40.0,PhD,HTML;CSS;React,Design;Technology,Front-end Developer,0.95
+90051,Noah Jenkins,43.0,Master's,Java;Spring;System Design,Engineering;Technology,Software Engineer,0.96
+90894,Charlotte Patel,34.0,Bachelor's,Figma;Wireframing;TypeScript,Design;Software Development,UX Designer,0.83
+90563,Layla Bennett,34.0,Master's,R;Statistics;Machine Learning,Data Science;Healthcare,Data Scientist,0.84
+90593,Mason Hughes,49.0,Bachelor's,Java;Microservices;Python,Software Engineering;AI,Backend Developer,0.94
+90172,Michael Watson,24.0,Master's,JavaScript;React;Node.js,Technology;Web,Backend Developer,0.84
+91157,Liam Reyes,32.0,Master's,Ethical Hacking;Cybersecurity;C++,Security;Software Development,Cybersecurity Specialist,0.94
+91122,Evelyn Howard,34.0,Master's,Ethical Hacking;Cybersecurity;Linux,Security;Technology,Full Stack Developer,0.84
+91101,Jackson Flores,42.0,Master's,Cloud Computing;DevOps;Graphic Design,Technology;Digital Media,DevOps Engineer,0.96
+90645,Lucas Perry,47.0,Bachelor's,Java;Spring;Python,Backend;Data Science,Backend Developer,0.94
+90991,Jackson Peterson,60.0,Bachelor's,Python;Neural Networks;JavaScript,Technology;Web Development,AI/ML Engineer,0.89
+90311,Abigail Russell,43.0,Master's,React;JavaScript;CSS,Design;Technology,Front-end Developer,0.96
+90366,Michael Foster,35.0,Master's,JavaScript;Vue.js;CSS,Web Design;Technology,Front-end Developer,0.93
+90458,Sebastian Cook,23.0,Master's,Python;Statistics;Machine Learning,Data Science;Finance,Data Scientist,0.85
+90750,Henry Reyes,34.0,Bachelor's,Kotlin;Android;Firebase,Mobile Development;Design,Mobile Developer,0.88
+90610,Henry Patterson,26.0,Bachelor's,Go;Microservices;Cloud Computing,Software Engineering;Technology,Backend Developer,0.96
+90491,Henry Coleman,47.0,Bachelor's,Python;Statistics;Python,Data Science;Web Development,Data Scientist,0.97
+90173, David Stewart ,26.0,Master's,JavaScript;Express;Cloud Computing,Technology;Cloud,Full Stack Developer,0.88
+91151,Ethan Bennett,39.0,Master's,Python;Cybersecurity;Network Security,Security;Technology,Cybersecurity Specialist,0.95
+90401,Mia Ford,21.0,Bachelor's,HTML;CSS;Cloud Computing,Design;Technology,Front-end Developer,0.93
+91031,Michael Cox,26.0,Bachelor's,Docker;Kubernetes;CI/CD,Technology;Business,DevOps Engineer,0.89
+90786,Liam Powell,45.0,Master's,React Native;JavaScript;JavaScript,Mobile Development;Technology,Mobile Developer,0.86
+90808,Emily Bailey,43.0,Bachelor's,Flutter;Dart;JavaScript,Technology;Web Design,Full Stack Developer,0.92
+90825,Aria Coleman,45.0,Master's,Java;Android;UI Design,Technology;Apps,Front-end Developer,0.84
+90076,Daniel Morgan,44.0,Master's,Python;Software Engineering;Algorithms,Software Development;Technology,Software Engineer,0.93
+90619,David Ford,51.0,Bachelor's,Python;Django;PostgreSQL,Backend;Technology,Backend Developer,0.84
+90553,Riley Bailey,32.0,Master's,Python;Data Mining;Statistics,Data Science;Finance,Data Scientist,0.83
+90974,Ethan Wood,35.0,Master's,Python;Machine Learning;Node.js,Technology;Backend,AI/ML Engineer,0.86
+90238,Aria Henderson,46.0,Bachelor's,Python;Django;React,Software Development;Web,Full Stack Developer,0.89
+90704,Samuel Brooks,24.0,Master's,Go;Microservices;JavaScript,Backend;Technology,Backend Developer,0.94
+90179,Sophia Henderson,27.0,Bachelor's,Python;Django;AWS,Web Development;Cloud,Full Stack Developer,0.9
+90348,Aria Henderson,25.0,Master's,JavaScript;Vue.js;CSS,Web Development;Design,Front-end Developer,0.88
+90895,Logan Patterson,39.0,Bachelor's,Figma;Wireframing;UX Research,Digital Media;Design,UX Designer,0.96
+90805,Madison Long,29.0,Master's,Flutter;Dart;Mobile Apps,Mobile Apps;Technology,Mobile Developer,0.91
+91070,Henry Jenkins,46.0,Bachelor's,Docker;Kubernetes;CI/CD,Cloud;Automation,DevOps Engineer,0.91
+91038,Alexander Ward,21.0,Bachelor's,AWS;Jenkins;DevOps,Technology;Infrastructure,DevOps Engineer,0.93
+90664,Layla Russell,34.0,Bachelor's,Node.js;Express;Ethical Hacking,Software Engineering;Security,Backend Developer,0.61
+90296,Hannah Henderson,39.0,Master's,JavaScript;Express;Cloud Computing,Web Development;Technology,Full Stack Developer,0.83
+90453,Avery Cox,55.0,Master's,Python;Big Data;Statistics,Data Science;Finance,Data Scientist,0.83
+91053,Henry Coleman,45.0,Master's,Docker;Kubernetes;Go,Technology;Backend,DevOps Engineer,0.88
+90520,Chloe Long,33.0,Master's,Python;Data Analysis;Kotlin,Data Science;Technology,Data Scientist,0.9
+90687,Charlotte Price,38.0,Bachelor's,Node.js;Express;JavaScript,Software Engineering;Technology,Backend Developer,0.87
+90885,Mia Reed,38.0,Master's,Adobe XD;UX/UI;Graphic Design,Arts;Digital Media,UX Designer,0.97
+91188,David Stewart,53.0,Bachelor's,Penetration Testing;Cybersecurity;Linux,Security;Technology,Cybersecurity Specialist,0.83
+90002,Emily Patel,28.0,Master's,Java;Spring;System Design,Software Development;AI,Software Engineer,0.95
+90260,Carter Richardson,53.0,Bachelor's,TypeScript;React;Node.js,Web Development;Technology,Full Stack Developer,0.96
+90914,Elijah Price,50.0,Master's,User Research;UX Design;Java,Arts;Software Engineering,UX Designer,0.96
+90475,Samuel Henderson,26.0,PhD,Python;Data Mining;Statistics,Data Science;Finance,AI/ML Engineer,0.89
+90809,Abigail Hayes,38.0,Master's,Kotlin;Android;Firebase,Mobile Development;Design,Mobile Developer,0.94
+91194,Victoria Stewart,47.0,Master's,Network Security;Linux;Python,Security;Technology,DevOps Engineer,0.9
+90427,Aria Stewart,52.0,Bachelor's,HTML;CSS;TypeScript,Web Development;Design,Front-end Developer,0.86
+90312,Harper Bailey,48.0,Master's,HTML;CSS;TypeScript,Design;Technology,Front-end Developer,0.87
+90270,Riley Howard,34.0,Master's,JavaScript;Express;MongoDB,Web Development;Technology,Full Stack Developer,0.84
+90449,Chloe Barnes,49.0,Master's,JavaScript;Vue.js;R,Design;Technology,Front-end Developer,0.83
+90375,Mia Powell,28.0,PhD,HTML;CSS;TypeScript,Design;Technology,Front-end Developer,0.94
+90213,Chloe Brooks,29.0,Bachelor's,TypeScript;React;Node.js,Software Development;Web,Full Stack Developer,0.85
+90019,Zoey Price,48.0,Bachelor's,Python;Software Engineering;AWS,Software Development;Cloud,Software Engineer,0.82
+90907,Ella Hayes,40.0,Master's,Adobe XD;UX/UI;Keras,Arts;Technology,UX Designer,0.84
+90929,Matthew Myers,29.0,PhD,User Research;UX Design;Prototyping,Design;Technology,AI/ML Engineer,0.83
+90466,Hannah Ward,55.0,Master's,Python;Big Data;Cloud Computing,Data Science;Cloud,Data Scientist,0.95
+91137,Alexander Morris,35.0,PhD,Python;Cybersecurity;Network Security,Cybersecurity;Networking,Cybersecurity Specialist,0.84
+90999,Oliver Long,46.0,PhD,Python;Neural Networks;Cybersecurity,Technology;Cybersecurity,AI/ML Engineer,0.94
+90118,David Sanders,50.0,Master's,Java;System Design;Cloud Computing,Software Development;AI,Software Engineer,0.82
+90169,Nora Cox,34.0,Master's,JavaScript;React;Node.js,Web Development;Technology,Backend Developer,0.86
+90442,Victoria Ramos,39.0,Master's,HTML;CSS;JavaScript,Design;Technology,Front-end Developer,0.95
+90686,Wyatt Cox,23.0,Bachelor's,Java;Spring;JavaScript,Backend;Software Development,Backend Developer,0.88
+90570,Grace Henderson,43.0,Master's,R;Statistics;Machine Learning,Technology;Data Science,Data Scientist,0.9
+91085,Benjamin Bennett,40.0,Bachelor's,Terraform;DevOps;Linux,Cloud;Automation,DevOps Engineer,0.87
+90240,Lucas Bailey,31.0,Master's,Python;Django;React,Web Development;Technology,Full Stack Developer,0.85
+90257,Abigail Ross,35.0,Bachelor's,TypeScript;React;Node.js,Technology;Web,Full Stack Developer,0.84
+91027,Charlotte Peterson,40.0,Master's,PyTorch;Machine Learning;Java,Technology;Software Development,AI/ML Engineer,0.94
+90714,Avery Coleman,54.0,Master's,React Native;JavaScript;Mobile Apps,Mobile Development;Design, Mobile Developer ,0.89
+90124,Scarlett Long,17.0,Bachelor's,Java;System Design;Kubernetes,Software Development;Cloud,Software Engineer,0.88
+91042,Evelyn Sanders,28.0,Bachelor's,Docker;Kubernetes;CI/CD,Technology;Business,DevOps Engineer,0.88
+91130,Jacob Long,23.0,Master's,Ethical Hacking;Cybersecurity;Linux,Cybersecurity;Networking,Cybersecurity Specialist,0.92
+90812,Lily Powell,43.0,Master's,React Native;JavaScript;Ethical Hacking,Mobile Development;Security,Mobile Developer,0.96
+90794,Joseph Kelly,52.0,PhD,React Native;JavaScript;Mobile Apps,Mobile Apps;Technology,Mobile Developer,0.87
+90703,Harper Barnes,37.0,Bachelor's,Java;Microservices;SQL,Software Engineering;Finance,Backend Developer,0.97
+90376,Grace Ross,22.0,Master's,HTML;CSS;JavaScript,Web Design;Software Development,Front-end Developer,0.85
+90762,John Patel,51.0,Bachelor's,Java;Android;Python,Mobile Development;Software Development,Mobile Developer,0.9
+90450,Ella Griffin,44.0,Bachelor's,JavaScript;Vue.js;Adobe XD,Web Design;Digital Media,Front-end Developer,0.86
+90880,Sebastian Watts,26.0,Bachelor's,Sketch;Prototyping;Cloud Computing,Arts;Technology,UX Designer,0.88
+90706,Nora Price,54.0,Master's,Java;Microservices;SQL,Software Engineering;Finance,Backend Developer,0.96
+90463,Alexander Watson,35.0,MASTER'S,R;Statistics;Machine Learning,Data Science;Healthcare,Data Scientist,0.95
+90081,Daniel Coleman,32.0,Master's,Java;Spring;JavaScript,Software Development;Technology,Software Engineer,0.92
+90905,Daniel Rogers,23.0,Master's,Graphic Design;UI/UX;Adobe Creative Suite,Digital Media;Design,UX Designer,0.83
+90410,Oliver Price,22.0,Bachelor's,HTML;CSS;Network Security,Design;Technology,Front-end Developer,0.91
+90868,David Ross,23.0,Master's,Adobe XD;UX/UI;Graphic Design,Digital Media;Design,UX Designer,0.91
+90334,Zoey Griffin,30.0,Bachelor's,HTML;CSS;React,Design;Technology,Front-end Developer,0.95
+90426,Noah Reyes,35.0,Bachelor's,HTML;CSS;Cloud Computing,Design;Technology,Front-end Developer,0.92
+90515,Riley Long,43.0,PhD,Python;Big Data;Statistics,Data Science;Healthcare,Data Scientist,0.94
+90158,Liam Ford,23.0,PhD,C++;Algorithms;System Design,Software Development;Technology,Full Stack Developer,0.88
+90505,Nora Russell,27.0,Master's,Python;Statistics;HTML,Data Science;Design,Data Scientist,0.82
+90003,Sophia Henderson,42.0,Bachelor's,Java;Spring;System Design,Software Development;AI,Software Engineer,0.91
+90592,Lily Diaz,25.0,Bachelor's,Java;Spring;Microservices,Software Engineering;Technology,Backend Developer,0.95
+90379,Aiden Diaz,41.0,Bachelor's,JavaScript;Vue.js;Java,Web Design;Mobile Apps,Front-end Developer,0.93
+90435,Michael Coleman,33.0,Bachelor's,JavaScript;Vue.js;AWS,Web Design;Technology,Front-end Developer,0.63
+91099,Samuel Coleman,22.0,Bachelor's,Cloud Computing;DevOps;Ethical Hacking,Technology;Technology,DevOps Engineer,0.95
+90681,Victoria Bennett,53.0,Bachelor's,Go;Microservices;APIs,Software Engineering;Finance,Backend Developer,0.84
+91168, Avery Hayes ,41.0,Bachelor's,Python;Cybersecurity;Kubernetes,Cybersecurity;Technology,Cybersecurity Specialist,0.96
+90295,Hannah Murphy,38.0,Bachelor's,JavaScript;Angular;Node.js,Technology;Web,Full Stack Developer,0.93
+90439,Oliver Bennett,23.0,Bachelor's,React;JavaScript;CSS,Design;Technology,Front-end Developer,0.92
+91002,Zoey Bailey,34.0,Master's,Python;Machine Learning;TensorFlow,Technology;AI,AI/ML Engineer,0.87
+90188,Mia Barnes,29.0,Master's,JavaScript;Express;MongoDB,Technology;Web,Full Stack Developer,0.94
+91172,Sophia Bailey,44.0,Bachelor's,Network Security;Linux;Python,Security;Technology,Cybersecurity Specialist,0.86
+90504,Olivia Coleman,43.0,Master's,R;Statistics;PyTorch,Data Science;Technology,Data Scientist,0.83
+90614,Logan Richardson,50.0,Bachelor's,Java;Spring;Adobe XD,Software Engineering;Digital Media,Backend Developer,0.83
+90727,Evelyn Reyes,53.0,bachelor's,Java;Android;UI Design,Technology;Apps,Mobile Developer,0.84
+90436,Abigail Richardson,29.0,Bachelor's,HTML;CSS;Docker,Web Development;Cloud,Front-end Developer,0.88
+90413,Grace Cox,26.0,Master's,HTML;CSS;React,Design;Technology,Front-end Developer,0.87
+90285,Owen Flores,35.0,Bachelor's,TypeScript;React;Node.js,Software Development;Web,Full Stack Developer,0.97
+90696,Jacob Price,36.0,Master's,Go;Microservices;APIs,Software Engineering;Finance,Backend Developer,0.9
+90160,Harper Ramos,47.0,Bachelor's,JavaScript;React;Node.js,Web Development;Technology,Backend Developer,0.88
+90694,Abigail Sanders,40.0,Bachelor's,Python;Django;PostgreSQL,Software Engineering;Finance,Backend Developer,0.93
+91141,Matthew Hughes,47.0,Bachelor's,Cybersecurity;Cryptography;Java,Security;Software Engineering,Cybersecurity Specialist,0.96
+91197,Ella Jenkins,46.0,PhD,Ethical Hacking;Cybersecurity;Linux,Technology;Security,Cybersecurity Specialist,0.87
+90986,David Cook,32.0,Bachelor's,Python;Machine Learning;JavaScript,Technology;Web Development,AI/ML Engineer,0.93
+90154,Hannah Russell,42.0,PhD,Python;Software Engineering;Algorithms,Software Development;Technology,Software Engineer,0.85
+90233,Daniel Powell,45.0,Master's,Python;Django;React,Technology;Web,Full Stack Developer,0.84
+90638,Olivia Rogers,22.0,Bachelor's,Java;Spring;Keras,Software Engineering;Technology,Backend Developer,0.9
+90937,Lily Henderson,52.0,PhD,Machine Learning;Scikit-learn;Python,AI;Data Science,AI/ML Engineer,0.9
+90131,Scarlett Watson,24.0,Master's,C#;.NET;Python,Software Development;Technology,Software Engineer,0.96
+91100,Evelyn Powell,33.0,Master's,Kubernetes;DevOps;Java,Cloud;Backend,DevOps Engineer,0.92
+90309,Charlotte Cox,54.0,Bachelor's,JavaScript;Express;MongoDB,Web Development;Technology,Full Stack Developer,0.95
+90540,Sophia Richardson,42.0,Bachelor's,Python;Data Mining;Statistics,Data Science;Finance,Data Scientist,0.88
+90010,Sophia Diaz,28.0,Master's,Python;Software Engineering;Python,Software Development;Data Science,Software Engineer,0.84
+90242,Benjamin Jenkins,51.0,Bachelor's,Python;Django;React,Technology;Web,Full Stack Developer,0.88
+90856,Avery Bryant,42.0,PhD,User Research;UX Design;Prototyping,Design;Technology,UX Designer,0.84
+90516,Riley Powell,41.0,PhD,Python;Data Mining;Cloud Computing,Technology;Cloud,Data Scientist,0.89
+90329,Olivia Wood,32.0,Bachelor's,HTML;CSS;TypeScript,Web Design;Technology,Front-end Developer,0.86
+90705,Jackson Hughes,42.0,Bachelor's,Java;Spring;Microservices,Software Engineering;Technology,Backend Developer,0.96
+90452,Owen Morris,46.0,Bachelor's,React;JavaScript;CSS,Design;Technology,Front-end Developer,0.83
+90327,Riley Sanders,99.0,Master's,HTML;CSS;TypeScript,Web Design;Technology,Front-end Developer,0.85
+90362,Isabella Myers,38.0,Master's,React;JavaScript;CSS,Web Development;Design,Front-end Developer,0.89
+90942,Lucas Powell,38.0,PhD,Keras;Machine Learning;Python,Technology;Machine Learning,AI/ML Engineer,0.92
+90586,Samuel Flores,45.0,Bachelor's,Python;Data Mining;Statistics,Technology;Data Science,Data Scientist,0.83
+90872,Hannah Cook,42.0,PhD,Sketch;Prototyping;UI Design,Arts;Digital Media,UX Designer,0.89
+90579,Avery Henderson,40.0,Bachelor's,Python;Data Mining;Statistics,Technology;Data Science,Data Scientist,0.91
+90201,Harper Wood,39.0,Bachelor's,TypeScript;React;Python,Technology;AI,Full Stack Developer,0.89
+90033,Lucas Ward,24.0,Master's,C#;.NET;JavaScript,Software Development;Software Development,Software Engineer,0.84
+90208,Chloe Watts,43.0,Bachelor's,JavaScript;Express;MongoDB,Technology;Web,Full Stack Developer,0.91
+90627,Liam Murphy,42.0,PhD,Python;Django;PostgreSQL,Software Engineering;Technology,Cybersecurity Specialist,0.88
+90853,Oliver Watson,47.0,PhD,Sketch;Prototyping;UI Design,Digital Media;Design,UX Designer,0.95
+90688,Alexander Peterson,32.0,Bachelor's,Java;Spring;Microservices,Software Engineering;Technology,Backend Developer,0.86
+91104,Madison Morgan,29.0,Bachelor's,Terraform;DevOps;Linux,Cloud;Automation,DevOps Engineer,0.95
+91086,Evelyn Price,35.0,Bachelor's,Cloud Computing;DevOps;Python,Technology;Technology,UX Designer,0.86
+91185,Sebastian Kelly,43.0,Bachelor's,Ethical Hacking;Cybersecurity;Adobe XD,Cybersecurity;Digital Media,Cybersecurity Specialist,0.89
+90588,Matthew Coleman,50.0,Master's,Java;Spring;Microservices,Backend;Technology,Backend Developer,0.93
+90140,Harper Kim,28.0,Master's,Java;System Design;Cloud Computing,Engineering;Technology,Software Engineer,0.97
+90596,Henry Long,37.0,Bachelor's,Node.js;Express;MongoDB,Software Engineering;Technology,Backend Developer,0.89
+90377,Lily Kelly,26.0,Bachelor's,HTML;CSS;JavaScript,Web Development;Design,Front-end Developer,0.87
+90420,Aiden Morgan,26.0,Bachelor's,JavaScript;Vue.js;CSS,Web Development;Design,Front-end Developer,0.92
+90866,Henry Reed,42.0,Bachelor's,Graphic Design;UI/UX;Adobe Creative Suite,Digital Media;Design,UX Designer,0.85
+90181,Owen Bailey,21.0,Master's,Python;Django;React,Software Development;Web,Full Stack Developer,0.85
+90349,Samuel Bailey,33.0,Bachelor's,HTML;CSS;TypeScript,Web Development;Design,Front-end Developer,0.89
+90978,John Ramos,41.0,Bachelor's,Machine Learning;Scikit-learn;Python,AI;Data Science,AI/ML Engineer,0.92
+91006,Layla Murphy,31.0,Bachelor's,PyTorch;Machine Learning;Sketch,Technology;Design,AI/ML Engineer,0.91
+90149,Madison Long,47.0,Master's,C++;Algorithms;System Design,Software Development;AI,Software Engineer,0.93
+90070,Chloe Powell,36.0,PhD,Python;Software Engineering;Python,Engineering;Data Science,Software Engineer,0.94
+90798,Owen Long,52.0,Bachelor's,Swift;iOS;UI Design,Mobile Apps;Technology,Mobile Developer,0.83
+90013,Noah Peterson,39.0,Master's,C#;.NET;HTML,Engineering;Web Design,Software Engineer,0.89
+90782,Daniel Reed,18.0,Bachelor's,Swift;iOS;UI Design,Mobile Apps;Technology,Mobile Developer,0.96
+90381,Abigail Stewart,34.0,Bachelor's,REACT;JAVASCRIPT;CSS,Web Design;Technology,Front-end Developer,0.94
+91011,Scarlett Myers,38.0,Bachelor's,Python;Machine Learning;Terraform,Technology;Technology,AI/ML Engineer,0.95
+90788,Daniel Patel,42.0,Master's,Kotlin;Android;Firebase,Mobile Development;Design,Mobile Developer,0.84
+90258,Jackson Flores,35.0,Master's,JavaScript;Angular;Node.js,Software Development;Web,Front-end Developer,0.86
+90631,Sophia Rogers,37.0,Bachelor's,Java;Microservices;TypeScript,Software Engineering;Software Development,Backend Developer,0.86
+90332,Jackson Reyes,40.0,Bachelor's,HTML;CSS;React,Design;Technology,Front-end Developer,0.95
+90926,Noah Coleman,55.0,Bachelor's,Adobe XD;UX/UI;Ethical Hacking,Digital Media;Technology,UX Designer,0.91
+90695,Charlotte Long,48.0,Bachelor's,Go;Microservices;Figma,Software Engineering;Arts,Backend Developer,0.92
+90447,Sebastian Hughes,23.0,Master's,HTML;CSS;JavaScript,Web Development;Design,Full Stack Developer,0.94
+90923,Matthew Morris,25.0,PhD,User Research;UX Design;Prototyping,Design;Technology,UX Designer,0.95
+90248,Aria Bennett,26.0,Bachelor's,TypeScript;React;Node.js,Web Development;Technology,Full Stack Developer,0.86
+91187,Isabella Wood,36.0,Bachelor's,Cybersecurity;Cryptography;Python,Technology;Software Engineering,Cybersecurity Specialist,0.89
+90744,Samuel Cooper,28.0,Master's,Java;Android;UI Design,Mobile Development;Design,Mobile Developer,0.87
+90371,Mia Cox,30.0,Master's,React;JavaScript;R,Design;Technology,Front-end Developer,0.85
+90835,Henry Watts,23.0,Master's,Sketch;Prototyping;Java,Arts;Mobile Apps,UX Designer,0.83
+90790,Harper Bryant,38.0,Master's,React Native;JavaScript;Java,Technology;Engineering,Mobile Developer,0.87
+91149,Harper Wood,55.0,PhD,Ethical Hacking;Cybersecurity;Linux,Cybersecurity;Networking,Cybersecurity Specialist,0.96
+90501,Hannah Bennett,27.0,Master's,Python;Big Data;React Native,Data Science;Technology,Data Scientist,0.93
+90599,Hannah Bennett,35.0,Master's,Java;Spring;Microservices,Software Engineering;Finance,Backend Developer,0.9
+90928,Henry Howard,30.0,Master's,User Research;UX Design;Prototyping,Design;Technology,UX Designer,0.87
+90962,Amelia Ross,31.0,Bachelor's,Python;Machine Learning;Statistics,AI;Data Science,AI/ML Engineer,0.97
+90611,Aria Howard,40.0,Bachelor's,Go;Microservices;Python,Backend;Technology,Backend Developer,0.84
+90988,Daniel Russell,53.0,Bachelor's,Machine Learning;Scikit-learn;Python,AI;Data Science,AI/ML Engineer,0.93
+90074,Madison Cook,28.0,Master's,Python;Software Engineering;Cybersecurity,Engineering;Security,Software Engineer,0.93
+90399,Alexander Stewart,39.0,Master's,HTML;CSS;TypeScript,Design;Technology,Front-end Developer,0.9
+91169,John Russell,44.0,Master's,Python;Cybersecurity;JavaScript,Technology;Technology,Cybersecurity Specialist,0.88
+90992,Henry Kelly,44.0,Bachelor's,Python;Neural Networks;TensorFlow,AI;Data Science,Data Scientist,0.89
+90388,Ava Jenkins,41.0,Bachelor's,HTML;CSS;TypeScript,Web Design;Technology,Front-end Developer,0.82
+90527,Madison Bennett,48.0,Bachelor's,Python;Data Mining;React,Technology;Web Development,Data Scientist,1.0
+90393,Ella Myers,54.0,Bachelor's,HTML;CSS;JavaScript,Design;Technology,Front-end Developer,0.96
+90352,Alexander Patterson,23.0,Bachelor's,React;JavaScript;CSS,Web Design;Technology,Front-end Developer,0.84
+90683,Ethan Brooks,51.0,Bachelor's,Java;Spring;Microservices,Backend;Technology,Backend Developer,0.86
+91066,Mason Morgan,43.0,Bachelor's,Kubernetes;DevOps;Sketch,Technology;Arts,DevOps Engineer,0.88
+90713,Matthew Patterson,44.0,Bachelor's,React Native;JavaScript;Mobile Apps,Mobile Apps;Technology,Mobile Developer,0.9
+90977,Logan Hughes,28.0,Master's,Machine Learning;Scikit-learn;Python,Technology;Security,AI/ML Engineer,0.92
+91079,Samuel Myers,39.0,Master's,AWS;Jenkins;DevOps,Technology;Infrastructure,DevOps Engineer,0.92
+90668,Nora Ford,32.0,Master's,Go;Microservices;APIs,Backend;Technology,Backend Developer,0.83
+90626,Olivia Reed,50.0,Bachelor's,Python;Django;HTML,Backend;Web Development,Backend Developer,0.9
+90903,Joseph Patel,26.0,Master's,Graphic Design;UI/UX;Adobe Creative Suite,Design;Technology,UX Designer,0.84
+90909,Mason Cox,33.0,Master's,Adobe XD;UX/UI;Graphic Design,Design;Technology,UX Designer,0.92
+90368,Jackson Coleman,35.0,Master's,React;JavaScript;CSS,Web Design;Technology,Front-end Developer,0.94
+90330,Jacob Sanders,48.0,Master's,HTML;CSS;TypeScript,Web Design;Technology,Front-end Developer,0.83
+90361,Amelia Patel,41.0,Bachelor's,HTML;CSS;React,Web Design;Technology,Front-end Developer,0.84
+90218,Carter Richardson,25.0,Master's,JavaScript;Angular;Python,Web Development;Software Engineering,Full Stack Developer,0.91
+90927,Chloe Barnes,43.0,Master's,Sketch;Prototyping;UI Design,Design;Technology,UX Designer,0.92
+90203,Riley Price,26.0,Bachelor's,JavaScript;Express;MongoDB,Web Development;Technology,Full Stack Developer,0.87
+90883,Olivia Ramos,44.0,Master's,Graphic Design;UI/UX;Python,Digital Media;AI,UX Designer,0.84
+90594,Lucas Jenkins,26.0,Master's,Node.js;Express;Cloud Computing,Software Engineering;Technology,Backend Developer,0.88
+91183,Isabella Ramos,32.0,Bachelor's,Ethical Hacking;Cybersecurity;Linux,Technology;Security,Backend Developer,0.97
+91091,Scarlett Murphy,38.0,Bachelor's,AWS;Jenkins;Python,Cloud;AI,DevOps Engineer,0.94
+90837,Carter Patel,34.0,Bachelor's,Sketch;Prototyping;UI Design,Arts;Digital Media,UX Designer,0.92
+90633,Sebastian Patterson,38.0,PhD,Go;Microservices;User Research,Software Engineering;Design,Backend Developer,0.92
+91178,Ava Myers,41.0,Master's,Cybersecurity;Cryptography;Networking,Technology;Security,Cybersecurity Specialist,0.96
+91057,Jackson Bailey,51.0,PhD,AWS;Jenkins;DevOps,Technology;Business,DevOps Engineer,0.84
+90709,Grace Ford,52.0,Master's,Python;Django;PostgreSQL,Software Engineering;Finance,Backend Developer,0.95
+90472,Liam Henderson,26.0,Master's,Python;Big Data;JavaScript,Data Science;Technology,Data Scientist,0.94
+90084,Charlotte Ramos,49.0,Master's,Java;Spring;System Design,Software Development;AI,Software Engineer,0.95
+90858,Avery Reyes,23.0,Bachelor's,Figma;Wireframing;HTML,Design;Design,UX Designer,0.93
+91191,Lily Foster,27.0,Bachelor's,Python;Cybersecurity;Network Security,Technology;Security,Cybersecurity Specialist,0.87
+90731,Alexander Hughes,55.0,Bachelor's,Java;Android;AWS,Mobile Development;Cloud,Mobile Developer,0.9
+90726,David Powell,37.0,Master's,React Native;JavaScript;Mobile Apps,Mobile Apps;Technology,DevOps Engineer,0.56
+90011,Zoey Ward,46.0,Bachelor's,Python;Software Engineering;Algorithms,Software Development;Technology,Software Engineer,0.91
+90139,Joseph Wood,48.0,Bachelor's,Python;Software Engineering;Algorithms,Software Development;Technology,Software Engineer,0.87
+90565,Liam Griffin,34.0,Bachelor's,Python;Big Data;Statistics,Technology;Data Science,Data Scientist,0.86
+90557,Layla Bennett,53.0,Master's,Python;Data Analysis;Machine Learning,Technology;Data Science,Data Scientist,0.91
+90776,John Bryant,29.0,Bachelor's,Kotlin;Android;Firebase,Mobile Development;Design,Mobile Developer,0.93
+90675,Ava Bailey,40.0,Bachelor's,Node.js;Express;MongoDB,Backend;Technology,Backend Developer,0.89
+90385,Amelia Ross,30.0,Master's,React;JavaScript;CSS,Web Development;Design,Front-end Developer,0.86
+91117,Harper Patel,33.0,PhD,Docker;Kubernetes;CI/CD,Cloud;Automation,DevOps Engineer,0.84
+90804,Lily Barnes,34.0,Bachelor's,Swift;iOS;UI Design,Technology;Apps,Mobile Developer,0.87
+91035,Jackson Powell,25.0,Master's,AWS;Jenkins;DevOps,Cloud;Automation,DevOps Engineer,0.96
+90356,Emily Brooks,53.0,Bachelor's,HTML;CSS;JavaScript,Web Design;Technology,Front-end Developer,0.94
+90437,Henry Coleman,51.0,Master's,HTML;CSS;JavaScript,Design;Technology,Front-end Developer,0.84
+90182,Wyatt Jenkins,30.0,Master's,JavaScript;Express;MongoDB,Software Development;Web,Full Stack Developer,0.89
+90102,Grace Hughes,48.0,Bachelor's,Java;System Design;Cloud Computing,Software Development;Technology,Software Engineer,0.86
+90220,Nora Powell,22.0,Master's,JavaScript;Express;Penetration Testing,Software Development;Technology,Full Stack Developer,0.96
+91111,Ella Cox,31.0,Bachelor's,AWS;Jenkins;User Research,Technology;Design,DevOps Engineer,0.86
+91051,David Kim,39.0,Master's,Kubernetes;DevOps;Kotlin,Technology;Mobile Development,DevOps Engineer,0.89
+90578,Zoey Stewart,24.0,PhD,Python;Statistics;Machine Learning,Technology;Data Science,Data Scientist,0.82
+90624,Isabella Hayes,22.0,Bachelor's,Java;Spring;JavaScript,Software Engineering;Design,Backend Developer,0.82
+91001,Avery Stewart,46.0,Master's,Python;Machine Learning;TensorFlow,AI;Innovation,AI/ML Engineer,0.89
+90113,David Watts,33.0,Bachelor's,C++;Algorithms;System Design,Engineering;Technology,Software Engineer,0.91
+90547,Charlotte Ross,37.0,Master's,Python;Data Analysis;Python,Data Science;Backend,Data Scientist,0.85
+90398,Charlotte Bryant,27.0,Bachelor's,HTML;CSS;React Native,Web Design;Mobile Apps,Front-end Developer,1.0
+91055,Isabella Price,51.0,Bachelor's,Docker;Kubernetes;Java,Cloud;Technology,DevOps Engineer,0.93
+90918,Hannah Powell,41.0,Master's,Graphic Design;UI/UX;Adobe Creative Suite,Arts;Digital Media,UX Designer,0.96
+91018,Olivia Kelly,24.0,Master's,Machine Learning;Scikit-learn;Python,Technology;Machine Learning,AI/ML Engineer,0.97
+90266,Henry Long,49.0,Bachelor's,JavaScript;Express;MongoDB,Web Development;Technology,Full Stack Developer,0.85
+91023,Owen Price,37.0,PhD,Machine Learning;Scikit-learn;Python,Technology;AI,AI/ML Engineer,0.94
+90692,Jackson Sanders,39.0,PhD,Python;Django;PostgreSQL,Software Engineering;Technology,Backend Developer,0.84
+90405,Ethan Cox,42.0,Bachelor's,HTML;CSS;JavaScript,Design;Technology,Front-end Developer,0.89
+91084,Sophia Powell,29.0,Master's,Kubernetes;DevOps;HTML,Technology;Web Design,DevOps Engineer,0.92
+91064,Isabella Flores,27.0,Bachelor's,Cloud Computing;DevOps;Python,Technology;Infrastructure,DevOps Engineer,0.86
+90244,Wyatt Diaz,30.0,Bachelor's,Python;Django;Kubernetes,Software Development;Cloud,Full Stack Developer,0.94
+90576,Olivia Peterson,48.0,PhD,Python;Data Analysis;Machine Learning,Data Science;Finance,Data Scientist,0.96
+90094,Jackson Reed,23.0,Master's,Java;Spring;Node.js,Software Development;Software Engineering,Software Engineer,0.84
+90595,Owen Kelly,48.0,Bachelor's,Python;Django;PostgreSQL,Software Engineering;Technology,Backend Developer,0.94
+90897,Riley Henderson,24.0,Master's,Sketch;Prototyping;UI Design,Design;Technology,UX Designer,0.91
+90383,Evelyn Patterson,27.0,Bachelor's,HTML;CSS;React,Web Design;Technology,DevOps Engineer,0.83
+90771,Evelyn Barnes,49.0,Bachelor's,React Native;JavaScript;Mobile Apps,Technology;Apps,Mobile Developer,0.92
+90674,Alexander Cox,37.0,Bachelor's,Java;Spring;AWS,Backend;Technology,Backend Developer,0.92
+90715,Sophia Griffin,23.0,Bachelor's,Swift;iOS;Cloud Computing,Technology;Technology,Mobile Developer,0.87
+90625,Avery Watts,49.0,Bachelor's,Java;Spring;Microservices,Backend;Technology,Backend Developer,0.84
+90669,Aria Cooper,39.0,Master's,Python;Django;PostgreSQL,Software Engineering;Finance,Backend Developer,0.95
+91162,Mia Barnes,31.0,Master's,Network Security;Linux;Adobe XD,Security;Design,Cybersecurity Specialist,0.94
+90554,Hannah Murphy,43.0,Master's,Python;Statistics;Machine Learning,Data Science;Healthcare,Data Scientist,0.89
+90604,Mia Peterson,53.0,PhD,Python;Django;PostgreSQL,Backend;Technology,Backend Developer,0.85
+90998,Alexander Wood,51.0,Master's,Python;Neural Networks;Python,AI;Data Science,AI/ML Engineer,0.91
+91165,Isabella Long,24.0,Bachelor's,Cybersecurity;Cryptography;Adobe XD,Cybersecurity;Design,Cybersecurity Specialist,0.86
+90298,Nora Stewart,33.0,Master's,TypeScript;React;Node.js,Web Development;Technology,Full Stack Developer,0.83
+90395,Scarlett Ford,42.0,Bachelor's,HTML;CSS;Python,Web Development;AI,Front-end Developer,0.87
+90707,Ava Barnes,36.0,Master's,Go;Microservices;React Native,Software Engineering;Technology,Backend Developer,0.84
+90698,Mason Perry,40.0,Bachelor's,Python;Django;Graphic Design,Software Engineering;Digital Media,Backend Developer,0.84
+90859,Avery Myers,24.0,Master's,Figma;Wireframing;UX Research,Digital Media;Design,UX Designer,0.9
+90227,Emily Brooks,39.0,Bachelor's,Python;Django;React,Web Development;Technology,Full Stack Developer,0.91
+90198, Chloe Hayes ,53.0,Bachelor's,JavaScript;React;Node.js,Software Development;Web,Full Stack Developer,0.96
+91189,Victoria Cooper,27.0,Bachelor's,Ethical Hacking;Cybersecurity;Linux,Cybersecurity;Networking,Mobile Developer,0.89
+90963,Mia Ramos,31.0,PhD,Python;Neural Networks;TensorFlow,AI;Innovation,AI/ML Engineer,0.89
+90020,Madison Griffin,31.0,Bachelor's,Java;Spring;Java,Software Development;Mobile Development,Software Engineer,0.92
+90676,Hannah Jenkins,55.0,Bachelor's,Java;Spring;Microservices,Software Engineering;Finance,Software Engineer,0.88
+90855,Avery Patterson,23.0,Bachelor's,Adobe XD;UX/UI;Graphic Design,Design;Technology,UX Designer,0.91
+90495,Jackson Sanders,24.0,Bachelor's,Python;Big Data;Statistics,Technology;Data Science,Data Scientist,0.92
+90693,Ella Kim,22.0,Bachelor's,Node.js;Express;AWS,Backend;Technology,Backend Developer,0.95
+90264,Jackson Cooper,33.0,Master's,JavaScript;Express;MongoDB,Software Development;Web,Full Stack Developer,0.91
+91142,Nora Peterson,46.0,Bachelor's,Ethical Hacking;Cybersecurity;HTML,Security;Web Design,Cybersecurity Specialist,0.92
+90583,Henry Kelly,36.0,Bachelor's,Python;Big Data;Python,Technology;Technology,Data Scientist,0.89
+90292,Joseph Powell,24.0,Master's,TypeScript;React;Python,Web Development;Data Science,Full Stack Developer,0.85
+90336,Ava Patel,41.0,Bachelor's,HTML;CSS;TypeScript,Design;Technology,Front-end Developer,0.89
+90807,Chloe Powell,50.0,Bachelor's,Kotlin;Android;Firebase,Mobile Apps;Technology,Cybersecurity Specialist,0.88
+91044,Matthew Cox,41.0,Bachelor's,Kubernetes;DevOps;JavaScript,Cloud;Software Development,DevOps Engineer,0.95
+90342,Isabella Patterson,44.0,PhD,JavaScript;Vue.js;Python,Web Design;Technology,Full Stack Developer,0.9
+90339,Aiden Bennett,54.0,Bachelor's,HTML;CSS;JavaScript,Design;Technology,Front-end Developer,0.93
+90263,Charlotte Sanders,49.0,Master's,Python;Django;React,Web Development;Technology,Full Stack Developer,0.83
+90030,Harper Ross,38.0,Bachelor's,Python;Software Engineering;Algorithms,Software Development;Technology,Software Engineer,0.87
+91140,Lucas Watson,25.0,Master's,Python;Cybersecurity;Network Security,Security;Technology,Mobile Developer,0.91
+90574,Wyatt Hughes,42.0,Bachelor's,Python;Data Mining;Statistics,Data Science;Finance,Data Scientist,0.86
+90983,Avery Price,40.0,Master's,Python;Deep Learning;AI,Technology;Machine Learning,AI/ML Engineer,0.91
+90910,Michael Rogers,54.0,Bachelor's,Graphic Design;UI/UX;Adobe Creative Suite,Digital Media;Design,UX Designer,0.92
+90109,Daniel Long,30.0,Master's,Java;Spring;System Design,Engineering;Technology,Software Engineer,0.87
+90091,Ethan Coleman,48.0,Master's,Java;System Design;Cloud Computing,Engineering;Technology,Software Engineer,0.92
+91068,Victoria Brooks,47.0,Master's,Cloud Computing;DevOps;Python,Technology;Infrastructure,DevOps Engineer,0.85
+91147,Mia Price,22.0,Master's,Cybersecurity;Cryptography;JavaScript,Security;Design,Cybersecurity Specialist,0.91
+90023,Samuel Hayes,52.0,Bachelor's,Java;Spring;System Design,Software Development;Technology,UX Designer,0.83
+90314,Riley Coleman,37.0,Bachelor's,HTML;CSS;JavaScript,Web Design;Technology,Front-end Developer,0.9
+90747,Ella Patel,24.0,Bachelor's,Swift;iOS;UI Design,Mobile Apps;Technology,Mobile Developer,0.92
+91058,Ethan Hayes,53.0,Master's,Kubernetes;DevOps;JavaScript,Cloud;Design,DevOps Engineer,0.89
+90607,David Watts,54.0,Bachelor's,Node.js;Express;React Native,Software Engineering;Mobile Development,Backend Developer,0.96
+90190,Jackson Patterson,31.0,Bachelor's,JavaScript;React;Node.js,Software Development;Web,Full Stack Developer,0.88
+90085,Chloe Patel,46.0,Bachelor's,C#;.NET;System Design,Engineering;Technology,Software Engineer,0.96
+90272,David Flores,42.0,Bachelor's,JavaScript;React;Node.js,Technology;Web,Full Stack Developer,0.88
+91132,Henry Coleman,28.0,Master's,Network Security;Linux;Python,Technology;Security,Cybersecurity Specialist,0.9
+91041,Alexander Bennett,34.0,Bachelor's,Cloud Computing;DevOps;Java,Technology;Software Engineering,DevOps Engineer,0.94
+90887,Scarlett Henderson,31.0,Master's,Figma;Wireframing;UX Research,Design;Technology,UX Designer,0.9
+90628,Ella Murphy,25.0,Bachelor's,Node.js;Express;MongoDB,Software Engineering;Technology,Backend Developer,0.88
+91192,Nora Ford,43.0,Master's,Network Security;Linux;Python,Technology;Security,Cybersecurity Specialist,0.9
+90729,Riley Cook,21.0,Bachelor's,Flutter;Dart;Mobile Apps,Mobile Apps;Technology,Mobile Developer,0.86
+90000,Evelyn Ramos,49.0,PhD,C#;.NET;System Design,Software Development;Technology,Software Engineer,0.94
+90984,Lily Ramos,44.0,Master's,Python;Machine Learning;Python,AI;Data Science,AI/ML Engineer,0.96
+90341,Avery Ward,38.0,Bachelor's,HTML;CSS;TypeScript,Web Design;Technology,Front-end Developer,0.96
+90016,Emily Morris,40.0,Bachelor's,C#;.NET;System Design,Engineering;Technology,Software Engineer,0.89
+90117,Benjamin Morris,33.0,Master's,C#;.NET;React,Software Development;Web Design,Software Engineer,0.92
+90080,Grace Patterson,27.0,Master's,Java;Spring;System Design,Engineering;Technology,Software Engineer,0.92
+90842,John Watts,31.0,Bachelor's,Adobe XD;UX/UI;Graphic Design,Arts;Digital Media,UX Designer,0.43
+90407,Amelia Ramos,34.0,Bachelor's,HTML;CSS;React,Design;Technology,Backend Developer,0.82
+90276,Jackson Long,41.0,PhD,JavaScript;Express;MongoDB,Software Development;Web,Full Stack Developer,0.92
+90225,Chloe Long,49.0,Master's,Python;Django;React,Web Development;Technology,Full Stack Developer,0.88
+90221,Aiden Cooper,40.0,Bachelor's,JavaScript;Angular;Node.js,Technology;Web,Full Stack Developer,0.89
+91016,Charlotte Flores,30.0,PhD,Python;Deep Learning;Graphic Design,AI;Design,AI/ML Engineer,0.89
+90741,Evelyn Russell,48.0,Master's,Kotlin;Android;Firebase,Mobile Development;Design,Mobile Developer,0.91
+91116,Aiden Watts,23.0,PhD,Terraform;DevOps;Linux,Cloud;Automation,DevOps Engineer,0.87
+90028,Ava Ramos,51.0,Bachelor's,Java;Spring;Python,Software Development;Technology,Software Engineer,0.9
+91102,Charlotte Brooks,41.0,PhD,AWS;Jenkins;DevOps,Cloud;Automation,DevOps Engineer,0.92
+90550,Liam Watson,45.0,Master's,R;Statistics;React,Technology;Web Development,Data Scientist,0.96
+90446,Michael Ford,32.0,Bachelor's,HTML;CSS;Java,Web Design;Engineering,Front-end Developer,0.83
+90384,Grace Patel,26.0,Master's,HTML;CSS;Keras,Design;Technology,Front-end Developer,0.86
+90171,Scarlett Cooper,41.0,Bachelor's,JavaScript;Angular;Node.js,Web Development;Technology,Full Stack Developer,0.93
+90237,David Bennett,55.0,PhD,JavaScript;React;R,Web Development;Data Science,Full Stack Developer,0.92
+90355,Aria Ramos,99.0,Master's,React;JavaScript;CSS,Web Design;Technology,Front-end Developer,0.85
+91040,Madison Henderson,46.0,Bachelor's,Kubernetes;DevOps;Node.js,Technology;Software Engineering,DevOps Engineer,0.85
+90642,Layla Reed,28.0,Master's,Python;Django;Python,Backend;AI,Backend Developer,0.86
+90186,Mia Price,54.0,Bachelor's,JavaScript;Express;MongoDB,Web Development;Technology,Full Stack Developer,0.9
+90819,Isabella Coleman,27.0,PhD,Flutter;Dart;Mobile Apps,Mobile Development;Design,Mobile Developer,0.93
+90888,Carter Long,53.0,PhD,User Research;UX Design;Python,Design;Technology,UX Designer,0.9
+91180,Avery Powell,55.0,Bachelor's,Penetration Testing;Cybersecurity;Linux,Technology;Security,Cybersecurity Specialist,0.96
+90060,Abigail Hayes,52.0,Master's,Java;System Design;Cloud Computing,Software Development;Technology,Software Engineer,0.97
+90202,Emily Kelly,45.0,Master's,Python;Django;React,Web Development;Technology,Full Stack Developer,0.85
+90322,Henry Howard,55.0,Master's,JavaScript;Vue.js;CSS,Web Development;Design,Front-end Developer,0.95
+90824,Elijah Kim,51.0,Bachelor's,Java;Android;Node.js,Mobile Development;Software Engineering,Mobile Developer,0.82
+90836,Scarlett Long,52.0,Master's,Sketch;Prototyping;Java,Design;Software Engineering,UX Designer,0.87
+90365,Amelia Ross,48.0,BACHELOR'S,HTML;CSS;React,Web Design;Technology,Front-end Developer,0.85
+90967,Sophia Coleman,31.0,Bachelor's,Machine Learning;Scikit-learn;Python,Technology;AI,AI/ML Engineer,1.0
+91186,Liam Powell,41.0,PhD,Ethical Hacking;Cybersecurity;Linux,Security;Technology,AI/ML Engineer,0.88
+91098,Nora Foster,36.0,Master's,Kubernetes;DevOps;Python,Technology;Infrastructure,DevOps Engineer,0.85
+91127,Jackson Richardson,50.0,Master's,Network Security;Linux;Python,Security;Technology,Cybersecurity Specialist,0.87
+90577,Sophia Coleman,34.0,Master's,Python;Statistics;Machine Learning,Data Science;Finance,Data Scientist,0.86
+90340,Logan Kelly,27.0,Bachelor's,JavaScript;Vue.js;CSS,Web Development;Design,Front-end Developer,0.88
+90850,Charlotte Ross,46.0,Bachelor's,Sketch;Prototyping;TypeScript,Design;Technology,UX Designer,0.85
+90321,Harper Peterson,53.0,Bachelor's,React;JavaScript;CSS,Design;Technology,Front-end Developer,0.96
+90032,Alexander Russell,32.0,Bachelor's,Java;Spring;System Design,Engineering;Technology,Software Engineer,0.94
+90654,Zoey Murphy,55.0,Bachelor's,Go;Microservices;APIs,Software Engineering;Finance,Backend Developer,0.92
+90397,Michael Flores,53.0,Bachelor's,HTML;CSS;Kubernetes,Design;Technology,Front-end Developer,0.94
+90792,Mason Kim,37.0,Master's,Java;Android;HTML,Technology;Web Design,Mobile Developer,0.85
+90814,Wyatt Stewart,53.0,Bachelor's,React Native;JavaScript;AWS,Mobile Apps;Technology,Mobile Developer,0.89
+90985,Abigail Rogers,52.0,Master's,Python;Machine Learning;React Native,Technology;Technology,AI/ML Engineer,0.87
+90116,Elijah Russell,31.0,PhD,C++;Algorithms;System Design,Software Development;AI,Software Engineer,0.91
+90639,Samuel Wood,41.0,Bachelor's,Java;Microservices;SQL,Software Engineering;Finance,Backend Developer,0.97
+90071,Mia Myers,52.0,Bachelor's,Python;Software Engineering;Algorithms,Software Development;AI,Software Engineer,0.87
+90934,Isabella Bailey,38.0,PhD,Keras;Machine Learning;Python,Technology;AI,AI/ML Engineer,0.93
+90815,Layla Myers,32.0,Bachelor's,Java;Android;UI Design,Mobile Development;Design,Mobile Developer,0.83
+90103,Joseph Bennett,33.0,Bachelor's,C#;.NET;System Design,Software Development;Technology,Software Engineer,0.97
