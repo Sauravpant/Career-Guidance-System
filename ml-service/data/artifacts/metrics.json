@@ -1,8 +1,7 @@
 {
-  "model": "SVC",
-  "accuracy": 0.9565,
-  "precision_macro": 0.9576,
-  "recall_macro": 0.9559,
-  "f1_macro": 0.9566,
-  "cv_f1_macro": 0.9642
+  "model": "XGBoost (Tuned)",
+  "accuracy": 0.9263,
+  "precision_macro": 0.9233,
+  "recall_macro": 0.9257,
+  "f1_macro": 0.9241
 }

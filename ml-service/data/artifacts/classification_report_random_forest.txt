@@ -1,21 +1,18 @@
 === Random Forest ===
 
-                           precision    recall  f1-score   support
+                          precision    recall  f1-score   support
 
-              AI Engineer       0.89      0.92      0.91       182
-        Backend Developer       0.94      0.94      0.94       180
-           Cloud Engineer       0.97      0.88      0.92       104
- Cybersecurity Specialist       0.95      0.99      0.97        98
-             Data Analyst       0.97      0.96      0.96       199
-           Data Scientist       0.92      0.97      0.95       183
-          DevOps Engineer       0.93      0.96      0.95       172
-      Front-end Developer       0.95      0.97      0.96       187
-     Full Stack Developer       0.97      0.96      0.96       192
-Machine Learning Engineer       0.93      0.87      0.90       189
-         Mobile Developer       0.98      0.97      0.97       175
-        Software Engineer       0.96      0.95      0.95       196
-              UX Designer       0.98      0.98      0.98       174
+          AI/ML Engineer       0.88      0.82      0.85        98
+       Backend Developer       0.94      0.88      0.91       132
+Cybersecurity Specialist       0.76      0.91      0.83        75
+          Data Scientist       0.92      0.92      0.92       129
+         DevOps Engineer       0.93      0.88      0.90        90
+     Front-end Developer       0.96      0.91      0.93       145
+    Full Stack Developer       0.88      0.89      0.89       152
+        Mobile Developer       0.89      0.92      0.90       108
+       Software Engineer       0.91      0.93      0.92       157
+             UX Designer       0.87      0.90      0.88       108
 
-                 accuracy                           0.95      2231
-                macro avg       0.95      0.95      0.95      2231
-             weighted avg       0.95      0.95      0.95      2231
+                accuracy                           0.90      1194
+               macro avg       0.89      0.90      0.89      1194
+            weighted avg       0.90      0.90      0.90      1194

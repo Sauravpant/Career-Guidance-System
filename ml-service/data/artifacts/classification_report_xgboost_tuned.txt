@@ -1,0 +1,18 @@
+=== XGBoost (Tuned) ===
+
+                          precision    recall  f1-score   support
+
+          AI/ML Engineer       0.94      0.92      0.93        98
+       Backend Developer       0.95      0.90      0.93       132
+Cybersecurity Specialist       0.83      0.92      0.87        75
+          Data Scientist       0.95      0.95      0.95       129
+         DevOps Engineer       0.93      0.92      0.93        90
+     Front-end Developer       0.94      0.92      0.93       145
+    Full Stack Developer       0.91      0.91      0.91       152
+        Mobile Developer       0.91      0.94      0.93       108
+       Software Engineer       0.94      0.96      0.95       157
+             UX Designer       0.93      0.92      0.93       108
+
+                accuracy                           0.93      1194
+               macro avg       0.92      0.93      0.92      1194
+            weighted avg       0.93      0.93      0.93      1194
