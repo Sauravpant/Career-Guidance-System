@@ -9,8 +9,8 @@ logging.basicConfig(
 
 app = FastAPI(
     title="Career Recommendation API",
-    description="ML-powered career recommendation system",
-    version="1.0.0",
+    description="ML-powered career recommendation based on skills and experience",
+    version="2.0.0",
 )
 
 app.include_router(router, prefix="/api/v1")

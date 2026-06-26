@@ -3,32 +3,29 @@ import numpy as np
 import pandas as pd
 import joblib
 from pathlib import Path
-
 from training.preprocessing import load_encoders, build_feature_matrix
 
-logger = logging.getLogger(__name__)
+logger     = logging.getLogger(__name__)
 MODELS_DIR = Path(__file__).resolve().parent.parent.parent / "models"
 
 
 class RecommendationService:
     def __init__(self):
         logger.info("Loading model and encoders...")
-        self.model = joblib.load(MODELS_DIR / "best_model.pkl")
-        self.skill_mlb, self.interest_mlb, self.edu_encoder, self.le = load_encoders()
+        self.model                       = joblib.load(MODELS_DIR / "best_model.pkl")
+        self.skill_mlb, self.scaler, self.le = load_encoders()
         logger.info("RecommendationService ready.")
 
-    def predict(self, skills: list[str], interests: list[str], education: str) -> dict:
+    def predict(self, skills: list[str], experience: float) -> dict:
         df = pd.DataFrame([{
-            "Skills":    ";".join(skills),
-            "Interests": ";".join(interests),
-            "Education": education,
+            "skills_required": ",".join(skills),
+            "experience":      experience,
         }])
 
-        X, _, _, _ = build_feature_matrix(
+        X, _, _ = build_feature_matrix(
             df,
             skill_mlb=self.skill_mlb,
-            interest_mlb=self.interest_mlb,
-            edu_encoder=self.edu_encoder,
+            scaler=self.scaler,
             fit=False,
         )
 

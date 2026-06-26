@@ -17,8 +17,7 @@ def recommend(
     try:
         result = service.predict(
             skills=payload.skills,
-            interests=payload.interests,
-            education=payload.education,
+            experience=payload.experience,
         )
         return RecommendResponse(**result)
     except Exception as e:
