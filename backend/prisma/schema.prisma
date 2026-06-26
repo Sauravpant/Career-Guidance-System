@@ -18,10 +18,10 @@ model User {
   email    String @unique
   password String
 
-  education String
+  education  String
+  experience Int
 
-  skills    String[]
-  interests String[]
+  skills String[]
 
   avatarUrl String?
   bannerUrl String?
