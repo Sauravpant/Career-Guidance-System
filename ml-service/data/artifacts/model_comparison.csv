@@ -1,5 +1,6 @@
-model,accuracy,precision_macro,recall_macro,f1_macro
-Logistic Regression,0.9137,0.9119,0.9128,0.912
-SVC,0.9196,0.917,0.9185,0.9174
-Random Forest,0.8978,0.8935,0.8952,0.8933
-XGBoost,0.9238,0.9218,0.9224,0.9218
+model,train_accuracy,train_f1_macro,train_mcc,test_accuracy,test_f1_macro,test_precision_macro,test_recall_macro,test_mcc
+Logistic Regression,0.9185,0.9211,0.9063,0.8872,0.8767,0.8752,0.8821,0.8644
+SVC,0.931,0.9344,0.9206,0.8925,0.8833,0.8858,0.8832,0.8705
+Random Forest,0.859,0.866,0.8415,0.8256,0.8112,0.8522,0.8032,0.7956
+XGBoost,0.9326,0.9361,0.9225,0.8925,0.8846,0.8853,0.8863,0.8706
+XGBoost (Tuned),0.9415,0.9456,0.9328,0.8925,0.8843,0.8855,0.8858,0.8706

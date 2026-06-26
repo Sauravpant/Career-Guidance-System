@@ -1,7 +1,60 @@
 {
-  "model": "XGBoost (Tuned)",
-  "accuracy": 0.9263,
-  "precision_macro": 0.9233,
-  "recall_macro": 0.9257,
-  "f1_macro": 0.9241
+  "best_model": "XGBoost",
+  "baseline_models": [
+    {
+      "model": "Logistic Regression",
+      "train_accuracy": 0.9185,
+      "train_f1_macro": 0.9211,
+      "train_mcc": 0.9063,
+      "test_accuracy": 0.8872,
+      "test_f1_macro": 0.8767,
+      "test_precision_macro": 0.8752,
+      "test_recall_macro": 0.8821,
+      "test_mcc": 0.8644
+    },
+    {
+      "model": "SVC",
+      "train_accuracy": 0.931,
+      "train_f1_macro": 0.9344,
+      "train_mcc": 0.9206,
+      "test_accuracy": 0.8925,
+      "test_f1_macro": 0.8833,
+      "test_precision_macro": 0.8858,
+      "test_recall_macro": 0.8832,
+      "test_mcc": 0.8705
+    },
+    {
+      "model": "Random Forest",
+      "train_accuracy": 0.859,
+      "train_f1_macro": 0.866,
+      "train_mcc": 0.8415,
+      "test_accuracy": 0.8256,
+      "test_f1_macro": 0.8112,
+      "test_precision_macro": 0.8522,
+      "test_recall_macro": 0.8032,
+      "test_mcc": 0.7956
+    },
+    {
+      "model": "XGBoost",
+      "train_accuracy": 0.9326,
+      "train_f1_macro": 0.9361,
+      "train_mcc": 0.9225,
+      "test_accuracy": 0.8925,
+      "test_f1_macro": 0.8846,
+      "test_precision_macro": 0.8853,
+      "test_recall_macro": 0.8863,
+      "test_mcc": 0.8706
+    }
+  ],
+  "tuned_model": {
+    "model": "XGBoost (Tuned)",
+    "train_accuracy": 0.9415,
+    "train_f1_macro": 0.9456,
+    "train_mcc": 0.9328,
+    "test_accuracy": 0.8925,
+    "test_f1_macro": 0.8843,
+    "test_precision_macro": 0.8855,
+    "test_recall_macro": 0.8858,
+    "test_mcc": 0.8706
+  }
 }

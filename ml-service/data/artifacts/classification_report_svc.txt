@@ -1,18 +1,16 @@
 === SVC ===
 
-                          precision    recall  f1-score   support
+                      precision    recall  f1-score   support
 
-          AI/ML Engineer       0.94      0.90      0.92        98
-       Backend Developer       0.94      0.90      0.92       132
-Cybersecurity Specialist       0.83      0.91      0.87        75
-          Data Scientist       0.95      0.95      0.95       129
-         DevOps Engineer       0.93      0.91      0.92        90
-     Front-end Developer       0.95      0.91      0.93       145
-    Full Stack Developer       0.90      0.91      0.90       152
-        Mobile Developer       0.91      0.94      0.93       108
-       Software Engineer       0.92      0.94      0.93       157
-             UX Designer       0.91      0.92      0.91       108
+      AI/ML Engineer       0.91      0.89      0.90       337
+        Data Analyst       0.94      0.93      0.94       217
+      Data Scientist       0.87      0.90      0.89       309
+     DevOps Engineer       0.80      0.87      0.83        52
+Full Stack Developer       0.91      0.93      0.92       109
+    Python Developer       0.89      0.83      0.86       116
+         QA Engineer       0.97      0.85      0.91        79
+   Software Engineer       0.78      0.87      0.83       111
 
-                accuracy                           0.92      1194
-               macro avg       0.92      0.92      0.92      1194
-            weighted avg       0.92      0.92      0.92      1194
+            accuracy                           0.89      1330
+           macro avg       0.89      0.88      0.88      1330
+        weighted avg       0.89      0.89      0.89      1330
