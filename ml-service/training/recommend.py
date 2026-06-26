@@ -7,23 +7,16 @@ from training.preprocessing import load_encoders, build_feature_matrix
 MODELS_DIR = Path(__file__).resolve().parent.parent / "models"
 
 
-def predict(skills: list[str], interests: list[str], education: str) -> dict:
-    skill_mlb, interest_mlb, edu_encoder, le = load_encoders()
+def predict(skills: list[str], experience: float) -> dict:
+    skill_mlb, scaler, le = load_encoders()
     model = joblib.load(MODELS_DIR / "best_model.pkl")
 
     df = pd.DataFrame([{
-        "Skills":    ";".join(skills),
-        "Interests": ";".join(interests),
-        "Education": education,
+        "skills_required": ",".join(skills),
+        "experience":      experience,
     }])
 
-    X, _, _, _ = build_feature_matrix(
-        df,
-        skill_mlb=skill_mlb,
-        interest_mlb=interest_mlb,
-        edu_encoder=edu_encoder,
-        fit=False,
-    )
+    X, _, _ = build_feature_matrix(df, skill_mlb=skill_mlb, scaler=scaler, fit=False)
 
     proba    = model.predict_proba(X)[0]
     top3_idx = np.argsort(proba)[::-1][:3]
