@@ -1,7 +1,7 @@
 import pandas as pd
 from pathlib import Path
 
-DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "raw" / "tech_jobs_dataset_cleaned.csv"
+DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "raw" / "tech_jobs_dataset.csv"
 
 
 DROP_COLS = ["skills_count"]
