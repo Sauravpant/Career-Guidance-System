@@ -104,7 +104,7 @@ The dataset is moderately imbalanced — DevOps Engineer has ~6.5× fewer sample
 
 ## Feature Engineering
 
-### Skills
+### Skill
 
 Comma-separated skill strings are parsed and encoded with `MultiLabelBinarizer`:
 
