@@ -102,7 +102,7 @@ def train():
     all_metrics    = []
     trained_models = {}
 
-    # --- Step 1: Train baseline models ---
+    # Baseline model training and evaluation
     for name, model in MODELS.items():
         logger.info(f"Training {name}...")
         model.fit(X_train_res, y_train_res)
@@ -124,9 +124,9 @@ def train():
         trained_models[name] = model
         joblib.dump(model, MODELS_DIR / MODEL_FILE_NAMES[name])
 
-    # --- Step 2: Pick best baseline model by test F1 macro ---
+    # Pick the best baseline model based on test F1 macro score
     best_name = save_comparison(all_metrics)
-    logger.info(f"\n🏆 Best baseline model: {best_name}")
+    logger.info(f"\nBest baseline model: {best_name}")
 
     # --- Step 3: Hyperparameter tune the best model ---
     logger.info(f"Tuning {best_name} with RandomizedSearchCV (n_iter=50, cv=5)...")

@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from pathlib import Path
-from sklearn.model_selection import learning_curve
+from sklearn.model_selection import StratifiedKFold, learning_curve
 
 ARTIFACTS_DIR = Path(__file__).resolve().parent.parent / "data" / "artifacts"
 

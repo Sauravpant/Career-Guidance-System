@@ -1,5 +1,5 @@
 {
-  "best_model": "XGBoost",
+  "best_model": "XGBoost (Tuned)",
   "baseline_models": [
     {
       "model": "Logistic Regression",
@@ -48,13 +48,13 @@
   ],
   "tuned_model": {
     "model": "XGBoost (Tuned)",
-    "train_accuracy": 0.9415,
-    "train_f1_macro": 0.9456,
-    "train_mcc": 0.9328,
-    "test_accuracy": 0.8925,
-    "test_f1_macro": 0.8843,
-    "test_precision_macro": 0.8855,
-    "test_recall_macro": 0.8858,
-    "test_mcc": 0.8706
+    "train_accuracy": 0.9383,
+    "train_f1_macro": 0.9422,
+    "train_mcc": 0.9291,
+    "test_accuracy": 0.8932,
+    "test_f1_macro": 0.8847,
+    "test_precision_macro": 0.8848,
+    "test_recall_macro": 0.887,
+    "test_mcc": 0.8715
   }
 }

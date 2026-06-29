@@ -1,7 +1,7 @@
 import json
 import numpy as np
 from pathlib import Path
-from sklearn.model_selection import RandomizedSearchCV
+from sklearn.model_selection import GridSearchCV, RandomizedSearchCV, StratifiedKFold
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from xgboost import XGBClassifier
@@ -32,7 +32,7 @@ PARAM_GRIDS = {
         "max_features":      ["sqrt", "log2"],
     },
     "XGBoost": {
-    "n_estimators": [200, 300, 400],
+    "n_estimators": [200, 300, 400,600],
     "learning_rate": [0.03, 0.05, 0.1],
     "max_depth": [3, 4, 5],
     "min_child_weight": [3, 5, 7],
@@ -66,7 +66,6 @@ def tune_best_model(
         scoring="f1_macro",
         n_jobs=-1,
         verbose=1,
-        random_state=42,
         refit=True,
     )
     search.fit(X_train, y_train)
