@@ -146,7 +146,9 @@ export const resetPassword = async (
 
   const { password, ...userData } = updatedUser;
 
-  return userData;
+  return {
+    ...userData
+  };
 };
 
 export const refreshAccessTokenService = async (incomingRefreshToken: string) => {

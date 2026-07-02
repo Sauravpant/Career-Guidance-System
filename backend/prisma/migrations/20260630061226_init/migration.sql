@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "User" ALTER COLUMN "education" DROP NOT NULL,
+ALTER COLUMN "experience" DROP NOT NULL,
+ALTER COLUMN "experience" DROP DEFAULT;
