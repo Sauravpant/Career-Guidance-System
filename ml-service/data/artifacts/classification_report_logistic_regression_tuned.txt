@@ -1,13 +1,13 @@
-=== XGBoost (Tuned) ===
+=== Logistic Regression (Tuned) ===
 
                       precision    recall  f1-score   support
 
-      AI/ML Engineer       0.92      0.89      0.91       337
-        Data Analyst       0.95      0.93      0.94       217
+      AI/ML Engineer       0.93      0.89      0.91       337
+        Data Analyst       0.94      0.93      0.94       217
       Data Scientist       0.87      0.90      0.89       309
-     DevOps Engineer       0.82      0.88      0.85        52
-Full Stack Developer       0.91      0.92      0.91       109
-    Python Developer       0.88      0.84      0.86       116
+     DevOps Engineer       0.76      0.92      0.83        52
+Full Stack Developer       0.93      0.93      0.93       109
+    Python Developer       0.91      0.84      0.87       116
          QA Engineer       0.96      0.86      0.91        79
    Software Engineer       0.77      0.86      0.81       111
 

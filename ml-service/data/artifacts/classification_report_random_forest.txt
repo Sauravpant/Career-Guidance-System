@@ -2,15 +2,15 @@
 
                       precision    recall  f1-score   support
 
-      AI/ML Engineer       0.89      0.84      0.86       337
-        Data Analyst       0.95      0.87      0.91       217
-      Data Scientist       0.89      0.84      0.87       309
-     DevOps Engineer       0.80      0.67      0.73        52
-Full Stack Developer       0.92      0.76      0.83       109
-    Python Developer       0.95      0.69      0.80       116
-         QA Engineer       0.98      0.82      0.90        79
-   Software Engineer       0.44      0.93      0.60       111
+      AI/ML Engineer       0.90      0.89      0.90       337
+        Data Analyst       0.93      0.93      0.93       217
+      Data Scientist       0.88      0.89      0.89       309
+     DevOps Engineer       0.83      0.85      0.84        52
+Full Stack Developer       0.90      0.87      0.88       109
+    Python Developer       0.89      0.84      0.87       116
+         QA Engineer       0.97      0.84      0.90        79
+   Software Engineer       0.74      0.87      0.80       111
 
-            accuracy                           0.83      1330
-           macro avg       0.85      0.80      0.81      1330
-        weighted avg       0.87      0.83      0.84      1330
+            accuracy                           0.88      1330
+           macro avg       0.88      0.87      0.88      1330
+        weighted avg       0.89      0.88      0.89      1330

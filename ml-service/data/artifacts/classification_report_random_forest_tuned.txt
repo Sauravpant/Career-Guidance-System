@@ -1,0 +1,16 @@
+=== Random Forest (Tuned) ===
+
+                      precision    recall  f1-score   support
+
+      AI/ML Engineer       0.91      0.86      0.89       337
+        Data Analyst       0.95      0.90      0.93       217
+      Data Scientist       0.88      0.88      0.88       309
+     DevOps Engineer       0.80      0.83      0.81        52
+Full Stack Developer       0.92      0.78      0.85       109
+    Python Developer       0.94      0.82      0.88       116
+         QA Engineer       0.98      0.82      0.90        79
+   Software Engineer       0.56      0.92      0.69       111
+
+            accuracy                           0.86      1330
+           macro avg       0.87      0.85      0.85      1330
+        weighted avg       0.88      0.86      0.87      1330

@@ -1,4 +1,4 @@
-=== SVC ===
+=== SVC (Tuned) ===
 
                       precision    recall  f1-score   support
 
