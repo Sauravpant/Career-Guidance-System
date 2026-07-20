@@ -1,10 +1,8 @@
 import json
 import numpy as np
 from pathlib import Path
-from sklearn.model_selection import GridSearchCV, RandomizedSearchCV, StratifiedKFold
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
-from xgboost import XGBClassifier
+from sklearn.model_selection import RandomizedSearchCV, cross_validate
+from sklearn.metrics import make_scorer, matthews_corrcoef
 
 from training.utils import get_logger
 
@@ -44,45 +42,102 @@ PARAM_GRIDS = {
     }
 }
 
+# Same scoring set used for the default-parameter CV baseline (see
+# evaluate.compute_cv_metrics / evaluate.CV_SCORING) so default-vs-tuned CV
+# numbers are directly comparable. "f1_macro" remains the metric used to
+# pick the winning candidate inside each search (refit="f1_macro"),
+# matching the project's existing primary metric.
+SCORING = {
+    "accuracy":        "accuracy",
+    "precision_macro": "precision_macro",
+    "recall_macro":    "recall_macro",
+    "f1_macro":        "f1_macro",
+    "mcc":             make_scorer(matthews_corrcoef),
+}
 
-def tune_best_model(
-    best_name: str,
-    best_model,
+
+def tune_model(
+    name: str,
+    model,
     X_train: np.ndarray,
     y_train: np.ndarray,
-) -> object:
-    param_grid = PARAM_GRIDS.get(best_name)
-    if param_grid is None:
-        logger.warning(f"No param grid for {best_name}, skipping tuning.")
-        return best_model
+    cv,
+    n_iter: int = 50,
+) -> tuple:
+    """
+    Hyperparameter-tunes a single model with RandomizedSearchCV.
 
-    logger.info(f"RandomizedSearchCV for {best_name} (n_iter=50, cv=5)...")
+    `model` should be a FRESH, unfitted, default-parameter estimator (tuning
+    always starts from scratch — never from an already-fitted baseline
+    model). `cv` should be a pre-built splitter (e.g. StratifiedKFold(5,
+    shuffle=True, random_state=42)), ideally the same splitter instance used
+    for the default-parameter CV baseline so both stages are scored on
+    identical folds.
+
+    Returns (tuned_estimator, best_params, cv_metrics):
+      - tuned_estimator: fitted on the full X_train/y_train
+      - best_params:     dict of the winning hyperparameters ({} if no grid
+                          was defined for this model)
+      - cv_metrics:      mean/std for accuracy, precision_macro,
+                          recall_macro, f1_macro, and mcc at the winning
+                          configuration, in the same format produced by
+                          evaluate.compute_cv_metrics
+
+    If no param grid is defined for `name`, the model is simply fit with its
+    default parameters and its own cv metrics are computed the same way, so
+    the return shape stays consistent for every model.
+    """
+    param_grid = PARAM_GRIDS.get(name)
+
+    if param_grid is None:
+        logger.warning(f"[{name}] No param grid defined — fitting with default parameters only.")
+        model.fit(X_train, y_train)
+        scores = cross_validate(model, X_train, y_train, cv=cv, scoring=SCORING, n_jobs=-1)
+        cv_metrics = {}
+        for metric_name in SCORING:
+            cv_metrics[f"{metric_name}_mean"] = round(float(np.mean(scores[f"test_{metric_name}"])), 4)
+            cv_metrics[f"{metric_name}_std"]  = round(float(np.std(scores[f"test_{metric_name}"])), 4)
+        return model, {}, cv_metrics
+
+    n_splits = cv.get_n_splits()
+    logger.info(f"[{name}] RandomizedSearchCV (n_iter={n_iter}, cv={n_splits})...")
 
     search = RandomizedSearchCV(
-        estimator=best_model,
+        estimator=model,
         param_distributions=param_grid,
-        n_iter=50,
-        cv=5,
-        scoring="f1_macro",
+        n_iter=n_iter,
+        cv=cv,
+        scoring=SCORING,
+        refit="f1_macro",
         n_jobs=-1,
         verbose=1,
-        refit=True,
+        random_state=42,
     )
     search.fit(X_train, y_train)
 
-    logger.info(f"Best params: {search.best_params_}")
-    logger.info(f"Best CV F1 macro: {round(search.best_score_, 4)}")
+    best_idx = search.best_index_
+    cv_metrics = {}
+    for metric_name in SCORING:
+        cv_metrics[f"{metric_name}_mean"] = round(float(search.cv_results_[f"mean_test_{metric_name}"][best_idx]), 4)
+        cv_metrics[f"{metric_name}_std"]  = round(float(search.cv_results_[f"std_test_{metric_name}"][best_idx]), 4)
 
-    _save_tuning_results(best_name, search)
-    return search.best_estimator_
+    logger.info(f"[{name}] Best params: {search.best_params_}")
+    logger.info(f"[{name}] Best CV f1_macro: {cv_metrics['f1_macro_mean']} ± {cv_metrics['f1_macro_std']}")
+
+    return search.best_estimator_, search.best_params_, cv_metrics
 
 
-def _save_tuning_results(model_name: str, search: RandomizedSearchCV):
-    ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
-    results = {
-        "model":       model_name,
-        "best_params": search.best_params_,
-        "best_cv_f1":  round(search.best_score_, 4),
+def save_tuning_summary(all_tuning_results: dict):
+    """
+    Writes ONE consolidated tuning_results.json covering all 4 models, e.g.:
+
+    {
+      "Logistic Regression": {"best_params": {...}, "cv_metrics": {...}},
+      "SVC":                 {"best_params": {...}, "cv_metrics": {...}},
+      "Random Forest":       {"best_params": {...}, "cv_metrics": {...}},
+      "XGBoost":              {"best_params": {...}, "cv_metrics": {...}}
     }
+    """
+    ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
     with open(ARTIFACTS_DIR / "tuning_results.json", "w") as f:
-        json.dump(results, f, indent=2)
+        json.dump(all_tuning_results, f, indent=2)
