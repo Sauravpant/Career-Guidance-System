@@ -2,7 +2,7 @@
 
 > An end-to-end ML pipeline that recommends tech job roles based on a candidate's skills and years of experience.
 
-![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python) ![FastAPI](https://img.shields.io/badge/FastAPI-latest-green?logo=fastapi) ![XGBoost](https://img.shields.io/badge/XGBoost-tuned-orange) ![License](https://img.shields.io/badge/license-MIT-lightgrey)
+![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python) ![FastAPI](https://img.shields.io/badge/FastAPI-latest-green?logo=fastapi) ![Best Model](https://img.shields.io/badge/Best%20Model-SVC%20(Tuned)-orange) ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
 ---
 
@@ -28,9 +28,9 @@
 
 ## Overview
 
-The Career Recommendation System takes a candidate's **skills** and **years of experience** as input and returns ranked job role recommendations with confidence scores. The pipeline trains and compares four classifiers, tunes the best model with `RandomizedSearchCV`, and serves predictions via a FastAPI REST endpoint.
+The Career Recommendation System takes a candidate's **skills** and **years of experience** as input and returns ranked job role recommendations with confidence scores. The pipeline trains all four classifiers with their library **default hyperparameters**, evaluates each with 5-fold CV, then hyperparameter-tunes **all four** with `RandomizedSearchCV` (cv=5) before picking a final winner — and serves predictions via a FastAPI REST endpoint.
 
-**Best model:** XGBoost — **88.46% F1 Macro** on the held-out test set (1,330 samples).
+**Best model:** SVC (Tuned) — **88.63% F1 Macro** on the held-out test set (1,330 samples), selected only after all four models were tuned (see [Hyperparameter Tuning](#hyperparameter-tuning)).
 
 ---
 
@@ -136,16 +136,21 @@ Raw CSV
         └─▶ preprocessing.py      MLB(skills) + experience
               └─▶ train_test_split  (80/20, stratified)
                     └─▶ SMOTE        (training only)
-                          └─▶ Train 4 baseline models
-                                └─▶ Learning curves (all 4)
-                                      └─▶ Evaluate train + test
-                                            └─▶ Pick best by F1 macro
-                                                  └─▶ RandomizedSearchCV
-                                                        (n_iter=50, cv=5)
-                                                        └─▶ Learning curve (tuned)
-                                                              └─▶ Evaluate tuned model
-                                                                    └─▶ Save best_model.pkl
+                          └─▶ PHASE 1 — Train 4 models, DEFAULT params only
+                                (no hand-picked hyperparameters)
+                                ├─▶ 5-fold CV (all 4)
+                                ├─▶ Learning curves (all 4)
+                                └─▶ Evaluate train + test (all 4)
+                          └─▶ PHASE 2 — Tune ALL 4 models
+                                RandomizedSearchCV (n_iter=50, cv=5), per model
+                                ├─▶ Learning curve (tuned, all 4)
+                                └─▶ Evaluate train + test (tuned, all 4)
+                          └─▶ PHASE 3 — Pick best by F1 macro
+                                (among the 4 TUNED models only)
+                                └─▶ Save best_model.pkl
 ```
+
+Every model — Logistic Regression, SVC, Random Forest, XGBoost — goes through the identical default → tune → evaluate path, so the final comparison is apples-to-apples. See [Hyperparameter Tuning](#hyperparameter-tuning) for details.
 
 ---
 
@@ -153,22 +158,29 @@ Raw CSV
 
 ### Performance Summary
 
-All metrics are reported on the held-out test set (1,330 samples, 20% stratified split). Training metrics are included to assess overfitting.
+Test metrics are on the held-out test set (1,330 samples, 20% stratified split). CV metrics are 5-fold `StratifiedKFold` (same folds reused for default and tuned stages). Train F1 and the overfit gap (`Train F1 − Test F1`) are included to assess overfitting.
 
-| Model | Train Accuracy | Train F1 Macro | Train MCC | Test Accuracy | Test F1 Macro | Test Precision | Test Recall | Test MCC |
-|---|---|---|---|---|---|---|---|---|
-| Logistic Regression | 0.9185 | 0.9211 | 0.9063 | 0.8872 | 0.8767 | 0.8752 | 0.8821 | 0.8644 |
-| SVC | 0.9310 | 0.9344 | 0.9206 | 0.8925 | 0.8833 | 0.8858 | 0.8832 | 0.8705 |
-| Random Forest | 0.8590 | 0.8660 | 0.8415 | 0.8256 | 0.8112 | 0.8522 | 0.8032 | 0.7956 |
-| **XGBoost** | **0.9326** | **0.9361** | **0.9225** | **0.8925** | **0.8846** | **0.8853** | **0.8863** | **0.8706** |
-| XGBoost (Tuned) | 0.9415 | 0.9456 | 0.9328 | 0.8925 | 0.8843 | 0.8855 | 0.8858 | 0.8706 |
+| Model | Stage | CV F1 Macro (mean ± std) | Train F1 Macro | Test F1 Macro | Test MCC | Overfit Gap |
+|---|---|---|---|---|---|---|
+| Logistic Regression | Default | 0.9151 ± 0.0062 | 0.9211 | 0.8767 | 0.8644 | 0.0444 |
+| Logistic Regression | Tuned   | 0.9182 ± 0.0059 | 0.9225 | 0.8847 | 0.8725 | 0.0378 |
+| SVC | Default | 0.9292 ± 0.0042 | 0.9447 | 0.8863 | 0.8723 | 0.0584 |
+| **SVC** | **Tuned** | **0.9292 ± 0.0042** | **0.9447** | **0.8863** | **0.8723** | **0.0584** |
+| Random Forest | Default | 0.9239 ± 0.0056 | 0.9999 | 0.8751 | 0.8614 | 0.1248 |
+| Random Forest | Tuned   | 0.8902 ± 0.0066 | 0.8923 | 0.8518 | 0.8373 | 0.0405 |
+| XGBoost | Default | 0.9251 ± 0.0060 | 0.9858 | 0.8746 | 0.8631 | 0.1112 |
+| XGBoost | Tuned   | 0.9256 ± 0.0043 | 0.9511 | 0.8843 | 0.8714 | 0.0668 |
+
+> Accuracy, precision_macro, and recall_macro for all 8 entries are also written to `data/artifacts/model_comparison.csv` / `metrics.json` — not reproduced here since they weren't in the training console output. Paste that file's contents in and this table can be filled out completely.
 
 **Key observations:**
 
-- **XGBoost** (baseline) was selected as the best model by F1 Macro. It ties SVC on test accuracy but edges ahead on recall and MCC.
-- **Random Forest** underperformed significantly — its learning curve reveals a persistent train/validation gap that did not close with more data, suggesting it struggles with this feature representation.
-- **Tuning yielded marginal gains** on test metrics (+0 accuracy, −0.0003 F1 macro vs. baseline XGBoost) but meaningfully improved cross-validation F1 to **0.9229**, indicating better generalization on unseen folds.
-- **Logistic Regression** achieves a competitive 0.8767 F1 macro — a strong baseline given its simplicity.
+- **SVC (Tuned) is the final model** — Test F1 0.8863, MCC 0.8723. It wins by the smallest of margins over XGBoost (Tuned) at 0.8843 (a 0.002 gap).
+- **SVC's tuning search converged back to its own defaults** (`C=1.0, kernel=rbf, gamma=scale`) — `RandomizedSearchCV` confirmed the untuned SVC was already optimal within the searched grid, so its default and tuned rows are identical. That's a legitimate outcome of a fair search, not a bug.
+- **Random Forest got *worse* after tuning** — CV F1 dropped from 0.9239 (default) to 0.8902 (tuned), and test F1 from 0.8751 to 0.8518. The regularized grid (`max_depth ≤ 20`, higher `min_samples_leaf/split`, no unrestricted trees) successfully closed the default RF's very large overfit gap (0.1248 → 0.0405, and default RF's train F1 of 0.9999 was essentially memorizing the training set) — but the grid over-corrected, trading away real generalization for a smaller gap. Worth calling out explicitly in the report as a case where reducing overfitting didn't translate into a better model.
+- **XGBoost improved cleanly with tuning** — test F1 rose (0.8746 → 0.8843) and the overfit gap nearly halved (0.1112 → 0.0668), with CV F1 essentially flat (0.9251 → 0.9256). This is the "textbook" result of tuning: similar cross-validated performance but noticeably better generalization.
+- **Logistic Regression also improved modestly** — more regularization (`C=0.1` vs. the default `C=1.0`) raised test F1 (0.8767 → 0.8847) and shrank the overfit gap (0.0444 → 0.0378).
+- **Random Forest is the weakest model both before and after tuning**, consistent with the earlier (pre-fairness-fix) run.
 
 **Evaluation metric rationale:**
 
@@ -183,111 +195,143 @@ All metrics are reported on the held-out test set (1,330 samples, 20% stratified
 
 ### Confusion Matrices
 
+> Per-class error commentary below is a placeholder — the specific misclassification counts depend on the actual PNGs generated by this run, which I don't have visual access to. Open each image and swap in what you actually see; I've kept the structure so you're not starting from scratch.
+
 #### Logistic Regression
 
-![Confusion Matrix — Logistic Regression](data/artifacts/confusion_matrix_logistic_regression.png)
+![Confusion Matrix — Logistic Regression (Default)](data/artifacts/confusion_matrix_logistic_regression.png)
+![Confusion Matrix — Logistic Regression (Tuned)](data/artifacts/confusion_matrix_logistic_regression_tuned.png)
 
-Notable: AI/ML Engineer and Data Scientist see the most cross-confusion (25 AI/ML predicted as Data Scientist, 18 Data Scientist predicted as AI/ML), which is expected given overlapping skill sets. Software Engineer is the hardest class (F1 0.78) with spillover into Python Developer.
-
----
-
-#### Random Forest
-
-![Confusion Matrix — Random Forest](data/artifacts/confusion_matrix_random_forest.png)
-
-Notable: Random Forest routes a disproportionate number of samples to Software Engineer (e.g., 36 AI/ML Engineers misclassified as Software Engineer), dragging down macro recall. This is reflected in its lowest test F1 (0.8112) and precision-recall gap (0.8522 vs. 0.8032).
+*Add notes on which classes are most confused, and whether tuning (`C=0.1`) changed the error pattern vs. default.*
 
 ---
 
 #### SVC
 
-![Confusion Matrix — SVC](data/artifacts/confusion_matrix_svc.png)
+![Confusion Matrix — SVC (Default)](data/artifacts/confusion_matrix_svc.png)
+![Confusion Matrix — SVC (Tuned)](data/artifacts/confusion_matrix_svc_tuned.png)
 
-Notable: SVC achieves clean separation across most classes. Full Stack Developer reaches F1 0.92 — the highest among all models for that class. Software Engineer improves to 0.83 F1 vs. 0.78 for Logistic Regression.
-
----
-
-#### XGBoost (Baseline)
-
-![Confusion Matrix — XGBoost](data/artifacts/confusion_matrix_xgboost.png)
-
-Notable: XGBoost matches SVC on accuracy but improves recall for DevOps Engineer (0.90 vs. 0.87) and Python Developer (0.84 vs. 0.83), helping macro recall. The AI/ML ↔ Data Scientist confusion cluster (24/18 misclassifications) is consistent with all linear models.
+*These two images should be identical — the tuned search converged to the same hyperparameters as the default (`C=1.0, kernel=rbf, gamma=scale`).*
 
 ---
 
-#### XGBoost (Tuned)
+#### Random Forest
 
+![Confusion Matrix — Random Forest (Default)](data/artifacts/confusion_matrix_random_forest.png)
+![Confusion Matrix — Random Forest (Tuned)](data/artifacts/confusion_matrix_random_forest_tuned.png)
+
+*Worth specifically checking here: since tuned RF scored *worse* on test F1 (0.8518 vs. 0.8751 default), see which classes the regularized grid sacrificed accuracy on.*
+
+---
+
+#### XGBoost
+
+![Confusion Matrix — XGBoost (Default)](data/artifacts/confusion_matrix_xgboost.png)
 ![Confusion Matrix — XGBoost (Tuned)](data/artifacts/confusion_matrix_xgboost_tuned.png)
 
-Notable: Tuning does not materially change the error pattern vs. baseline XGBoost. The confusion matrix is nearly identical — the main gains from tuning are improved cross-validation stability rather than a shift in which classes are misclassified.
+*Tuning improved test F1 here (0.8746 → 0.8843) — check whether that shows up as a broad improvement or is concentrated in a couple of classes.*
 
 ---
 
 ### Learning Curves
 
-Learning curves plot F1 Macro (y-axis) against training set size (x-axis) for both training score and cross-validation score. A narrowing gap indicates good generalization; a persistent wide gap signals variance/overfitting.
+Learning curves plot F1 Macro (y-axis) against training set size (x-axis) for both training score and cross-validation score (`cv=5`). A narrowing gap indicates good generalization; a persistent wide gap signals variance/overfitting.
+
+> As with the confusion matrices, the specific shape commentary below is a placeholder until you've looked at this run's actual plots.
 
 #### Logistic Regression
 
-![Learning Curve — Logistic Regression](data/artifacts/learning_curve_logistic_regression.png)
-
-The curves converge cleanly by ~4,000 samples, with train and validation scores meeting near 0.91. This indicates Logistic Regression is well-fitted and not suffering from high variance or bias — it simply plateaus slightly below the tree-based models.
-
----
-
-#### Random Forest
-
-![Learning Curve — Random Forest](data/artifacts/learning_curve_random_forest.png)
-
-A striking U-shape in the validation curve and a wide, persistent train/validation gap throughout most of the training range indicate high variance. The curves begin converging only at the far right (~6,000 samples), suggesting this model would likely benefit from significantly more data or better hyperparameter control on tree depth.
+![Learning Curve — Logistic Regression (Default)](data/artifacts/learning_curve_logistic_regression.png)
+![Learning Curve — Logistic Regression (Tuned)](data/artifacts/learning_curve_logistic_regression_tuned.png)
 
 ---
 
 #### SVC
 
-![Learning Curve — SVC](data/artifacts/learning_curve_svc.png)
-
-Strong convergence — curves merge tightly by ~4,500 samples. SVC achieves high validation scores (≥0.92) with very low variance at full training size. The wide confidence band at small sample sizes collapses quickly, showing the model is data-efficient.
-
----
-
-#### XGBoost (Baseline)
-
-![Learning Curve — XGBoost](data/artifacts/learning_curve_xgboost.png)
-
-Both curves are still rising at the 6,000-sample mark (~0.94 train, ~0.92 validation), with a modest but stable gap. This upward trend suggests the model has not yet saturated — **additional training data would likely yield further improvement**. The gap is well-controlled, indicating low variance.
+![Learning Curve — SVC (Default)](data/artifacts/learning_curve_svc.png)
+![Learning Curve — SVC (Tuned)](data/artifacts/learning_curve_svc_tuned.png)
 
 ---
 
-#### XGBoost (Tuned)
+#### Random Forest
 
+![Learning Curve — Random Forest (Default)](data/artifacts/learning_curve_random_forest.png)
+![Learning Curve — Random Forest (Tuned)](data/artifacts/learning_curve_random_forest_tuned.png)
+
+*Default RF's train F1 of 0.9999 (near-perfect memorization) should show as a huge, barely-narrowing gap here — worth including in the writeup as the clearest overfitting example across all 8 models.*
+
+---
+
+#### XGBoost
+
+![Learning Curve — XGBoost (Default)](data/artifacts/learning_curve_xgboost.png)
 ![Learning Curve — XGBoost (Tuned)](data/artifacts/learning_curve_xgboost_tuned.png)
 
-The tuned model shows a tighter training curve (starts higher, grows more steadily) and improved validation scores throughout. The train/validation gap is slightly narrower than baseline XGBoost, consistent with better regularization from the tuned `gamma`, `min_child_weight`, and `colsample_bytree` parameters.
+*The tuned curve's gap should visibly narrow vs. default, consistent with the overfit gap dropping from 0.1112 to 0.0668.*
 
 ---
 
 ### Hyperparameter Tuning
 
-XGBoost was selected as the best baseline model and tuned with `RandomizedSearchCV` (n_iter=50, cv=5, scoring=F1 Macro).
+All four models were tuned with `RandomizedSearchCV` (n_iter=50, cv=5, scoring=F1 Macro) — not just the winning baseline. Each search reused the same 5 CV folds as the default-parameter baseline (`StratifiedKFold(5, shuffle=True, random_state=42)`), so default-vs-tuned numbers are directly comparable. `data/artifacts/tuning_results.json` has one entry per model with its `best_params` and full `cv_metrics`.
 
-**Best cross-validation F1 Macro: 0.9229**
+**Winner: SVC (Tuned) — Test F1 Macro 0.8863, Test MCC 0.8723, CV F1 Macro 0.9292 ± 0.0042** (selected as the highest test F1 macro among the 4 tuned models).
 
-**Best parameters found:**
+#### Logistic Regression
 
-| Parameter | Value | Effect |
-|---|---|---|
-| `n_estimators` | 200 | More trees; compensated by low learning rate |
-| `max_depth` | 4 | Shallow trees reduce overfitting |
-| `learning_rate` | 0.1 | Standard; works well with 200 estimators |
-| `subsample` | 0.9 | Stochastic sampling adds regularization |
-| `colsample_bytree` | 0.7 | Feature subsampling per tree |
-| `min_child_weight` | 3 | Controls leaf node minimum sum of instance weights |
-| `gamma` | 0.25 | Minimum loss reduction for a split; prunes weak splits |
-| `reg_alpha` | 0 | No L1 regularization |
-| `reg_lambda` | 1 | Standard L2 regularization |
+Best CV F1 Macro: **0.9182 ± 0.0059** (vs. 0.9151 default)
 
-The combination of shallow trees (`max_depth=4`), moderate feature subsampling (`colsample_bytree=0.7`), and a non-zero `gamma` (0.25) is responsible for the improved cross-validation stability compared to the default configuration.
+| Parameter | Value |
+|---|---|
+| `C` | 0.1 |
+| `penalty` | `l2` |
+| `solver` | `lbfgs` |
+
+More regularization than the default (`C=1.0`) — improved both test F1 (0.8767 → 0.8847) and the overfit gap (0.0444 → 0.0378).
+
+#### SVC — final model
+
+Best CV F1 Macro: **0.9292 ± 0.0042** (identical to default)
+
+| Parameter | Value |
+|---|---|
+| `C` | 1.0 |
+| `kernel` | `rbf` |
+| `gamma` | `scale` |
+
+The search landed exactly on SVC's own defaults — i.e., within the searched grid, the untuned SVC was already the best configuration. Default and tuned metrics are therefore identical.
+
+#### Random Forest
+
+Best CV F1 Macro: **0.8902 ± 0.0066** (vs. 0.9239 default — got worse)
+
+| Parameter | Value |
+|---|---|
+| `n_estimators` | 300 |
+| `max_depth` | 20 |
+| `min_samples_leaf` | 3 |
+| `min_samples_split` | 12 |
+| `max_features` | `log2` |
+
+The grid intentionally excludes unrestricted trees (`max_depth=None`) to control overfitting, and it worked — the overfit gap fell from 0.1248 (default RF's train F1 was 0.9999, essentially memorized) to 0.0405. But it overshot: test F1 dropped from 0.8751 to 0.8518. A case worth flagging explicitly in the report — the regularized search space may need widening (e.g., allow `max_depth` up to 25–30, or a smaller `min_samples_leaf` floor) so it can find a better bias/variance tradeoff rather than only exploring the low-variance end.
+
+#### XGBoost
+
+Best CV F1 Macro: **0.9256 ± 0.0043** (vs. 0.9251 default)
+
+| Parameter | Value |
+|---|---|
+| `n_estimators` | 400 |
+| `max_depth` | 5 |
+| `learning_rate` | 0.05 |
+| `subsample` | 0.9 |
+| `colsample_bytree` | 0.7 |
+| `min_child_weight` | 3 |
+| `gamma` | 0 |
+| `reg_alpha` | 0.5 |
+| `reg_lambda` | 1 |
+
+CV F1 barely moved, but test F1 improved (0.8746 → 0.8843) and the overfit gap nearly halved (0.1112 → 0.0668) — the cleanest "tuning helped generalization" result of the four models. It finished a close second to SVC (Tuned), 0.002 F1 macro behind.
 
 ---
 
@@ -345,7 +389,7 @@ cd ml-service
 python -m training.train
 ```
 
-This executes the full pipeline: data loading → preprocessing → SMOTE → training all 4 models → evaluation → hyperparameter tuning → saving `best_model.pkl`.
+This executes the full pipeline: data loading → preprocessing → SMOTE → train all 4 models with default params (+ 5-fold CV) → hyperparameter-tune all 4 models (RandomizedSearchCV, cv=5) → evaluate every model at both stages → save the best **tuned** model as `best_model.pkl`.
 
 ---
 
@@ -366,21 +410,32 @@ All outputs are saved to `data/artifacts/` after training:
 
 | File | Description |
 |---|---|
-| `model_comparison.csv` | Train + test metrics for all models including tuned |
-| `metrics.json` | Best model metrics (structured) |
-| `tuning_results.json` | Best hyperparameters from RandomizedSearchCV |
-| `classification_report_logistic_regression.txt` | Per-class precision/recall/F1 |
-| `classification_report_random_forest.txt` | Per-class precision/recall/F1 |
-| `classification_report_svc.txt` | Per-class precision/recall/F1 |
-| `classification_report_xgboost.txt` | Per-class precision/recall/F1 |
-| `classification_report_xgboost_tuned.txt` | Per-class precision/recall/F1 |
-| `confusion_matrix_logistic_regression.png` | Confusion matrix heatmap |
-| `confusion_matrix_random_forest.png` | Confusion matrix heatmap |
-| `confusion_matrix_svc.png` | Confusion matrix heatmap |
-| `confusion_matrix_xgboost.png` | Confusion matrix heatmap |
-| `confusion_matrix_xgboost_tuned.png` | Confusion matrix heatmap |
-| `learning_curve_logistic_regression.png` | Learning curve (F1 Macro vs. training size) |
-| `learning_curve_random_forest.png` | Learning curve (F1 Macro vs. training size) |
-| `learning_curve_svc.png` | Learning curve (F1 Macro vs. training size) |
-| `learning_curve_xgboost.png` | Learning curve (F1 Macro vs. training size) |
-| `learning_curve_xgboost_tuned.png` | Learning curve (F1 Macro vs. training size) |
+| `model_comparison.csv` | Train + test + 5-fold CV metrics for all 8 entries (4 default, 4 tuned) |
+| `metrics.json` | `{best_model, default_models: [...], tuned_models: [...]}` — full metrics for all 8 |
+| `tuning_results.json` | Best hyperparameters + CV metrics from RandomizedSearchCV, **one entry per model** |
+| `classification_report_logistic_regression.txt` | Per-class precision/recall/F1 (default) |
+| `classification_report_logistic_regression_tuned.txt` | Per-class precision/recall/F1 (tuned) |
+| `classification_report_random_forest.txt` | Per-class precision/recall/F1 (default) |
+| `classification_report_random_forest_tuned.txt` | Per-class precision/recall/F1 (tuned) |
+| `classification_report_svc.txt` | Per-class precision/recall/F1 (default) |
+| `classification_report_svc_tuned.txt` | Per-class precision/recall/F1 (tuned) |
+| `classification_report_xgboost.txt` | Per-class precision/recall/F1 (default) |
+| `classification_report_xgboost_tuned.txt` | Per-class precision/recall/F1 (tuned) |
+| `confusion_matrix_logistic_regression.png` | Confusion matrix heatmap (default) |
+| `confusion_matrix_logistic_regression_tuned.png` | Confusion matrix heatmap (tuned) |
+| `confusion_matrix_random_forest.png` | Confusion matrix heatmap (default) |
+| `confusion_matrix_random_forest_tuned.png` | Confusion matrix heatmap (tuned) |
+| `confusion_matrix_svc.png` | Confusion matrix heatmap (default) |
+| `confusion_matrix_svc_tuned.png` | Confusion matrix heatmap (tuned) |
+| `confusion_matrix_xgboost.png` | Confusion matrix heatmap (default) |
+| `confusion_matrix_xgboost_tuned.png` | Confusion matrix heatmap (tuned) |
+| `learning_curve_logistic_regression.png` | Learning curve, F1 Macro vs. training size (default) |
+| `learning_curve_logistic_regression_tuned.png` | Learning curve, F1 Macro vs. training size (tuned) |
+| `learning_curve_random_forest.png` | Learning curve, F1 Macro vs. training size (default) |
+| `learning_curve_random_forest_tuned.png` | Learning curve, F1 Macro vs. training size (tuned) |
+| `learning_curve_svc.png` | Learning curve, F1 Macro vs. training size (default) |
+| `learning_curve_svc_tuned.png` | Learning curve, F1 Macro vs. training size (tuned) |
+| `learning_curve_xgboost.png` | Learning curve, F1 Macro vs. training size (default) |
+| `learning_curve_xgboost_tuned.png` | Learning curve, F1 Macro vs. training size (tuned) |
+
+`models/` will also now contain **8** classifier files (`logistic_regression.pkl`, `logistic_regression_tuned.pkl`, `svc.pkl`, `svc_tuned.pkl`, `random_forest.pkl`, `random_forest_tuned.pkl`, `xgboost.pkl`, `xgboost_tuned.pkl`) plus `best_model.pkl` (a copy of whichever tuned model won) and the shared encoders (`skill_mlb.pkl`, `scaler.pkl`, `label_encoder.pkl`).
