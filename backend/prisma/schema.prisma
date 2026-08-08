@@ -36,6 +36,9 @@ model User {
   phaseProgress   PhaseProgress[]
   projects        Project[]
   resources       Resource[]
+  weeklyGoals     WeeklyGoal[]
+  skillProgress   SkillProgress[]
+  skillGapHistory SkillGapHistory[]
 
   @@index([email])
 }
@@ -151,4 +154,44 @@ model Resource {
 
   user  User          @relation(fields: [userId], references: [id])
   phase RoadmapPhase? @relation(fields: [phaseId], references: [id])
+}
+
+model WeeklyGoal {
+  id        String   @id @default(cuid())
+  userId    String
+  title     String
+  completed Boolean  @default(false)
+  weekStart DateTime
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model SkillProgress {
+  id        String   @id @default(cuid())
+  userId    String
+  skillName String
+  status    String   // "LEARNING", "COMPLETED", "WANT_TO_LEARN"
+  score     Float    @default(0.0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, skillName])
+}
+
+model SkillGapHistory {
+  id             String   @id @default(cuid())
+  userId         String
+  careerName     String
+  score          Float    // percentage of matching skills
+  matchingSkills String[]
+  missingSkills  String[]
+  createdAt      DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
