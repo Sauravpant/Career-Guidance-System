@@ -19,14 +19,10 @@ class UserService {
     });
   }
 
-  async updateUserProfile(userId: string, data: UpdateUserData) {
+  async updateUserProfile(userId: string, data: Partial<UpdateUserData>) {
     return prisma.user.update({
       where: { id: userId },
-      data: {
-        education: data.education,
-        experience: data.experience,
-        skills: data.skills,
-      },
+      data,
     });
   }
 
