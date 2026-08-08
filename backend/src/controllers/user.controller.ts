@@ -1,9 +1,11 @@
 import { Response } from "express";
 import userService from "../services/user.service";
+import recommendationService from "../services/recommendation.service";
 import { asyncHandler } from "../utils/async-handler";
 import { ApiResponse } from "../utils/api-response";
 import { AuthenticatedRequest } from "../middlewares/auth.middleware";
-import { refreshTokens } from "./auth.controller";
+import prisma from "../configs/db";
+import roadmapService from "../services/roadmap.service";
 
 export const getMe = asyncHandler(
   async (req: AuthenticatedRequest, res: Response) => {
@@ -17,19 +19,53 @@ export const getMe = asyncHandler(
 
 export const updateProfile = asyncHandler(
   async (req: AuthenticatedRequest, res: Response) => {
-    const { education, experience, skills } = req.body;
+    const { name, education, experience, skills, avatarUrl, bannerUrl } = req.body;
 
-    const updatedUser = await userService.updateUserProfile(req.user.id, {
-      education,
-      experience,
-      skills,
-    });
+    const updateData: any = {};
+
+    if (name !== undefined && typeof name === "string" && name.trim()) {
+      updateData.name = name.trim();
+    }
+
+    if (education !== undefined) {
+      updateData.education = typeof education === "string" ? education.trim() : education;
+    }
+
+    if (experience !== undefined && experience !== null && experience !== "") {
+      const parsedExp = Number(experience);
+      if (!isNaN(parsedExp)) {
+        updateData.experience = parsedExp;
+      }
+    } else if (experience === null || experience === "") {
+      updateData.experience = null;
+    }
+
+    if (skills !== undefined) {
+      if (Array.isArray(skills)) {
+        updateData.skills = skills.map((s: any) => String(s).trim()).filter(Boolean);
+      } else if (typeof skills === "string") {
+        updateData.skills = skills.split(",").map((s: string) => s.trim()).filter(Boolean);
+      } else if (skills === null) {
+        updateData.skills = [];
+      }
+    }
+
+    if (avatarUrl !== undefined) {
+      updateData.avatarUrl = typeof avatarUrl === "string" ? avatarUrl.trim() || null : null;
+    }
+
+    if (bannerUrl !== undefined) {
+      updateData.bannerUrl = typeof bannerUrl === "string" ? bannerUrl.trim() || null : null;
+    }
+
+    const updatedUser = await userService.updateUserProfile(req.user.id, updateData);
     const { refreshToken, password, ...user } = updatedUser;
     return res
       .status(200)
       .json(new ApiResponse(200, user, "Profile updated successfully"));
   },
 );
+
 
 export const deleteMe = asyncHandler(
   async (req: AuthenticatedRequest, res: Response) => {
@@ -41,5 +77,84 @@ export const deleteMe = asyncHandler(
   },
 );
 
-//controller to take education,experience and skills of user as input
-//education - string, experince -integer, skills - string array
+export const getCareerRecommendation = asyncHandler(
+  async (req: AuthenticatedRequest, res: Response) => {
+    const userId = req.user.id;
+
+    // Fetch the recommendation using the user's DB profile
+    const recommendation = await recommendationService.getRecommendation(userId);
+
+    return res
+      .status(200)
+      .json(new ApiResponse(200, recommendation, "Career recommendation fetched successfully"));
+  },
+);
+
+export const exploreCareers = asyncHandler(
+  async (req: AuthenticatedRequest, res: Response) => {
+    const { skills, experience } = req.body;
+
+    let parsedSkills: string[] = [];
+    if (Array.isArray(skills)) {
+      parsedSkills = skills.map((s: any) => String(s).trim()).filter(Boolean);
+    } else if (typeof skills === "string") {
+      parsedSkills = skills.split(",").map((s: string) => s.trim()).filter(Boolean);
+    }
+
+    const parsedExp = Number(experience) || 0;
+
+    const recommendation = await recommendationService.exploreCareers(parsedSkills, parsedExp);
+
+    return res
+      .status(200)
+      .json(new ApiResponse(200, recommendation, "Explored career recommendations successfully"));
+  },
+);
+
+export const selectCareer = asyncHandler(
+  async (req: AuthenticatedRequest, res: Response) => {
+    const userId = req.user.id;
+    const { careerName } = req.body;
+
+    if (!careerName || typeof careerName !== "string") {
+      return res.status(400).json(new ApiResponse(400, null, "careerName is required"));
+    }
+
+    // Delete existing records for the user
+    await prisma.phaseProgress.deleteMany({ where: { userId } });
+    await prisma.project.deleteMany({ where: { userId } });
+    await prisma.resource.deleteMany({ where: { userId } });
+    
+    // Find user's roadmaps first to delete their phases
+    const userRoadmaps = await prisma.roadmap.findMany({ where: { userId }, select: { id: true } });
+    const roadmapIds = userRoadmaps.map(r => r.id);
+    if (roadmapIds.length > 0) {
+      await prisma.roadmapPhase.deleteMany({ where: { roadmapId: { in: roadmapIds } } });
+    }
+    
+    await prisma.roadmap.deleteMany({ where: { userId } });
+    await prisma.weeklyGoal.deleteMany({ where: { userId } });
+    await prisma.skillProgress.deleteMany({ where: { userId } });
+    await prisma.skillGapHistory.deleteMany({ where: { userId } });
+
+    // Generate new roadmap for the selected career
+    const roadmap = await roadmapService.generateRoadmap(userId, careerName);
+
+    return res
+      .status(200)
+      .json(new ApiResponse(200, { career: careerName, roadmap }, "Career selected and new roadmap generated successfully"));
+  },
+);
+
+export const getRecommendationHistory = asyncHandler(
+  async (req: AuthenticatedRequest, res: Response) => {
+    const userId = req.user.id;
+
+    const history = await recommendationService.getRecommendationHistory(userId);
+
+    return res
+      .status(200)
+      .json(new ApiResponse(200, history, "Recommendation history fetched successfully"));
+  },
+);
+

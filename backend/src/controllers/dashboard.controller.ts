@@ -1,0 +1,35 @@
+import { Response } from "express";
+import { asyncHandler } from "../utils/async-handler";
+import dashboardService from "../services/dashboard.service";
+import { ApiResponse } from "../utils/api-response";
+import { AuthenticatedRequest } from "../middlewares/auth.middleware";
+
+// Full dashboard — KPIs + all chart data in one call
+export const getDashboardData = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
+  const userId = req.user.id;
+  const dashboardData = await dashboardService.getDashboardData(userId);
+
+  return res
+    .status(200)
+    .json(new ApiResponse(200, dashboardData, "Dashboard KPIs and chart data fetched successfully"));
+});
+
+// Dedicated: Weekly progress tracking (4-week history + this week summary)
+export const getWeeklyProgressTrack = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
+  const userId = req.user.id;
+  const data = await dashboardService.getWeeklyProgressTrack(userId);
+
+  return res
+    .status(200)
+    .json(new ApiResponse(200, data, "Weekly progress track fetched successfully"));
+});
+
+// Dedicated: Phase progress tracking (per-phase completion for the latest roadmap)
+export const getPhaseProgressTrack = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
+  const userId = req.user.id;
+  const data = await dashboardService.getPhaseProgressTrack(userId);
+
+  return res
+    .status(200)
+    .json(new ApiResponse(200, data, "Phase progress track fetched successfully"));
+});
