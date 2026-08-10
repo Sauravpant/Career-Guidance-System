@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2016",
-    "types": ["node"],
+    "types": ["node", "jest"],
     "module": "commonjs",
     "rootDir": "./src",
     "outDir": "./dist",

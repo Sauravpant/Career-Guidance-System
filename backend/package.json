@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --watch src --ext ts --exec ts-node src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --runInBand --forceExit",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --forceExit",
     "build": "tsc",
     "start": "node dist/index.js"
   },
@@ -16,10 +18,16 @@
     "@types/cookie-parser": "^1.4.10",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
+    "@types/jest": "^29.5.14",
     "@types/node": "^25.9.2",
+    "@types/supertest": "^6.0.3",
     "dotenv": "^17.4.2",
+    "jest": "^30.4.2",
+    "jest-mock-extended": "^4.0.0",
     "nodemon": "^3.1.14",
     "prisma": "^7.8.0",
+    "supertest": "^7.1.0",
+    "ts-jest": "^29.4.0",
     "ts-node": "^10.9.2",
     "tsx": "^4.22.4",
     "typescript": "^6.0.3"
@@ -43,5 +51,19 @@
     "pg": "^8.22.0",
     "winston": "^3.19.0",
     "zod": "^4.4.3"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "roots": ["<rootDir>/src"],
+    "testMatch": ["**/__tests__/**/*.test.ts"],
+    "moduleFileExtensions": ["ts", "js", "json"],
+    "transform": {
+      "^.+\\.ts$": ["ts-jest", { "tsconfig": "tsconfig.json" }]
+    },
+    "setupFiles": ["<rootDir>/src/__tests__/setup.ts"],
+    "clearMocks": true,
+    "resetMocks": true,
+    "testTimeout": 15000
   }
 }
