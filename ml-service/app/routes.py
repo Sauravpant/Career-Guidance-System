@@ -15,6 +15,7 @@ def recommend(
     service: RecommendationService = Depends(get_recommendation_service),
 ) -> RecommendResponse:
     try:
+        print(f"Received payload: {payload}")
         result = service.predict(
             skills=payload.skills,
             experience=payload.experience,
