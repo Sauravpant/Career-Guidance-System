@@ -23,7 +23,7 @@ api.interceptors.response.use(
       url.includes('/auth/refresh') || 
       url.includes('/auth/logout');
       
-    const hasSession = !!localStorage.getItem('pathfinder_user');
+    const hasSession = !!localStorage.getItem('careerpath_user');
     
     // Check if error is 401 and we haven't retried yet, and it's not an auth endpoint, and the user has an active session
     if (
