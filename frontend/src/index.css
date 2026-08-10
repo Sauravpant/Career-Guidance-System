@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   PathFinder — Premium Design System
+   CareerPath — Premium Design System
    Inspired by Linear · Vercel · Stripe · Notion
    ═══════════════════════════════════════════════════════════════ */
 
@@ -166,6 +166,37 @@ a:hover { text-decoration: underline; }
   left: 0;
   top: 0;
   z-index: 100;
+  transition: transform var(--t-normal);
+}
+
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 90;
+  backdrop-filter: blur(2px);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 4px;
+}
+
+.mobile-close-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 4px;
+  margin-left: auto;
 }
 
 .sidebar-header {
@@ -1234,14 +1265,23 @@ a:hover { text-decoration: underline; }
    ═══════════════════════════════════════════════════════════════ */
 
 @media (max-width: 768px) {
-  .sidebar { transform: translateX(-100%); }
+  .sidebar { 
+    transform: translateX(-100%); 
+    transition: transform var(--t-normal);
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
   .main-content { margin-left: 0; }
   .page-container { padding: var(--space-4); }
   .top-bar { padding: 0 var(--space-4); }
   .kpi-grid { grid-template-columns: 1fr 1fr; }
+  .mobile-menu-btn { display: flex; }
+  .mobile-close-btn { display: flex; }
 }
 
 @media (max-width: 480px) {
   .kpi-grid { grid-template-columns: 1fr; }
   .auth-card { padding: var(--space-6); }
+  .logged-in-user { display: none; }
 }
