@@ -5,57 +5,106 @@ import { ApiResponse } from "../utils/api-response";
 import { AuthenticatedRequest } from "../middlewares/auth.middleware";
 import { AppError } from "../utils/app-error";
 
-export const getAvailableCareers = asyncHandler(async (_req: AuthenticatedRequest, res: Response) => {
-  const careers = skillGapService.getAvailableCareers();
-  return res
-    .status(200)
-    .json(new ApiResponse(200, careers, "Available career tracks fetched"));
-});
+export const getAvailableCareers = asyncHandler(
 
-export const runAnalysis = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
-  const userId = req.user.id;
-  const { careerName } = req.body;
+  async (_req: AuthenticatedRequest, res: Response) => {
 
-  if (!careerName) {
-    throw new AppError(400, "careerName is required in request body");
-  }
+    const careers = skillGapService.getAvailableCareers();
 
-  const result = await skillGapService.runAnalysis(userId, careerName);
+    return res
+      .status(200)
+      .json(new ApiResponse(200, careers, "Available career tracks fetched"));
+  },
+);
 
-  return res
-    .status(200)
-    .json(new ApiResponse(200, result, "Skill gap analysis completed successfully"));
-});
+export const runAnalysis = asyncHandler(
 
-export const getHistory = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
-  const userId = req.user.id;
-  const history = await skillGapService.getHistory(userId);
+  async (req: AuthenticatedRequest, res: Response) => {
 
-  return res
-    .status(200)
-    .json(new ApiResponse(200, history, "Skill gap analysis history fetched successfully"));
-});
+    const userId = req.user.id;
+    const { careerName } = req.body;
 
-export const getSkillProgress = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
-  const userId = req.user.id;
-  const progressList = await skillGapService.getSkillProgress(userId);
+    if (!careerName) {
+      throw new AppError(400, "careerName is required in request body");
+    }
 
-  return res
-    .status(200)
-    .json(new ApiResponse(200, progressList, "User skills progress fetched successfully"));
-});
+    const result = await skillGapService.runAnalysis(userId, careerName);
 
-export const upsertSkillProgress = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
-  const userId = req.user.id;
-  const { skillName, status, score } = req.body;
+    return res
+      .status(200)
+      .json(
+        new ApiResponse(
+          200,
+          result,
+          "Skill gap analysis completed successfully",
+        ),
+      );
+  },
+);
 
-  if (!skillName || !status) {
-    throw new AppError(400, "skillName and status (e.g. COMPLETED, LEARNING, WANT_TO_LEARN) are required");
-  }
+export const getHistory = asyncHandler(
 
-  const progress = await skillGapService.upsertSkillProgress(userId, skillName, status, score || 0.0);
+  async (req: AuthenticatedRequest, res: Response) => {
 
-  return res
-    .status(200)
-    .json(new ApiResponse(200, progress, "Skill progress updated successfully"));
-});
+    const userId = req.user.id;
+    const history = await skillGapService.getHistory(userId);
+
+    return res
+      .status(200)
+      .json(
+        new ApiResponse(
+          200,
+          history,
+          "Skill gap analysis history fetched successfully",
+        ),
+      );
+  },
+);
+
+export const getSkillProgress = asyncHandler(
+
+  async (req: AuthenticatedRequest, res: Response) => {
+
+    const userId = req.user.id;
+    const progressList = await skillGapService.getSkillProgress(userId);
+
+    return res
+      .status(200)
+      .json(
+        new ApiResponse(
+          200,
+          progressList,
+          "User skills progress fetched successfully",
+        ),
+      );
+  },
+);
+
+export const upsertSkillProgress = asyncHandler(
+
+  async (req: AuthenticatedRequest, res: Response) => {
+
+    const userId = req.user.id;
+    const { skillName, status, score } = req.body;
+
+    if (!skillName || !status) {
+      throw new AppError(
+        400,
+        "skillName and status (e.g. COMPLETED, LEARNING, WANT_TO_LEARN) are required",
+      );
+    }
+
+    const progress = await skillGapService.upsertSkillProgress(
+      userId,
+      skillName,
+      status,
+      score || 0.0,
+    );
+
+    return res
+      .status(200)
+      .json(
+        new ApiResponse(200, progress, "Skill progress updated successfully"),
+      );
+  },
+);

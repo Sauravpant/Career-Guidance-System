@@ -9,7 +9,6 @@ import {
 } from "../controllers/skill-gap.controller";
 
 const router = Router();
-
 router.get("/careers", authMiddleware, getAvailableCareers);
 router.post("/analyze", authMiddleware, runAnalysis);
 router.get("/history", authMiddleware, getHistory);

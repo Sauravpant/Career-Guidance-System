@@ -2,149 +2,157 @@ import prisma from "../configs/db";
 import { getStartOfWeek } from "./weekly-goal.service";
 
 class DashboardService {
+
   async getDashboardData(userId: string) {
-    // 1. Get User info & current skills count
-    const user = await prisma.user.findUnique({
-      where: { id: userId },
-      select: {
-        skills: true,
-      },
-    });
 
-    const totalSkills = user?.skills.length || 0;
+    const now = new Date();
+    const currentWeekStart = getStartOfWeek(now);
+    const nextWeekStart = new Date(currentWeekStart.getTime());
+    nextWeekStart.setDate(nextWeekStart.getDate() + 7);
 
-    // 2. Roadmaps count
-    const totalRoadmaps = await prisma.roadmap.count({
-      where: { userId },
-    });
+    const lastWeekStart = new Date(currentWeekStart.getTime());
+    lastWeekStart.setDate(lastWeekStart.getDate() - 7);
 
-    // 3. Overall Roadmap phase completion progress
-    const phasesCount = await prisma.roadmapPhase.count({
-      where: { roadmap: { userId } },
-    });
+    const threeWeeksAgoDate = new Date();
+    threeWeeksAgoDate.setDate(threeWeeksAgoDate.getDate() - 3 * 7);
 
-    const completedPhasesCount = await prisma.phaseProgress.count({
-      where: {
-        userId,
-        completed: true,
-      },
-    });
-
-    const overallRoadmapProgress = phasesCount > 0 ? (completedPhasesCount / phasesCount) * 100 : 0;
-
-    // 4. Latest Roadmap progress details
-    const latestRoadmap = await prisma.roadmap.findFirst({
-      where: { userId },
-      orderBy: { createdAt: "desc" },
-      include: {
-        career: true,
-        phases: {
-          include: {
-            progress: {
-              where: { userId },
+    const historyStart = getStartOfWeek(threeWeeksAgoDate);
+    const [
+      user,
+      totalRoadmaps,
+      phasesCount,
+      completedPhasesCount,
+      latestRoadmap,
+      weeklyGoals,
+      lastWeekGoals,
+      latestSkillGapAnalyses,
+      skillProgressList,
+      allWeeklyGoalHistory,
+    ] = await Promise.all([
+      prisma.user.findUnique({
+        where: { id: userId },
+        select: { skills: true },
+      }),
+      prisma.roadmap.count({ where: { userId } }),
+      prisma.roadmapPhase.count({ where: { roadmap: { userId } } }),
+      prisma.phaseProgress.count({ where: { userId, completed: true } }),
+      prisma.roadmap.findFirst({
+        where: { userId },
+        orderBy: { createdAt: "desc" },
+        include: {
+          career: true,
+          phases: {
+            include: {
+              progress: { where: { userId } },
             },
           },
         },
-      },
-    });
+      }),
+      prisma.weeklyGoal.findMany({
+        where: {
+          userId,
+          weekStart: { gte: currentWeekStart, lt: nextWeekStart },
+        },
+      }),
+      prisma.weeklyGoal.findMany({
+        where: {
+          userId,
+          weekStart: { gte: lastWeekStart, lt: currentWeekStart },
+        },
+      }),
+      prisma.skillGapHistory.findMany({
+        where: { userId },
+        orderBy: { createdAt: "desc" },
+        take: 10,
+      }),
+      prisma.skillProgress.findMany({ where: { userId } }),
+      prisma.weeklyGoal.findMany({
+        where: {
+          userId,
+          weekStart: { gte: historyStart, lt: nextWeekStart },
+        },
+      }),
+    ]);
+
+    const totalSkills = user?.skills.length || 0;
+    const overallRoadmapProgress =
+      phasesCount > 0 ? (completedPhasesCount / phasesCount) * 100 : 0;
 
     let latestRoadmapProgress = null;
+
     if (latestRoadmap) {
+
       const totalPhases = latestRoadmap.phases.length;
-      const completedPhases = latestRoadmap.phases.filter((p) => p.progress[0]?.completed === true).length;
+      const completedPhases = latestRoadmap.phases.filter(
+        (p) => p.progress[0]?.completed === true,
+      ).length;
       latestRoadmapProgress = {
         id: latestRoadmap.id,
         title: latestRoadmap.title,
         careerName: latestRoadmap.career.name,
         totalPhases,
         completedPhases,
-        progressPercent: totalPhases > 0 ? (completedPhases / totalPhases) * 100 : 0,
+        progressPercent:
+          totalPhases > 0 ? (completedPhases / totalPhases) * 100 : 0,
       };
     }
 
-    // 5. Weekly Goals for current week
-    const now = new Date();
-    const currentWeekStart = getStartOfWeek(now);
-    const nextWeekStart = new Date(currentWeekStart.getTime());
-    nextWeekStart.setDate(nextWeekStart.getDate() + 7);
-
-    const weeklyGoals = await prisma.weeklyGoal.findMany({
-      where: {
-        userId,
-        weekStart: {
-          gte: currentWeekStart,
-          lt: nextWeekStart,
-        },
-      },
-    });
-
     const totalWeeklyGoals = weeklyGoals.length;
     const completedWeeklyGoals = weeklyGoals.filter((g) => g.completed).length;
-
-    // 6. Skill Gap Score KPI (average score from latest runs)
-    const latestSkillGapAnalyses = await prisma.skillGapHistory.findMany({
-      where: { userId },
-      orderBy: { createdAt: "desc" },
-      take: 10,
-    });
-
     const averageSkillMatch =
       latestSkillGapAnalyses.length > 0
-        ? latestSkillGapAnalyses.reduce((acc, curr) => acc + curr.score, 0) / latestSkillGapAnalyses.length
+        ? latestSkillGapAnalyses.reduce((acc, curr) => acc + curr.score, 0) /
+          latestSkillGapAnalyses.length
         : 0;
 
     const latestSkillGapScore = latestSkillGapAnalyses[0]?.score || 0;
-
-    // 7. Skill Gap Progress history (for line graph over time)
     const skillGapHistoryChart = latestSkillGapAnalyses
       .map((item) => ({
         careerName: item.careerName,
         score: item.score,
         createdAt: item.createdAt,
       }))
-      .reverse(); // Chronological order for graphs
-
-    // 8. Skill Progress distribution (completed, learning, want to learn) for Pie/Doughnut Chart
-    const skillProgressList = await prisma.skillProgress.findMany({
-      where: { userId },
-    });
+      .reverse();
 
     const skillDistribution = {
-      completed: skillProgressList.filter((s) => s.status === "COMPLETED").length,
+      completed: skillProgressList.filter((s) => s.status === "COMPLETED")
+        .length,
       learning: skillProgressList.filter((s) => s.status === "LEARNING").length,
-      wantToLearn: skillProgressList.filter((s) => s.status === "WANT_TO_LEARN").length,
+      wantToLearn: skillProgressList.filter((s) => s.status === "WANT_TO_LEARN")
+        .length,
     };
 
-    // 9. Historical Weekly Goals Progress (for past 4 weeks bar chart)
     const weeklyGoalHistoryChart = [];
+
     for (let i = 3; i >= 0; i--) {
+
       const tempDate = new Date();
       tempDate.setDate(tempDate.getDate() - i * 7);
+
       const start = getStartOfWeek(tempDate);
       const end = new Date(start.getTime());
       end.setDate(end.getDate() + 7);
 
-      const goals = await prisma.weeklyGoal.findMany({
-        where: {
-          userId,
-          weekStart: {
-            gte: start,
-            lt: end,
-          },
-        },
-      });
+      const startMs = start.getTime();
+      const endMs = end.getTime();
+      const goals = allWeeklyGoalHistory.filter((g) => {
+        const t = new Date(g.weekStart).getTime();
 
-      // Always push all 4 weeks — even if there are 0 goals (so frontend chart always has 4 data points)
+        return t >= startMs && t < endMs;
+      });
       weeklyGoalHistoryChart.push({
         weekOf: start.toISOString().split("T")[0],
         total: goals.length,
         completed: goals.filter((g) => g.completed).length,
-        completionPercent: goals.length > 0 ? Math.round((goals.filter((g) => g.completed).length / goals.length) * 100) : 0,
+        completionPercent:
+          goals.length > 0
+            ? Math.round(
+                (goals.filter((g) => g.completed).length / goals.length) * 100,
+              )
+            : 0,
       });
     }
-    // Already in chronological order (i goes from 3..0)
 
-    // 10. Per-phase progress for the latest roadmap (for frontend phase tracker)
     const perPhaseProgress = latestRoadmap
       ? latestRoadmap.phases.map((p) => ({
           phaseId: (p as any).id,
@@ -154,29 +162,21 @@ class DashboardService {
         }))
       : [];
 
-    // 11. Weekly progress trend: current week vs last week (for KPI percentage change card)
-    const lastWeekStart = new Date(currentWeekStart.getTime());
-    lastWeekStart.setDate(lastWeekStart.getDate() - 7);
-    const lastWeekGoals = await prisma.weeklyGoal.findMany({
-      where: {
-        userId,
-        weekStart: {
-          gte: lastWeekStart,
-          lt: currentWeekStart,
-        },
-      },
-    });
     const lastWeekCompletionPercent =
       lastWeekGoals.length > 0
-        ? (lastWeekGoals.filter((g) => g.completed).length / lastWeekGoals.length) * 100
+        ? (lastWeekGoals.filter((g) => g.completed).length /
+            lastWeekGoals.length) *
+          100
         : 0;
+
     const currentWeekCompletionPercent =
       totalWeeklyGoals > 0
         ? (completedWeeklyGoals / totalWeeklyGoals) * 100
         : 0;
-    const weeklyProgressTrend = currentWeekCompletionPercent - lastWeekCompletionPercent;
 
-    // 12. Compile response
+    const weeklyProgressTrend =
+      currentWeekCompletionPercent - lastWeekCompletionPercent;
+
     return {
       kpis: {
         totalSkills,
@@ -189,10 +189,12 @@ class DashboardService {
           completed: completedWeeklyGoals,
           completionPercent:
             totalWeeklyGoals > 0
-              ? Math.round((completedWeeklyGoals / totalWeeklyGoals) * 100 * 100) / 100
+              ? Math.round(
+                  (completedWeeklyGoals / totalWeeklyGoals) * 100 * 100,
+                ) / 100
               : 0,
         },
-        weeklyProgressTrend: Math.round(weeklyProgressTrend * 100) / 100, // Δ% vs last week
+        weeklyProgressTrend: Math.round(weeklyProgressTrend * 100) / 100,
       },
       charts: {
         roadmapProgress: latestRoadmapProgress,
@@ -204,60 +206,72 @@ class DashboardService {
     };
   }
 
-  // ─── Dedicated: Weekly Progress Track ────────────────────────────────────
   async getWeeklyProgressTrack(userId: string) {
+
     const now = new Date();
     const currentWeekStart = getStartOfWeek(now);
     const nextWeekStart = new Date(currentWeekStart.getTime());
     nextWeekStart.setDate(nextWeekStart.getDate() + 7);
 
-    // Current week goals
-    const currentWeekGoals = await prisma.weeklyGoal.findMany({
-      where: {
-        userId,
-        weekStart: { gte: currentWeekStart, lt: nextWeekStart },
-      },
-    });
+    const lastWeekStart = new Date(currentWeekStart.getTime());
+    lastWeekStart.setDate(lastWeekStart.getDate() - 7);
+
+    const threeWeeksAgoDate = new Date();
+    threeWeeksAgoDate.setDate(threeWeeksAgoDate.getDate() - 3 * 7);
+
+    const historyStart = getStartOfWeek(threeWeeksAgoDate);
+    const [currentWeekGoals, lastWeekGoals, allHistory] = await Promise.all([
+      prisma.weeklyGoal.findMany({
+        where: {
+          userId,
+          weekStart: { gte: currentWeekStart, lt: nextWeekStart },
+        },
+      }),
+      prisma.weeklyGoal.findMany({
+        where: {
+          userId,
+          weekStart: { gte: lastWeekStart, lt: currentWeekStart },
+        },
+      }),
+      prisma.weeklyGoal.findMany({
+        where: { userId, weekStart: { gte: historyStart, lt: nextWeekStart } },
+      }),
+    ]);
 
     const total = currentWeekGoals.length;
     const completed = currentWeekGoals.filter((g) => g.completed).length;
-
-    // Last week for trend calculation
-    const lastWeekStart = new Date(currentWeekStart.getTime());
-    lastWeekStart.setDate(lastWeekStart.getDate() - 7);
-    const lastWeekGoals = await prisma.weeklyGoal.findMany({
-      where: {
-        userId,
-        weekStart: { gte: lastWeekStart, lt: currentWeekStart },
-      },
-    });
     const lastCompleted = lastWeekGoals.filter((g) => g.completed).length;
     const lastTotal = lastWeekGoals.length;
-
     const currentPct = total > 0 ? (completed / total) * 100 : 0;
     const lastPct = lastTotal > 0 ? (lastCompleted / lastTotal) * 100 : 0;
     const trend = Math.round((currentPct - lastPct) * 100) / 100;
-
-    // 4-week history chart
     const history = [];
+
     for (let i = 3; i >= 0; i--) {
+
       const tempDate = new Date();
       tempDate.setDate(tempDate.getDate() - i * 7);
+
       const start = getStartOfWeek(tempDate);
       const end = new Date(start.getTime());
       end.setDate(end.getDate() + 7);
 
-      const goals = await prisma.weeklyGoal.findMany({
-        where: { userId, weekStart: { gte: start, lt: end } },
-      });
+      const startMs = start.getTime();
+      const endMs = end.getTime();
+      const goals = allHistory.filter((g) => {
+        const t = new Date(g.weekStart).getTime();
 
+        return t >= startMs && t < endMs;
+      });
       history.push({
         weekOf: start.toISOString().split("T")[0],
         total: goals.length,
         completed: goals.filter((g) => g.completed).length,
         completionPercent:
           goals.length > 0
-            ? Math.round((goals.filter((g) => g.completed).length / goals.length) * 100)
+            ? Math.round(
+                (goals.filter((g) => g.completed).length / goals.length) * 100,
+              )
             : 0,
       });
     }
@@ -270,13 +284,13 @@ class DashboardService {
         remaining: total - completed,
         completionPercent: Math.round(currentPct * 100) / 100,
       },
-      trend, // positive = improved vs last week, negative = declined
+      trend,
       history,
     };
   }
 
-  // ─── Dedicated: Phase Progress Track ─────────────────────────────────────
   async getPhaseProgressTrack(userId: string) {
+
     const latestRoadmap = await prisma.roadmap.findFirst({
       where: { userId },
       orderBy: { createdAt: "desc" },
@@ -292,6 +306,7 @@ class DashboardService {
     });
 
     if (!latestRoadmap) {
+
       return {
         roadmapId: null,
         roadmapTitle: null,
@@ -305,7 +320,7 @@ class DashboardService {
 
     const totalPhases = latestRoadmap.phases.length;
     const completedPhases = latestRoadmap.phases.filter(
-      (p) => p.progress[0]?.completed === true
+      (p) => p.progress[0]?.completed === true,
     ).length;
 
     return {

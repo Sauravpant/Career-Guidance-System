@@ -11,7 +11,6 @@ import {
 import { authMiddleware } from "../middlewares/auth.middleware";
 
 const router = express.Router();
-
 router.get("/me", authMiddleware, getMe);
 router.patch("/update-profile", authMiddleware, updateProfile);
 router.delete("/delete-me", authMiddleware, deleteMe);
@@ -21,4 +20,3 @@ router.post("/select-career", authMiddleware, selectCareer);
 router.get("/recommendation-history", authMiddleware, getRecommendationHistory);
 
 export default router;
-

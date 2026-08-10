@@ -1,24 +1,32 @@
-const jwt = require("jsonwebtoken") as {
-  sign: (payload: object, secret: string, options?: { expiresIn?: string | number }) => string;
-  verify: (token: string, secret: string) => any;
-};
+import jwt from "jsonwebtoken";
 
-const getSecret = (name: string): string => {
-  const secret = process.env[name];
-  if (!secret) {
-    throw new Error(`${name} is not defined`);
-  }
-  return secret;
-};
+const ACCESS_SECRET = ((): string => {
+  const s = process.env.ACCESS_TOKEN_SECRET;
+
+  if (!s) throw new Error("ACCESS_TOKEN_SECRET is not defined");
+
+  return s;
+})();
+
+const REFRESH_SECRET = ((): string => {
+  const s = process.env.REFRESH_TOKEN_SECRET;
+
+  if (!s) throw new Error("REFRESH_TOKEN_SECRET is not defined");
+
+  return s;
+})();
 
 export const generateAccessToken = (id: string): string => {
-  return jwt.sign({ id }, getSecret("ACCESS_TOKEN_SECRET"), { expiresIn: "15m" });
+
+  return jwt.sign({ id }, ACCESS_SECRET, { expiresIn: "15m" });
 };
 
 export const generateRefreshToken = (id: string): string => {
-  return jwt.sign({ id }, getSecret("REFRESH_TOKEN_SECRET"), { expiresIn: "7d" });
+
+  return jwt.sign({ id }, REFRESH_SECRET, { expiresIn: "7d" });
 };
 
 export const verifyRefreshToken = (token: string): any => {
-  return jwt.verify(token, getSecret("REFRESH_TOKEN_SECRET"));
+
+  return jwt.verify(token, REFRESH_SECRET);
 };

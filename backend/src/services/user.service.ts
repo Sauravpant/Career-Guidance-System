@@ -2,7 +2,9 @@ import prisma from "../configs/db";
 import { UpdateUserData } from "../types/user.types";
 
 class UserService {
+
   async getMe(userId: string) {
+
     return prisma.user.findUnique({
       where: { id: userId },
       select: {
@@ -20,6 +22,7 @@ class UserService {
   }
 
   async updateUserProfile(userId: string, data: Partial<UpdateUserData>) {
+
     return prisma.user.update({
       where: { id: userId },
       data,
@@ -27,6 +30,7 @@ class UserService {
   }
 
   async deleteMe(userId: string) {
+
     return prisma.user.delete({
       where: { id: userId },
     });

@@ -3,7 +3,9 @@ import { AppError } from "../utils/app-error";
 import { TYPE } from "../generated/prisma";
 
 class ResourceService {
+
   async getResources(userId: string) {
+
     return prisma.resource.findMany({
       where: { userId },
       orderBy: { createdAt: "desc" },
@@ -11,7 +13,7 @@ class ResourceService {
   }
 
   async getResourcesByPhase(userId: string, phaseId: string) {
-    // Verify the phase belongs to the user via roadmap ownership
+
     const phase = await prisma.roadmapPhase.findFirst({
       where: {
         id: phaseId,
@@ -37,8 +39,9 @@ class ResourceService {
       description: string;
       url: string;
       type: "GLOBAL" | "PHASE";
-    }
+    },
   ) {
+
     return prisma.resource.create({
       data: {
         userId,
@@ -58,8 +61,9 @@ class ResourceService {
       title?: string;
       description?: string;
       url?: string;
-    }
+    },
   ) {
+
     const resource = await prisma.resource.findFirst({
       where: { id: resourceId, userId },
     });
@@ -75,6 +79,7 @@ class ResourceService {
   }
 
   async deleteResource(userId: string, resourceId: string) {
+
     const resource = await prisma.resource.findFirst({
       where: { id: resourceId, userId },
     });

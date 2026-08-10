@@ -2,17 +2,20 @@ import prisma from "../configs/db";
 import { AppError } from "../utils/app-error";
 
 export function getStartOfWeek(dateInput: Date | string | number): Date {
+
   const date = new Date(dateInput);
-  const day = date.getDay(); // 0 is Sunday, 1 is Monday, etc.
-  // Align to Monday of that week
+  const day = date.getDay();
   const diff = date.getDate() - day + (day === 0 ? -6 : 1);
   const monday = new Date(date.setDate(diff));
   monday.setHours(0, 0, 0, 0);
+
   return monday;
 }
 
 class WeeklyGoalService {
+
   async getWeeklyGoals(userId: string, dateInWeek: string | Date = new Date()) {
+
     const weekStart = getStartOfWeek(dateInWeek);
     const weekEnd = new Date(weekStart.getTime());
     weekEnd.setDate(weekEnd.getDate() + 7);
@@ -29,7 +32,12 @@ class WeeklyGoalService {
     });
   }
 
-  async createWeeklyGoal(userId: string, title: string, dateInWeek: string | Date = new Date()) {
+  async createWeeklyGoal(
+    userId: string,
+    title: string,
+    dateInWeek: string | Date = new Date(),
+  ) {
+
     const weekStart = getStartOfWeek(dateInWeek);
 
     return prisma.weeklyGoal.create({
@@ -48,8 +56,9 @@ class WeeklyGoalService {
     data: {
       completed?: boolean;
       title?: string;
-    }
+    },
   ) {
+
     const goal = await prisma.weeklyGoal.findFirst({
       where: { id: goalId, userId },
     });
@@ -65,6 +74,7 @@ class WeeklyGoalService {
   }
 
   async deleteWeeklyGoal(userId: string, goalId: string) {
+
     const goal = await prisma.weeklyGoal.findFirst({
       where: { id: goalId, userId },
     });

@@ -5,9 +5,11 @@ export const errorMiddleware = (
   err: Error,
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
+
   if (err instanceof AppError) {
+
     return res.status(err.statusCode).json({
       success: false,
       message: err.message,

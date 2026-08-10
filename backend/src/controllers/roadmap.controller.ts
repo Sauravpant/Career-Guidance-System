@@ -5,90 +5,121 @@ import { ApiResponse } from "../utils/api-response";
 import { AuthenticatedRequest } from "../middlewares/auth.middleware";
 import { AppError } from "../utils/app-error";
 
-export const generateRoadmap = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
-  const userId = req.user.id;
-  const { careerName } = req.body;
+export const generateRoadmap = asyncHandler(
 
-  if (!careerName) {
-    throw new AppError(400, "Please provide careerName in the request body");
-  }
+  async (req: AuthenticatedRequest, res: Response) => {
 
-  const roadmap = await roadmapService.generateRoadmap(userId, careerName);
+    const userId = req.user.id;
+    const { careerName } = req.body;
 
-  return res
-    .status(200)
-    .json(new ApiResponse(200, roadmap, "Roadmap generated successfully"));
-});
+    if (!careerName) {
+      throw new AppError(400, "Please provide careerName in the request body");
+    }
 
-export const getRoadmap = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
-  const userId = req.user.id;
-  const roadmapId = req.params.roadmapId as string;
+    const roadmap = await roadmapService.generateRoadmap(userId, careerName);
 
-  if (!roadmapId) {
-    throw new AppError(400, "Roadmap ID is required");
-  }
-
-  const roadmap = await roadmapService.getRoadmap(roadmapId, userId);
-
-  return res
-    .status(200)
-    .json(new ApiResponse(200, roadmap, "Roadmap fetched successfully"));
-});
-
-export const getMyRoadmap = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
-  const userId = req.user.id;
-
-  const roadmap = await roadmapService.getMyRoadmap(userId);
-
-  if (!roadmap) {
     return res
       .status(200)
-      .json(new ApiResponse(200, null, "No roadmap found for this user"));
-  }
+      .json(new ApiResponse(200, roadmap, "Roadmap generated successfully"));
+  },
+);
 
-  return res
-    .status(200)
-    .json(new ApiResponse(200, roadmap, "Roadmap fetched successfully"));
-});
+export const getRoadmap = asyncHandler(
 
-export const getUserRoadmaps = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
-  const userId = req.user.id;
+  async (req: AuthenticatedRequest, res: Response) => {
 
-  const roadmaps = await roadmapService.getUserRoadmaps(userId);
+    const userId = req.user.id;
+    const roadmapId = req.params.roadmapId as string;
 
-  return res
-    .status(200)
-    .json(new ApiResponse(200, roadmaps, "Roadmaps fetched successfully"));
-});
+    if (!roadmapId) {
+      throw new AppError(400, "Roadmap ID is required");
+    }
 
-export const togglePhaseProgress = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
-  const userId = req.user.id;
-  const phaseId = req.params.phaseId as string;
-  const { completed } = req.body;
+    const roadmap = await roadmapService.getRoadmap(roadmapId, userId);
 
-  if (completed === undefined) {
-    throw new AppError(400, "completed (boolean) status is required in request body");
-  }
+    return res
+      .status(200)
+      .json(new ApiResponse(200, roadmap, "Roadmap fetched successfully"));
+  },
+);
 
-  const progress = await roadmapService.togglePhaseProgress(userId, phaseId, !!completed);
+export const getMyRoadmap = asyncHandler(
 
-  return res
-    .status(200)
-    .json(new ApiResponse(200, progress, "Phase progress updated successfully"));
-});
+  async (req: AuthenticatedRequest, res: Response) => {
 
-export const getPhaseById = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
-  const userId = req.user.id;
-  const phaseId = req.params.phaseId as string;
+    const userId = req.user.id;
+    const roadmap = await roadmapService.getMyRoadmap(userId);
 
-  if (!phaseId) {
-    throw new AppError(400, "Phase ID is required");
-  }
+    if (!roadmap) {
 
-  const phase = await roadmapService.getPhaseById(phaseId, userId);
+      return res
+        .status(200)
+        .json(new ApiResponse(200, null, "No roadmap found for this user"));
+    }
 
-  return res
-    .status(200)
-    .json(new ApiResponse(200, phase, "Phase details fetched successfully"));
-});
+    return res
+      .status(200)
+      .json(new ApiResponse(200, roadmap, "Roadmap fetched successfully"));
+  },
+);
 
+export const getUserRoadmaps = asyncHandler(
+
+  async (req: AuthenticatedRequest, res: Response) => {
+
+    const userId = req.user.id;
+    const roadmaps = await roadmapService.getUserRoadmaps(userId);
+
+    return res
+      .status(200)
+      .json(new ApiResponse(200, roadmaps, "Roadmaps fetched successfully"));
+  },
+);
+
+export const togglePhaseProgress = asyncHandler(
+
+  async (req: AuthenticatedRequest, res: Response) => {
+
+    const userId = req.user.id;
+    const phaseId = req.params.phaseId as string;
+    const { completed } = req.body;
+
+    if (completed === undefined) {
+      throw new AppError(
+        400,
+        "completed (boolean) status is required in request body",
+      );
+    }
+
+    const progress = await roadmapService.togglePhaseProgress(
+      userId,
+      phaseId,
+      !!completed,
+    );
+
+    return res
+      .status(200)
+      .json(
+        new ApiResponse(200, progress, "Phase progress updated successfully"),
+      );
+  },
+);
+
+export const getPhaseById = asyncHandler(
+
+  async (req: AuthenticatedRequest, res: Response) => {
+
+    const userId = req.user.id;
+    const phaseId = req.params.phaseId as string;
+
+    if (!phaseId) {
+      throw new AppError(400, "Phase ID is required");
+    }
+
+    const phase = await roadmapService.getPhaseById(phaseId, userId);
+
+    return res
+      .status(200)
+      .json(new ApiResponse(200, phase, "Phase details fetched successfully"));
+  },
+);

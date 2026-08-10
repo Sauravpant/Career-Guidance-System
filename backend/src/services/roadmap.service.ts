@@ -7,22 +7,26 @@ import fs from "fs";
 import path from "path";
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+let _cachedCareerSkillsData: Record<string, string[]> | null = null;
 
-function getCanonicalCareerName(careerName: string): string {
+function loadCareerSkillsData(): Record<string, string[]> {
+
+  if (_cachedCareerSkillsData) return _cachedCareerSkillsData;
+
   const possiblePaths = [
     path.join(__dirname, "../data/career-skills.json"),
     path.join(process.cwd(), "src/data/career-skills.json"),
     path.join(process.cwd(), "dist/data/career-skills.json"),
     path.join(process.cwd(), "backend/src/data/career-skills.json"),
   ];
+
   for (const p of possiblePaths) {
+
     if (fs.existsSync(p)) {
       try {
-        const rawData = JSON.parse(fs.readFileSync(p, "utf-8"));
-        const matchedKey = Object.keys(rawData).find(
-          (k) => k.toLowerCase().trim() === careerName.toLowerCase().trim(),
-        );
-        if (matchedKey) return matchedKey;
+        _cachedCareerSkillsData = JSON.parse(fs.readFileSync(p, "utf-8"));
+
+        return _cachedCareerSkillsData!;
       } catch (e) {
         console.error(
           "Error reading career-skills.json in roadmap service:",
@@ -31,35 +35,62 @@ function getCanonicalCareerName(careerName: string): string {
       }
     }
   }
-  return careerName; // Fallback to original
+
+  _cachedCareerSkillsData = {};
+
+  return _cachedCareerSkillsData;
+}
+
+function getCanonicalCareerName(careerName: string): string {
+
+  const rawData = loadCareerSkillsData();
+  const matchedKey = Object.keys(rawData).find(
+    (k) => k.toLowerCase().trim() === careerName.toLowerCase().trim(),
+  );
+
+  return matchedKey ?? careerName;
 }
 
 function formatSteps(steps: any): string {
+
   if (!steps) return "";
+
   if (typeof steps === "string") return steps;
+
   if (Array.isArray(steps)) {
-    return steps.map((s) => {
-      if (typeof s === "string") {
-        return s;
-      }
-      return JSON.stringify(s);
-    }).join("\n");
+
+    return steps
+      .map((s) => {
+
+        if (typeof s === "string") {
+
+          return s;
+        }
+
+        return JSON.stringify(s);
+      })
+      .join("\n");
   }
+
   if (typeof steps === "object") {
+
     return JSON.stringify(steps);
   }
+
   return String(steps);
 }
 
 class RoadmapService {
+
   async generateRoadmap(userId: string, careerName: string) {
-    // If user already has a roadmap, return the latest one instead of generating
+
     const existingRoadmap = await prisma.roadmap.findFirst({
       where: { userId },
       orderBy: { createdAt: "desc" },
     });
 
     if (existingRoadmap) {
+
       return this.getRoadmap(existingRoadmap.id, userId);
     }
 
@@ -71,7 +102,6 @@ class RoadmapService {
     }
 
     const canonicalCareerName = getCanonicalCareerName(careerName);
-
     const user = await prisma.user.findUnique({
       where: { id: userId },
     });
@@ -87,60 +117,34 @@ class RoadmapService {
 
     const prompt = `
 You are an expert Career Mentor, Senior Software Architect, Technical Interviewer, and Curriculum Designer.
-
 Your task is to generate a COMPLETE and HIGHLY DETAILED learning roadmap for becoming a professional "${canonicalCareerName}".
-
 The roadmap should be equivalent in quality to roadmap.sh, a university curriculum, or a professional bootcamp.
-
 User Profile
-
 Education:
 ${education || "Not specified"}
-
 Experience:
 ${experience || 0} years
-
 Current Skills:
 ${skills.length ? skills.join(", ") : "None"}
-
 -------------------------
-
 GENERAL RULES
-
 1. Generate EXACTLY 8 sequential phases.
-
 2. Never generate fewer than 8 phases.
-
 3. Every phase should build naturally on previous phases.
-
 4. Assume the goal is to become JOB READY.
-
 5. Do NOT skip important concepts.
-
 6. Fill knowledge gaps based on the user's current skills.
-
 7. Adapt the difficulty according to the user's experience.
-
 8. If the user already knows something, include it only as a review instead of teaching from scratch.
-
 9. Do NOT repeat topics between phases.
-
 10. Every resource MUST be a REAL website.
-
 11. Never invent URLs.
-
 12. Prefer official documentation whenever possible.
-
 13. Output ONLY valid JSON.
-
 14. No markdown.
-
 15. No explanation outside JSON.
-
 -------------------------
-
 Generate EXACTLY this JSON structure:
-
 {
 "title":"",
 "career":"",
@@ -163,6 +167,7 @@ Generate EXACTLY this JSON structure:
 "type":"",
 "url":""
 }
+
 ],
 "projects":[
 {
@@ -173,9 +178,11 @@ Generate EXACTLY this JSON structure:
 "features":[],
 "steps":[]
 }
+
 ],
 "milestone":""
 }
+
 ],
 "globalResources":[
 {
@@ -184,6 +191,7 @@ Generate EXACTLY this JSON structure:
 "type":"",
 "url":""
 }
+
 ],
 "globalProjects":[
 {
@@ -194,243 +202,133 @@ Generate EXACTLY this JSON structure:
 "features":[],
 "steps":[]
 }
+
 ]
 }
 
 -------------------------
-
 DETAILED REQUIREMENTS
-
 Roadmap
-
 Generate exactly 8 phases.
-
 Each phase should represent approximately:
-
 4–8 weeks of learning.
-
 Entire roadmap should span roughly
-
 9–15 months.
-
 -------------------------
-
 Every phase MUST contain
-
 • Title
-
 • Description
-
 120–200 words
-
 Explain:
-
 - Why this phase matters
-
 - What will be learned
-
 - How it connects to the next phase
-
 - Expected outcome
-
 -------------------------
-
 Topics
-
 Generate
-
 8–15 detailed topics.
-
 Avoid broad titles.
-
 Instead of
-
 React
-
 Write
-
 React Components
-
 JSX
-
 Props
-
 State
-
 Hooks
-
 React Router
-
 Performance Optimization
-
 Testing
-
 Error Boundaries
-
 etc.
-
 -------------------------
-
 Prerequisites
-
 3–6 prerequisites
-
 -------------------------
-
 Learning Outcomes
-
 Generate 5–8 outcomes.
-
 Example
-
 "Can build responsive websites."
-
 "Can deploy a REST API."
-
 -------------------------
-
 Resources
-
 Generate 4–6 resources.
-
 Mix:
-
 Official Documentation
-
 roadmap.sh
-
 MDN
-
 freeCodeCamp
-
 Microsoft Learn
-
 Google Developers
-
 AWS Docs
-
 React Docs
-
 Node Docs
-
 Python Docs
-
 FastAPI Docs
-
 MongoDB Docs
-
 PostgreSQL Docs
-
 Coursera (free where applicable)
-
 YouTube Playlists
-
 Each resource must contain
-
 Title
-
 Description
-
 Type
-
 URL
-
 -------------------------
-
 Projects
-
 Generate EXACTLY TWO projects per phase.
-
 Every project must include
-
 Title
-
 Description
-
 Difficulty
-
 Estimated Duration
-
 8–12 Features
-
 8–15 Step-by-step implementation steps
-
 Projects should become progressively harder.
-
 -------------------------
-
 Milestone
-
 Each phase must end with one milestone.
-
 Example
-
 "Deploy your first production-ready full-stack application."
-
 -------------------------
-
 Global Resources
-
 Generate 8 high-quality learning resources.
-
 -------------------------
-
 Global Projects
-
 Generate EXACTLY THREE capstone projects.
-
 Each project must include
-
 Title
-
 Description
-
 Difficulty
-
 Estimated Duration
-
 10–15 Features
-
 10–20 Implementation Steps
-
 -------------------------
-
 Career-Specific Guidance
-
 Tailor the roadmap specifically for "${canonicalCareerName}".
-
 Include industry-standard tools, technologies, frameworks, deployment methods, testing strategies, version control, CI/CD, cloud platforms, security, debugging, optimization, and interview preparation wherever applicable.
-
 -------------------------
-
 Final Validation
-
 Before returning the JSON verify that:
-
 ✓ Exactly 8 phases exist.
-
 ✓ Every phase has 8–15 topics.
-
 ✓ Every phase has exactly 2 projects.
-
 ✓ Every phase has 4–6 resources.
-
 ✓ Every phase has 5–8 learning outcomes.
-
 ✓ Every phase has 3–6 prerequisites.
-
 ✓ URLs are valid.
-
 ✓ JSON is valid.
-
 Return ONLY raw JSON.
 `;
 
     let roadmapData: any;
     try {
+
       if (!GEMINI_API_KEY) {
         throw new Error("Gemini API key is not configured");
       }
+
       const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
       const model = genAI.getGenerativeModel({
         model: "gemini-1.5-flash",
@@ -449,6 +347,7 @@ Return ONLY raw JSON.
       );
 
       const GROQ_API_KEY = process.env.GROQ_API_KEY;
+
       if (!GROQ_API_KEY) {
         throw new AppError(
           500,
@@ -457,6 +356,7 @@ Return ONLY raw JSON.
       }
 
       try {
+
         const groq = new Groq({ apiKey: GROQ_API_KEY });
         const chatCompletion = await groq.chat.completions.create({
           messages: [
@@ -475,9 +375,11 @@ Return ONLY raw JSON.
         });
 
         const generatedText = chatCompletion.choices[0]?.message?.content || "";
+
         if (!generatedText) {
           throw new Error("Empty response from Groq");
         }
+
         roadmapData = JSON.parse(generatedText.trim());
       } catch (groqError: any) {
         console.error("Groq fallback also failed. Error:", groqError.message);
@@ -489,7 +391,7 @@ Return ONLY raw JSON.
     }
 
     try {
-      // Find or create Career
+
       let career = await prisma.career.findFirst({
         where: {
           name: {
@@ -508,7 +410,6 @@ Return ONLY raw JSON.
         });
       }
 
-      // Create Roadmap
       const roadmap = await prisma.roadmap.create({
         data: {
           userId,
@@ -517,90 +418,83 @@ Return ONLY raw JSON.
         },
       });
 
-      // Create Phases, Resources, Projects
       if (roadmapData.phases && Array.isArray(roadmapData.phases)) {
-        for (const phase of roadmapData.phases) {
-          const createdPhase = await prisma.roadmapPhase.create({
-            data: {
-              roadmapId: roadmap.id,
-              phaseNumber: Number(phase.phaseNumber),
-              title: phase.title,
-              description: phase.description,
-              topics: phase.topics || [],
-            },
-          });
+        await Promise.all(
+          roadmapData.phases.map(async (phase: any) => {
 
-          // Phase Resources
-          if (phase.resources && Array.isArray(phase.resources)) {
-            for (const res of phase.resources) {
-              await prisma.resource.create({
+            const createdPhase = await prisma.roadmapPhase.create({
+              data: {
+                roadmapId: roadmap.id,
+                phaseNumber: Number(phase.phaseNumber),
+                title: phase.title,
+                description: phase.description,
+                topics: phase.topics || [],
+              },
+            });
+            await Promise.all([
+              ...(Array.isArray(phase.resources)
+                ? phase.resources.map((res: any) =>
+                    prisma.resource.create({
+                      data: {
+                        userId,
+                        phaseId: createdPhase.id,
+                        title: res.title,
+                        description: res.description || "",
+                        url: res.url || "#",
+                        type: TYPE.PHASE,
+                      },
+                    }),
+                  )
+                : []),
+              ...(Array.isArray(phase.projects)
+                ? phase.projects.map((proj: any) =>
+                    prisma.project.create({
+                      data: {
+                        userId,
+                        phaseId: createdPhase.id,
+                        title: proj.title,
+                        description: proj.description || "",
+                        steps: formatSteps(proj.steps),
+                        type: TYPE.PHASE,
+                      },
+                    }),
+                  )
+                : []),
+            ]);
+          }),
+        );
+      }
+
+      await Promise.all([
+        ...(Array.isArray(roadmapData.globalResources)
+          ? roadmapData.globalResources.map((res: any) =>
+              prisma.resource.create({
                 data: {
                   userId,
-                  phaseId: createdPhase.id,
                   title: res.title,
                   description: res.description || "",
                   url: res.url || "#",
-                  type: TYPE.PHASE,
+                  type: TYPE.GLOBAL,
                 },
-              });
-            }
-          }
-
-          // Phase Projects
-          if (phase.projects && Array.isArray(phase.projects)) {
-            for (const proj of phase.projects) {
-              await prisma.project.create({
+              }),
+            )
+          : []),
+        ...(Array.isArray(roadmapData.globalProjects)
+          ? roadmapData.globalProjects.map((proj: any) =>
+              prisma.project.create({
                 data: {
                   userId,
-                  phaseId: createdPhase.id,
                   title: proj.title,
                   description: proj.description || "",
                   steps: formatSteps(proj.steps),
-                  type: TYPE.PHASE,
+                  type: TYPE.GLOBAL,
                 },
-              });
-            }
-          }
-        }
-      }
+              }),
+            )
+          : []),
+      ]);
 
-      // Global Resources
-      if (
-        roadmapData.globalResources &&
-        Array.isArray(roadmapData.globalResources)
-      ) {
-        for (const res of roadmapData.globalResources) {
-          await prisma.resource.create({
-            data: {
-              userId,
-              title: res.title,
-              description: res.description || "",
-              url: res.url || "#",
-              type: TYPE.GLOBAL,
-            },
-          });
-        }
-      }
-
-      // Global Projects
-      if (
-        roadmapData.globalProjects &&
-        Array.isArray(roadmapData.globalProjects)
-      ) {
-        for (const proj of roadmapData.globalProjects) {
-          await prisma.project.create({
-            data: {
-              userId,
-              title: proj.title,
-              description: proj.description || "",
-              steps: formatSteps(proj.steps),
-              type: TYPE.GLOBAL,
-            },
-          });
-        }
-      }
       return this.getRoadmap(roadmap.id, userId);
-
     } catch (dbError: any) {
       console.error("Database Save Error:", dbError.message);
       throw new AppError(
@@ -611,48 +505,48 @@ Return ONLY raw JSON.
   }
 
   async getMyRoadmap(userId: string) {
+
     const roadmap = await prisma.roadmap.findFirst({
       where: { userId },
       orderBy: { createdAt: "desc" },
     });
 
     if (!roadmap) {
-      return null; // No roadmap yet — frontend handles this gracefully
+
+      return null;
     }
 
     return this.getRoadmap(roadmap.id, userId);
   }
 
   async getRoadmap(roadmapId: string, userId: string) {
-    const roadmap = await prisma.roadmap.findFirst({
-      where: { id: roadmapId, userId },
-      include: {
-        career: true,
-        phases: {
-          orderBy: { phaseNumber: "asc" },
-          include: {
-            progress: {
-              where: { userId },
+
+    const [roadmap, globalResources, globalProjects] = await Promise.all([
+      prisma.roadmap.findFirst({
+        where: { id: roadmapId, userId },
+        include: {
+          career: true,
+          phases: {
+            orderBy: { phaseNumber: "asc" },
+            include: {
+              progress: { where: { userId } },
+              resources: true,
+              projects: true,
             },
-            resources: true,
-            projects: true,
           },
         },
-      },
-    });
+      }),
+      prisma.resource.findMany({
+        where: { userId, type: TYPE.GLOBAL, phaseId: null },
+      }),
+      prisma.project.findMany({
+        where: { userId, type: TYPE.GLOBAL, phaseId: null },
+      }),
+    ]);
 
     if (!roadmap) {
       throw new AppError(404, "Roadmap not found");
     }
-
-    // Include global resources and projects in the output
-    const globalResources = await prisma.resource.findMany({
-      where: { userId, type: TYPE.GLOBAL, phaseId: null },
-    });
-
-    const globalProjects = await prisma.project.findMany({
-      where: { userId, type: TYPE.GLOBAL, phaseId: null },
-    });
 
     return {
       ...roadmap,
@@ -662,6 +556,7 @@ Return ONLY raw JSON.
   }
 
   async getUserRoadmaps(userId: string) {
+
     return prisma.roadmap.findMany({
       where: { userId },
       include: {
@@ -684,6 +579,7 @@ Return ONLY raw JSON.
     phaseId: string,
     completed: boolean,
   ) {
+
     const phase = await prisma.roadmapPhase.findUnique({
       where: { id: phaseId },
     });
@@ -713,7 +609,7 @@ Return ONLY raw JSON.
   }
 
   async getPhaseById(phaseId: string, userId: string) {
-    // Ensure the phase belongs to a roadmap owned by the user
+
     const phase = await prisma.roadmapPhase.findFirst({
       where: {
         id: phaseId,
@@ -747,4 +643,3 @@ Return ONLY raw JSON.
 }
 
 export default new RoadmapService();
-

@@ -9,7 +9,6 @@ import {
 } from "../controllers/resource.controller";
 
 const router = Router();
-
 router.get("/", authMiddleware, getResources);
 router.get("/phase/:phaseId", authMiddleware, getResourcesByPhase);
 router.post("/", authMiddleware, createResource);

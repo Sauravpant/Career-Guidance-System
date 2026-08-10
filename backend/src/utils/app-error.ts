@@ -4,11 +4,16 @@ export class AppError extends Error {
   errors: any[];
   success: boolean;
   data: null;
-
-  constructor(statusCode: number, message: string = "Something went wrong", errors: any[] = [], stack: string = "") {
+  constructor(
+    statusCode: number,
+    message: string = "Something went wrong",
+    errors: any[] = [],
+    stack: string = "",
+  ) {
     super(message);
     this.statusCode = statusCode;
     this.message = message;
+    this.name = "AppError";
     this.errors = errors;
     this.success = false;
     this.data = null;

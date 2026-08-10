@@ -1,8 +1,8 @@
 import winston from "winston";
 
 const environment = process.env.NODE_ENV;
-
 const customFormat = winston.format.printf(({ level, message, timestamp }) => {
+
   return `{ ${timestamp}  [${level.toUpperCase()}] -> ${message} }`;
 });
 

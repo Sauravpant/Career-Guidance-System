@@ -5,74 +5,100 @@ import { ApiResponse } from "../utils/api-response";
 import { AuthenticatedRequest } from "../middlewares/auth.middleware";
 import { AppError } from "../utils/app-error";
 
-export const getResources = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
-  const userId = req.user.id;
-  const resources = await resourceService.getResources(userId);
+export const getResources = asyncHandler(
 
-  return res
-    .status(200)
-    .json(new ApiResponse(200, resources, "Resources fetched successfully"));
-});
+  async (req: AuthenticatedRequest, res: Response) => {
 
-export const getResourcesByPhase = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
-  const userId = req.user.id;
-  const phaseId = req.params.phaseId as string;
+    const userId = req.user.id;
+    const resources = await resourceService.getResources(userId);
 
-  if (!phaseId) {
-    throw new AppError(400, "Phase ID is required");
-  }
+    return res
+      .status(200)
+      .json(new ApiResponse(200, resources, "Resources fetched successfully"));
+  },
+);
 
-  const resources = await resourceService.getResourcesByPhase(userId, phaseId);
+export const getResourcesByPhase = asyncHandler(
 
-  return res
-    .status(200)
-    .json(new ApiResponse(200, resources, "Phase resources fetched successfully"));
-});
+  async (req: AuthenticatedRequest, res: Response) => {
 
-export const createResource = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
-  const userId = req.user.id;
-  const { phaseId, title, description, url, type } = req.body;
+    const userId = req.user.id;
+    const phaseId = req.params.phaseId as string;
 
-  if (!title || !url || !type) {
-    throw new AppError(400, "Title, url, and type (GLOBAL/PHASE) are required");
-  }
+    if (!phaseId) {
+      throw new AppError(400, "Phase ID is required");
+    }
 
-  const resource = await resourceService.createResource(userId, {
-    phaseId: phaseId as string | null,
-    title,
-    description: description || "",
-    url,
-    type,
-  });
+    const resources = await resourceService.getResourcesByPhase(
+      userId,
+      phaseId,
+    );
 
-  return res
-    .status(201)
-    .json(new ApiResponse(201, resource, "Resource created successfully"));
-});
+    return res
+      .status(200)
+      .json(
+        new ApiResponse(200, resources, "Phase resources fetched successfully"),
+      );
+  },
+);
 
-export const updateResource = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
-  const userId = req.user.id;
-  const id = req.params.id as string;
-  const { title, description, url } = req.body;
+export const createResource = asyncHandler(
 
-  const resource = await resourceService.updateResource(userId, id, {
-    title,
-    description,
-    url,
-  });
+  async (req: AuthenticatedRequest, res: Response) => {
 
-  return res
-    .status(200)
-    .json(new ApiResponse(200, resource, "Resource updated successfully"));
-});
+    const userId = req.user.id;
+    const { phaseId, title, description, url, type } = req.body;
 
-export const deleteResource = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
-  const userId = req.user.id;
-  const id = req.params.id as string;
+    if (!title || !url || !type) {
+      throw new AppError(
+        400,
+        "Title, url, and type (GLOBAL/PHASE) are required",
+      );
+    }
 
-  await resourceService.deleteResource(userId, id);
+    const resource = await resourceService.createResource(userId, {
+      phaseId: phaseId as string | null,
+      title,
+      description: description || "",
+      url,
+      type,
+    });
 
-  return res
-    .status(200)
-    .json(new ApiResponse(200, null, "Resource deleted successfully"));
-});
+    return res
+      .status(201)
+      .json(new ApiResponse(201, resource, "Resource created successfully"));
+  },
+);
+
+export const updateResource = asyncHandler(
+
+  async (req: AuthenticatedRequest, res: Response) => {
+
+    const userId = req.user.id;
+    const id = req.params.id as string;
+    const { title, description, url } = req.body;
+    const resource = await resourceService.updateResource(userId, id, {
+      title,
+      description,
+      url,
+    });
+
+    return res
+      .status(200)
+      .json(new ApiResponse(200, resource, "Resource updated successfully"));
+  },
+);
+
+export const deleteResource = asyncHandler(
+
+  async (req: AuthenticatedRequest, res: Response) => {
+
+    const userId = req.user.id;
+    const id = req.params.id as string;
+    await resourceService.deleteResource(userId, id);
+
+    return res
+      .status(200)
+      .json(new ApiResponse(200, null, "Resource deleted successfully"));
+  },
+);
