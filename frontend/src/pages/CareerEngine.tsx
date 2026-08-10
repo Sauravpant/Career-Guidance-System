@@ -10,7 +10,7 @@ import {
   Search
 } from 'lucide-react';
 
-export const CareerEngine: React.FC = () => {
+export const CareerEngine: React.FC<{ setActiveTab: (tab: string) => void }> = ({ setActiveTab }) => {
   const { user } = useAuth();
   const { 
     useRecommendationHistory, 
@@ -22,9 +22,12 @@ export const CareerEngine: React.FC = () => {
   const { data: historyList, isLoading } = useRecommendationHistory();
   const recommendMutation = useRecommendCareerMutation();
   const exploreMutation = useExploreCareersMutation();
-  const selectCareerMutation = useSelectCareerMutation();
+  const selectCareerMutation = useSelectCareerMutation(() => {
+    // Auto-navigate to roadmap after career is selected & all caches are reset
+    setActiveTab('roadmap');
+  });
 
-  const [activeTab, setActiveTab] = useState<'my-recommendation' | 'explore'>('my-recommendation');
+  const [activeTab, setLocalTab] = useState<'my-recommendation' | 'explore'>('my-recommendation');
   const [skillsInput, setSkillsInput] = useState('');
   const [experienceInput, setExperienceInput] = useState('0');
   
@@ -63,10 +66,10 @@ export const CareerEngine: React.FC = () => {
     setConfirmModal({ isOpen: false, careerName: '' });
     try {
       await selectCareerMutation.mutateAsync(careerName);
-      setAlertModal({ isOpen: true, message: `Successfully selected ${careerName}! Your roadmap and dashboard have been updated.` });
+      // onSuccess callback in the mutation handles navigation automatically
     } catch (err) {
       console.error(err);
-      setAlertModal({ isOpen: true, message: 'Failed to select career.', isError: true });
+      setAlertModal({ isOpen: true, message: 'Failed to select career. Please try again.', isError: true });
     }
   };
 
@@ -104,7 +107,7 @@ export const CareerEngine: React.FC = () => {
       {/* Tabs */}
       <div style={{ display: 'flex', gap: '16px', borderBottom: '1px solid var(--border-color)' }}>
         <button 
-          onClick={() => setActiveTab('my-recommendation')}
+          onClick={() => setLocalTab('my-recommendation')}
           style={{
             background: 'none',
             border: 'none',
@@ -122,7 +125,7 @@ export const CareerEngine: React.FC = () => {
           <Cpu size={18} /> My Recommendations
         </button>
         <button 
-          onClick={() => setActiveTab('explore')}
+          onClick={() => setLocalTab('explore')}
           style={{
             background: 'none',
             border: 'none',

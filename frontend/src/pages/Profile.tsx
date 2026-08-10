@@ -10,7 +10,8 @@ import {
   Plus, 
   X, 
   Check,
-  AlertCircle
+  AlertCircle,
+  Image as ImageIcon
 } from 'lucide-react';
 
 export const Profile: React.FC = () => {
@@ -81,11 +82,25 @@ export const Profile: React.FC = () => {
         <div className="card" style={{ padding: 0, overflow: 'visible', marginBottom: '16px' }}>
           <div style={{ height: '120px', background: 'linear-gradient(135deg, var(--primary) 0%, var(--purple) 100%)', borderRadius: 'var(--radius-lg) var(--radius-lg) 0 0' }}></div>
           <div style={{ padding: '0 24px 24px 24px', display: 'flex', alignItems: 'flex-end', marginTop: '-50px', gap: '20px', flexWrap: 'wrap' }}>
-            <img
-              src={avatarUrl || `https://api.dicebear.com/7.x/adventurer/svg?seed=${encodeURIComponent(user?.name || 'PathFinder')}`}
-              alt="Avatar Preview"
-              style={{ width: '100px', height: '100px', borderRadius: '50%', objectFit: 'cover', border: '4px solid var(--bg-secondary)', backgroundColor: 'var(--bg-tertiary)', flexShrink: 0 }}
-            />
+            {avatarUrl ? (
+              <img
+                src={avatarUrl}
+                alt="Avatar Preview"
+                style={{ width: '100px', height: '100px', borderRadius: '50%', objectFit: 'cover', border: '4px solid var(--bg-secondary)', backgroundColor: 'var(--bg-tertiary)', flexShrink: 0 }}
+              />
+            ) : (
+              <div
+                style={{ 
+                  width: '100px', height: '100px', borderRadius: '50%', 
+                  border: '4px solid var(--bg-secondary)', backgroundColor: 'var(--primary)', 
+                  flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  color: 'white', fontSize: '3rem', fontWeight: 600,
+                  boxShadow: 'var(--shadow-sm)'
+                }}
+              >
+                {user?.name ? user.name.charAt(0).toUpperCase() : 'U'}
+              </div>
+            )}
             <div style={{ flex: 1, minWidth: 0, paddingBottom: '10px' }}>
               <h2 style={{ fontSize: '1.5rem', margin: '0 0 4px 0' }}>{user?.name}</h2>
               <p style={{ color: 'var(--text-secondary)', margin: 0, fontSize: '0.85rem' }}>{user?.email}</p>
@@ -137,7 +152,7 @@ export const Profile: React.FC = () => {
             <div className="form-group">
               <label className="form-label" htmlFor="profile-avatar">Avatar Image URL (Optional)</label>
               <div style={{ position: 'relative' }}>
-                <Mail size={16} style={{ position: 'absolute', left: '16px', top: '16px', color: 'var(--text-muted)' }} />
+                <ImageIcon size={16} style={{ position: 'absolute', left: '16px', top: '16px', color: 'var(--text-muted)' }} />
                 <input
                   id="profile-avatar"
                   type="url"

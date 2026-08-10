@@ -50,7 +50,7 @@ export const Landing: React.FC = () => {
             <div className="auth-logo-icon">
               <Compass size={18} strokeWidth={2.5} />
             </div>
-            <span>PathFinder</span>
+            <span>CareerPath</span>
           </div>
           <p className="auth-subtitle">AI-Driven Career Guidance & Skill Mapping System</p>
         </div>

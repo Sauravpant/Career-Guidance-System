@@ -177,7 +177,7 @@ export const WeeklyTracker: React.FC = () => {
           <h3 className="card-title" style={{ fontSize: '1.05rem', marginBottom: '12px' }}>
             <Calendar size={16} /> Select Week
           </h3>
-          <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '16px' }}>Choose a day; PathFinder will fetch the containing calendar week's tracker goals.</p>
+          <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '16px' }}>Choose a day; CareerPath will fetch the containing calendar week's tracker goals.</p>
           <input 
             type="date"
             className="form-control"
