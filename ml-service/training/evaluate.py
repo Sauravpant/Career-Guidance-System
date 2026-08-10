@@ -13,10 +13,6 @@ from sklearn.metrics import (
 
 ARTIFACTS_DIR = Path(__file__).resolve().parent.parent / "data" / "artifacts"
 
-# Shared scoring set used everywhere we report metrics (default-param CV,
-# RandomizedSearchCV during tuning, and this module) so every stage of the
-# pipeline is reporting the exact same set of numbers and can be compared
-# apples-to-apples.
 CV_SCORING = {
     "accuracy":        "accuracy",
     "precision_macro": "precision_macro",
@@ -63,20 +59,6 @@ def compute_metrics(
 
 
 def compute_cv_metrics(model, X: np.ndarray, y: np.ndarray, cv) -> dict:
-    """
-    Runs k-fold cross-validation for a single (unfitted) model and returns
-    mean/std for accuracy, precision_macro, recall_macro, f1_macro, and MCC.
-
-    `cv` should be a pre-built splitter (e.g. StratifiedKFold(n_splits=5,
-    shuffle=True, random_state=42)) so that the SAME folds can be reused for
-    both the default-parameter baseline and the hyperparameter-tuned model,
-    keeping the comparison fair.
-
-    Used for the default-parameter baseline stage. For the tuned stage, the
-    equivalent numbers are pulled directly out of RandomizedSearchCV's
-    cv_results_ (see training.tune.tune_model) rather than recomputed here,
-    since the search already performs this exact cross-validation.
-    """
     scores = cross_validate(model, X, y, cv=cv, scoring=CV_SCORING, n_jobs=-1)
 
     cv_metrics = {}
@@ -87,16 +69,6 @@ def compute_cv_metrics(model, X: np.ndarray, y: np.ndarray, cv) -> dict:
 
 
 def save_comparison(all_metrics: list[dict]) -> str:
-    """
-    Saves model_comparison.csv and metrics.json across ALL models supplied
-    (both "default" and "tuned" stage entries are expected — see the `stage`
-    and `cv` keys added onto each metrics dict in training.train).
-
-    Final model selection uses the same metric the project already used
-    (highest test f1_macro), but — per the fairness fix — it is now applied
-    ONLY across the tuned-stage entries, since every model goes through
-    identical default -> tune stages before this comparison happens.
-    """
     ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
 
     rows = []
@@ -126,9 +98,7 @@ def save_comparison(all_metrics: list[dict]) -> str:
     df = pd.DataFrame(rows)
     df.to_csv(ARTIFACTS_DIR / "model_comparison.csv", index=False)
 
-    # Select the best model from the tuned rows only (falls back to all rows
-    # if, for some reason, no tuned rows were supplied).
-    tuned_df     = df[df["stage"] == "tuned"]
+    tuned_df = df[df["stage"] == "tuned"]
     selection_df = tuned_df if not tuned_df.empty else df
     best_idx     = selection_df["test_f1_macro"].idxmax()
     best_name    = df.loc[best_idx, "model"]
