@@ -20,7 +20,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const queryClient = useQueryClient();
   const [localUser, setLocalUser] = useState<UserProfile | null>(() => {
-    const saved = localStorage.getItem('pathfinder_user');
+    const saved = localStorage.getItem('careerpath_user');
     return saved ? JSON.parse(saved) : null;
   });
   const [authError, setAuthError] = useState<Error | null>(null);
@@ -31,11 +31,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     queryFn: async () => {
       try {
         const u = await userService.getMe();
-        localStorage.setItem('pathfinder_user', JSON.stringify(u));
+        localStorage.setItem('careerpath_user', JSON.stringify(u));
         setLocalUser(u);
         return u;
       } catch (err) {
-        localStorage.removeItem('pathfinder_user');
+        localStorage.removeItem('careerpath_user');
         setLocalUser(null);
         return null;
       }
@@ -48,7 +48,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const loginMutation = useMutation({
     mutationFn: authService.login,
     onSuccess: (userData) => {
-      localStorage.setItem('pathfinder_user', JSON.stringify(userData));
+      localStorage.setItem('careerpath_user', JSON.stringify(userData));
       setLocalUser(userData);
       queryClient.setQueryData(['me'], userData);
       setAuthError(null);
@@ -75,7 +75,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const logoutMutation = useMutation({
     mutationFn: authService.logout,
     onSuccess: () => {
-      localStorage.removeItem('pathfinder_user');
+      localStorage.removeItem('careerpath_user');
       setLocalUser(null);
       queryClient.setQueryData(['me'], null);
       // Remove all queries except 'me' to avoid triggering refetch loop on 'me'
@@ -88,7 +88,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Event listener for token expiration
   useEffect(() => {
     const handleAuthExpired = () => {
-      localStorage.removeItem('pathfinder_user');
+      localStorage.removeItem('careerpath_user');
       setLocalUser(null);
       queryClient.setQueryData(['me'], null);
       // Remove all queries except 'me' to avoid triggering refetch loop on 'me'

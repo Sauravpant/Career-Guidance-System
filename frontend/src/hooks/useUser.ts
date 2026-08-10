@@ -20,7 +20,7 @@ export const useUser = () => {
       onSuccess: (updatedUser) => {
         // Update user profile in queries
         queryClient.setQueryData(['me'], updatedUser);
-        localStorage.setItem('pathfinder_user', JSON.stringify(updatedUser));
+        localStorage.setItem('careerpath_user', JSON.stringify(updatedUser));
         queryClient.invalidateQueries({ queryKey: ['me'] });
         queryClient.invalidateQueries({ queryKey: ['dashboard'] });
       },
@@ -45,14 +45,27 @@ export const useUser = () => {
     });
   };
 
-  const useSelectCareerMutation = () => {
+  const useSelectCareerMutation = (onNavigateToRoadmap?: () => void) => {
     return useMutation({
       mutationFn: (careerName: string) => userService.selectCareer(careerName),
-      onSuccess: () => {
+      onSuccess: (data) => {
+        // Immediately set the roadmap cache with the newly generated roadmap from the API response
+        if (data && data.roadmap) {
+          queryClient.setQueryData(['roadmap', 'latest'], data.roadmap);
+        }
+
+        // Invalidate every query that gets reset when a career is selected
         queryClient.invalidateQueries({ queryKey: ['dashboard'] });
-        queryClient.invalidateQueries({ queryKey: ['roadmap'] });
+        queryClient.invalidateQueries({ queryKey: ['roadmap'] });         // catches ['roadmap', 'latest'] and ['roadmap', id]
         queryClient.invalidateQueries({ queryKey: ['skill-gap'] });
+        queryClient.invalidateQueries({ queryKey: ['skill-gap-history'] });
+        queryClient.invalidateQueries({ queryKey: ['skill-progress'] });
         queryClient.invalidateQueries({ queryKey: ['weekly-goals'] });
+        queryClient.invalidateQueries({ queryKey: ['projects'] });
+        queryClient.invalidateQueries({ queryKey: ['resources'] });
+        
+        // Navigate to roadmap tab after everything is reset
+        onNavigateToRoadmap?.();
       },
     });
   };
