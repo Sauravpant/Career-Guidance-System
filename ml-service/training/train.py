@@ -15,39 +15,15 @@ from training.learning_curves import plot_learning_curve
 from training.tune import tune_model, save_tuning_summary
 from training.utils import get_logger
 import warnings
-#ignore all warnings
+
 warnings.filterwarnings("ignore", category=Warning)
 logger = get_logger(__name__)
 MODELS_DIR = Path(__file__).resolve().parent.parent / "models"
 
-CV_FOLDS    = 5   # used for BOTH the default-parameter baseline CV and every hyperparameter search
-TUNE_N_ITER = 50  # RandomizedSearchCV iterations per model
+CV_FOLDS = 5
+TUNE_N_ITER = 50
 
 
-# -----------------------------------------------------------------------------
-# Fairness fix (per supervisor feedback): comparing "baseline" models that
-# already had hand-picked hyperparameters against a tuned model was not a
-# fair comparison. Every model below is built with its library's own
-# DEFAULT hyperparameters — nothing here is hand-tuned. The only two
-# exceptions are NOT performance-tuning choices:
-#
-#   - random_state=42       → fixes the seed for reproducibility only; it
-#                              does not change the "default-ness" of the
-#                              configuration.
-#   - SVC(probability=True) → required so the model exposes predict_proba,
-#                              which app/services/recommendation_service.py
-#                              depends on regardless of which of the 4
-#                              models ends up winning.
-#
-# Every other hyperparameter is left at the library default. Each of these
-# 4 models is trained here with defaults, then separately hyperparameter-
-# tuned in Phase 2 below (see training.tune.tune_model), and the final model
-# is only chosen after ALL FOUR have been tuned.
-#
-# NOTE: a fresh dict must be built each time (rather than reused/mutated),
-# since a fitted model can't cleanly be "reset" back to unfitted — Phase 1
-# and Phase 2 each need their own untouched instances.
-# -----------------------------------------------------------------------------
 def build_default_models() -> dict:
     return {
         "Logistic Regression": LogisticRegression(random_state=42),
@@ -73,11 +49,6 @@ TUNED_MODEL_FILE_NAMES = {
 
 
 def _partial_smote(X_train, y_train) -> tuple:
-    """
-    Boost minority classes to 60% of majority class size only.
-    Prevents overcorrection on genuinely rare classes like DevOps Engineer.
-    Also sets k_neighbors safely based on smallest class size.
-    """
     counts       = pd.Series(y_train).value_counts()
     target_size  = int(counts.max() * 0.60)
     strategy     = {cls: target_size for cls, cnt in counts.items() if cnt < target_size}
@@ -95,43 +66,33 @@ def train():
     df = load_data()
     logger.info(f"Dataset shape: {df.shape}")
 
-    X, skill_mlb, scaler = build_feature_matrix(df, fit=True) #input feature encode
-    y, le                = encode_target(df["job_title"], fit=True) #output encode
+    X, skill_mlb, scaler, exp_clip_range = build_feature_matrix(df, fit=True)
+    y, le = encode_target(df["job_title"], fit=True)
 
-    save_encoders(skill_mlb, scaler, le) #savw rgw encoder for future use
+    save_encoders(skill_mlb, scaler, le, exp_clip_range)
     logger.info(f"Feature matrix: {X.shape} | Classes: {len(le.classes_)}")
 
-    # 80/20 stratified split
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=42, stratify=y
     )
     logger.info(f"Train: {X_train.shape} | Test: {X_test.shape}")
 
-    # Partial SMOTE on training data only
     X_train_res, y_train_res = _partial_smote(X_train, y_train)
     logger.info(f"After partial SMOTE: {X_train_res.shape}")
 
     MODELS_DIR.mkdir(exist_ok=True)
 
-    # Shared fold splitter — reused for BOTH the default-parameter CV (Phase
-    # 1) and every hyperparameter search (Phase 2), so default and tuned
-    # models are scored on the exact same 5 folds. This is what makes the
-    # before/after tuning comparison fair.
     cv_splitter = StratifiedKFold(n_splits=CV_FOLDS, shuffle=True, random_state=42)
 
-    # =========================================================================
-    # PHASE 1 — Train all 4 models with DEFAULT hyperparameters only.
-    #           Each is evaluated with train/test metrics AND 5-fold CV.
-    # =========================================================================
     default_metrics = []
     default_models  = {}
 
     for name, model in build_default_models().items():
-        logger.info(f"[Default] Training {name} (library default hyperparameters)...")
+        logger.info(f"[Default] Training {name}...")
 
         logger.info(f"[Default] Running {CV_FOLDS}-fold CV for {name}...")
         cv_metrics = compute_cv_metrics(
-            build_default_models()[name],  # fresh, unfitted clone — cross_validate fits its own internal clones anyway, but this keeps intent explicit
+            build_default_models()[name],
             X_train_res, y_train_res, cv=cv_splitter,
         )
 
@@ -157,16 +118,11 @@ def train():
 
         default_metrics.append(metrics)
         default_models[name] = model
-        joblib.dump(model, MODELS_DIR / MODEL_FILE_NAMES[name]) #save default model
+        joblib.dump(model, MODELS_DIR / MODEL_FILE_NAMES[name])
 
     logger.info("\nAll 4 models trained with default parameters. Proceeding to hyperparameter tuning for all 4...")
 
-    # =========================================================================
-    # PHASE 2 — Hyperparameter-tune ALL 4 models (RandomizedSearchCV, cv=5).
-    #           Tuning starts from a FRESH default instance each time — never
-    #           from the already-fitted Phase 1 model.
-    # =========================================================================
-    tuned_metrics  = []
+    tuned_metrics = []
     tuned_models   = {}
     tuning_summary = {}
 
@@ -199,19 +155,11 @@ def train():
 
         tuned_metrics.append(metrics)
         tuned_models[name] = tuned_model
-        joblib.dump(tuned_model, MODELS_DIR / TUNED_MODEL_FILE_NAMES[name]) #save tuned model
+        joblib.dump(tuned_model, MODELS_DIR / TUNED_MODEL_FILE_NAMES[name])
 
     save_tuning_summary(tuning_summary)
     logger.info("Tuning results for all 4 models saved → data/artifacts/tuning_results.json")
 
-    # =========================================================================
-    # PHASE 3 — Save the full comparison (all 4 default + all 4 tuned), then
-    #           pick the FINAL model. Selection criterion is unchanged from
-    #           before (highest test f1_macro) — but per the fairness fix it
-    #           is now applied ONLY across the 4 TUNED models, since every
-    #           model has now been through the identical default -> tune
-    #           pipeline.
-    # =========================================================================
     all_metrics = default_metrics + tuned_metrics
     save_comparison(all_metrics)
     logger.info("Full model comparison saved → data/artifacts/model_comparison.csv / metrics.json")
