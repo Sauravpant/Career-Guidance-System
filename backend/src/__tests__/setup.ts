@@ -1,0 +1,12 @@
+process.env.NODE_ENV = "test";
+process.env.PORT = "3001";
+process.env.ACCESS_TOKEN_SECRET = "test-access-secret-32chars-long!!";
+process.env.REFRESH_TOKEN_SECRET = "test-refresh-secret-32chars-long!";
+process.env.DATABASE_URL = "postgresql://test:test@localhost:5432/test_db";
+process.env.CORS_ORIGIN = "http://localhost:5173";
+process.env.GEMINI_API_KEY = "test-gemini-key";
+process.env.GROQ_API_KEY = "test-groq-key";
+process.env.CLOUDINARY_CLOUD_NAME = "test";
+process.env.CLOUDINARY_API_KEY = "test";
+process.env.CLOUDINARY_SECRET_KEY = "test";
+process.env.ML_RECOMMEND_URL = "http://localhost:8000/api/v1/recommend";
