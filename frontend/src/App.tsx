@@ -51,7 +51,7 @@ const AppContent: React.FC = () => {
       case 'skill-gap':
         return <SkillGap />;
       case 'career-engine':
-        return <CareerEngine />;
+        return <CareerEngine setActiveTab={setActiveTab} />;
       case 'projects':
         return <Projects />;
       case 'resources':
