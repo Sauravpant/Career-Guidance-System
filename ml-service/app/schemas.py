@@ -16,7 +16,9 @@ class RecommendRequest(BaseModel):
     @classmethod
     def valid_experience(cls, v: float) -> float:
         if v < 0:
-            raise ValueError("experience must be non-negative")
+            raise ValueError("experience must be non-negative (0 or more years)")
+        if v > 100:
+            raise ValueError("experience must be 100 years or less")
         return v
 
 
